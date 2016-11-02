@@ -1,0 +1,62 @@
+// See README.md for template syntax and examples.
+// Feel free to add as many environments and tool-lists as you want.
+
+name:
+info:
+location:
+contact:
+
+-- desktop
+
+> os:
+
+> browser:
+
+> editor:
+
+> task tracking:
+
+> notes:
+
+> terminal:
+
+> calendar:
+
+> passwords manager:
+
+> personal finances:
+
+> music:
+
+> e-mail:
+
+> cloud storage:
+
+> photo gallery:
+
+
+-- mobile
+
+> os:
+
+> browser:
+
+> e-mail:
+
+> calendar:
+
+> photo gallery:
+
+> camera:
+
+> twitter client:
+
+> podcasts:
+
+> messenger:
+
+> weather:
+
+> task tracking:
+
+> reading:
