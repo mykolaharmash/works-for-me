@@ -2,7 +2,7 @@
 
 This repository is a nice way to discover new tools by looking at setups which work for other people. And of course you can share your own cozy, carefully-crafted tooling to help others.
 
-It's not just about listing apps, but about highlighting tools that help to make your work better or make your life easier.
+Just one thing to have in mind - it's not just about listing all your apps, but highlighting tools that help you do your work better or make your life easier.
 
 ### How to add my setup?
 
@@ -21,13 +21,13 @@ See `setups/` folder for examples. But, overall, syntax is very simple.
 
 `>` indicates tool-line
 
-After any environment or tool you can add description if you want highlight some use cases or emphasize features you like.
+After any environment or tool you can add description if you want to highlight some use cases or emphasize features you like.
 
 ### Environments
 
 Environment is just a grupping title for a list of tools.
 
-### Item-line
+### Tool-line
 
 Your tool can be specified in a such format
 
