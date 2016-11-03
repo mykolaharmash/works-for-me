@@ -1,0 +1,30 @@
+{
+  "name": "works-for-me",
+  "version": "0.0.1",
+  "description": "A nice way to discover new tools by looking at setups which work for other people.",
+  "main": "index.js",
+  "directories": {
+    "test": "test",
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2",
+    "chai": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha ./test/*Test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nik-garmash/works-for-me.git"
+  },
+  "author": "Nikolay Garmash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nik-garmash/works-for-me/issues"
+  },
+  "homepage": "https://github.com/nik-garmash/works-for-me#readme",
+  "engines": {
+    "node": "~6.9.1"
+  }
+}

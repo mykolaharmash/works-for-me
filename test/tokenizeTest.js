@@ -1,17 +1,17 @@
 let assert = require('assert');
 let tokenize = require('../lib/tokenize');
 
-let oneLineInput = require('./stubs/one-line--input');
-let oneLineOutput = require('./stubs/one-line--output');
+let oneLineInput = require('./stubs/tokenize/one-line--input');
+let oneLineOutput = require('./stubs/tokenize/one-line--output');
 
-let multiLineInput = require('./stubs/multi-line--input');
-let multiLineOutput = require('./stubs/multi-line--output');
+let multiLineInput = require('./stubs/tokenize/multi-line--input');
+let multiLineOutput = require('./stubs/tokenize/multi-line--output');
 
-let leadingTrailingSpacesInput = require('./stubs/leading-traling-spaces--input');
-let leadingTrailingSpacesOutput = require('./stubs/leading-traling-spaces--output');
+let leadingTrailingSpacesInput = require('./stubs/tokenize/leading-traling-spaces--input');
+let leadingTrailingSpacesOutput = require('./stubs/tokenize/leading-traling-spaces--output');
 
-let leadingTrailingNewlinesInput = require('./stubs/leading-traling-newlines--input');
-let leadingTrailingNewlinesOutput = require('./stubs/leading-traling-newlines--output');
+let leadingTrailingNewlinesInput = require('./stubs/tokenize/leading-traling-newlines--input');
+let leadingTrailingNewlinesOutput = require('./stubs/tokenize/leading-traling-newlines--output');
 
 describe('tokenizer', () => {
   it('tokenizes one-line template', () => {
