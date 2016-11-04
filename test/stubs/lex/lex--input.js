@@ -13,7 +13,7 @@ module.exports = [
   'one',
   '\n',
   '>',
-  'type:',
+  'purpose:',
   'tool',
   '\n',
   'some',

@@ -21,6 +21,8 @@ See `setups/` folder for examples. But, overall, syntax is very simple.
 
 `>` indicates tool-line
 
+`//` comment line
+
 After any environment or tool you can add description if you want to highlight some use cases or emphasize features you like.
 
 ### Environments
@@ -32,18 +34,18 @@ Environment is just a grupping title for a list of tools.
 Your tool can be specified in a such format
 
 ```
-type: name
+purpose: name
 ```
 
 Also, optional url can be added withing parentheses
 
 ```
-type: name (url)
+purpose: name (url)
 ```
 
 And if you have multiple tools for one purpose, just list them with comma
 
 ```
-type: name (url), name, name (url)
+purpose: name (url), name, name (url)
 ```
 
