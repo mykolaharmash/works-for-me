@@ -22,14 +22,14 @@ module.exports = [
         ],
         description: [
           { type: 'word', content: 'desktop' },
-          { type: 'word', content: 'env' }
+          { type: 'word', content: 'env' },
           { type: 'word', content: 'description' }
         ]
       },
       {
         type: 'comment-line',
         content: [
-          { type: 'word', content: 'comment' }
+          { type: 'word', content: 'comment' },
           { type: 'word', content: 'one' }
         ]
       },

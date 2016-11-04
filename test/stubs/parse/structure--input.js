@@ -23,5 +23,8 @@ module.exports = [
   { type: 'word', content: '3' },
   { type: 'newline', content: '\n' },
   { type: 'word', content: 'tool' },
-  { type: 'word', content: 'description' }
+  { type: 'word', content: 'description' },
+  { type: 'newline', content: '\n' },
+  { type: 'env-bullet', content: '--' },
+  { type: 'word', content: 'mobile' }
 ];
