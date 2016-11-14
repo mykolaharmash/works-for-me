@@ -26,5 +26,8 @@
   "homepage": "https://github.com/nik-garmash/works-for-me#readme",
   "engines": {
     "node": "~6.9.1"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1"
   }
 }
