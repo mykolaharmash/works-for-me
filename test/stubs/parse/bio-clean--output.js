@@ -2,7 +2,6 @@ module.exports = [
   {
     type: 'bio-line',
     content: [
-      { type: 'newline', content: '\n' },
       { type: 'word', content: 'name:' },
       { type: 'word', content: 'John' },
       { type: 'word', content: 'Doe' },
@@ -21,10 +20,8 @@ module.exports = [
   {
     type: 'bio-line',
     content: [
-      { type: 'newline', content: '\n' },
       { type: 'word', content: 'contact:' },
       { type: 'word', content: 'some@email.com' },
-      { type: 'newline', content: '\n' }
     ]
   }
 ];
