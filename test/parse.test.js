@@ -9,11 +9,16 @@ let globalSplitterOutput = require('./stubs/parse/global-splitter--output');
 let bioCleanInput = require('./stubs/parse/bio-clean--input');
 let bioCleanOutput = require('./stubs/parse/bio-clean--output');
 
+const {
+  GLOBAL_PARSER_KEY,
+  BIO_PARSER_KEY
+} = require('../lib/constants');
+
 describe('parse', () => {
   describe('global splitter', () => {
     it('splits lexemes list by two contexts: "bio" and "setup"', () => {
       const parsersMap = {
-        'global': globalSplitter
+        [GLOBAL_PARSER_KEY]: globalSplitter
       };
       let tree = parse(globalSplitterInput, parsersMap);
 
@@ -24,7 +29,7 @@ describe('parse', () => {
   describe('bio', () => {
     it('splits lexemes list to "bio-line" contexts', () => {
       const parsersMap = {
-        'global': bio
+        [GLOBAL_PARSER_KEY]: bio
       };
       let tree = parse(bioCleanInput, parsersMap);
 
