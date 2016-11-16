@@ -12,7 +12,7 @@
     "chai": "^3.5.0"
   },
   "scripts": {
-    "test": "mocha ./test/*Test.js"
+    "test": "mocha ./test/*.test.js"
   },
   "repository": {
     "type": "git",

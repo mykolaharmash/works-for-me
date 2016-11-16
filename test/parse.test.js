@@ -9,6 +9,10 @@ let globalSplitterOutput = require('./stubs/parse/global-splitter--output');
 
 let bioCleanInput = require('./stubs/parse/bio-clean--input');
 let bioCleanOutput = require('./stubs/parse/bio-clean--output');
+let bioTralingNewlinesInput = require('./stubs/parse/bio-traling-newlines--input');
+let bioTralingNewlinesOutput = require('./stubs/parse/bio-traling-newlines--output');
+let bioCommentsInput = require('./stubs/parse/bio-comments--input');
+let bioCommentsOutput = require('./stubs/parse/bio-comments--output');
 
 let setupInput = require('./stubs/parse/setup--input');
 let setupOutput = require('./stubs/parse/setup--output');
@@ -38,6 +42,26 @@ describe('parse', () => {
       let tree = parse(bioCleanInput, parsersMap);
 
       assert.deepEqual(tree, bioCleanOutput);
+    });
+
+    it(`saves traling newlines and newlines
+        between bio-lines as "plain" context`, () => {
+      const parsersMap = {
+        [GLOBAL_PARSER_KEY]: bio
+      };
+      let tree = parse(bioTralingNewlinesInput, parsersMap);
+
+      assert.deepEqual(tree, bioTralingNewlinesOutput);
+    });
+
+
+    it('creates "comment-line" contexts from comment lexemes', () => {
+      const parsersMap = {
+        [GLOBAL_PARSER_KEY]: bio
+      };
+      let tree = parse(bioCommentsInput, parsersMap);
+
+      assert.deepEqual(tree, bioCommentsOutput);
     });
   });
 
