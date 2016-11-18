@@ -3,6 +3,7 @@ let parse = require('../lib/parse');
 let globalSplitter = require('../lib/parsers/global-splitter');
 let bio = require('../lib/parsers/bio');
 let setup = require('../lib/parsers/setup');
+let environment = require('../lib/parsers/environment');
 
 let globalSplitterInput = require('./stubs/parse/global-splitter--input');
 let globalSplitterOutput = require('./stubs/parse/global-splitter--output');
@@ -16,6 +17,9 @@ let bioCommentsOutput = require('./stubs/parse/bio-comments--output');
 
 let setupInput = require('./stubs/parse/setup--input');
 let setupOutput = require('./stubs/parse/setup--output');
+
+let environmentInput = require('./stubs/parse/environment--input');
+let environmentOutput = require('./stubs/parse/environment--output');
 
 const {
   GLOBAL_PARSER_KEY,
@@ -73,6 +77,17 @@ describe('parse', () => {
       let tree = parse(setupInput, parsersMap);
 
       assert.deepEqual(tree, setupOutput);
+    });
+  });
+
+  describe('environment', () => {
+    it('splits environment into headers and tools list', () => {
+      const parsersMap = {
+        [GLOBAL_PARSER_KEY]: environment
+      };
+      let tree = parse(environmentInput, parsersMap);
+
+      assert.deepEqual(tree, environmentOutput);
     });
   });
 });
