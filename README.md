@@ -2,7 +2,7 @@
 
 This repository is a nice way to discover new tools by looking at setups which work for other people. And of course you can share your own cozy, carefully-crafted tooling to help others.
 
-Just one thing to have in mind - it's not just about listing all your apps, but highlighting tools that help you do your work better or make your life easier.
+Just one thing to have in mind — it's not just about listing all your apps, but highlighting tools that help you do your work better or make your life easier.
 
 ### How to add my setup?
 
