@@ -12,7 +12,7 @@ module.exports = [
       { type: 'comment-bullet', content: '//' },
       { type: 'word', content: 'comment' },
       { type: 'word', content: 'one' },
-      { type: 'newline', content: '\n' },
+      { type: 'newline', content: '\n' }
     ]
   },
   {
@@ -34,4 +34,4 @@ module.exports = [
       { type: 'word', content: '(https://www.iterm2.com/)' }
     ]
   }
-]
+];

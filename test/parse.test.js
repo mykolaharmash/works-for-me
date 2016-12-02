@@ -4,14 +4,15 @@ let globalSplitter = require('../lib/parsers/global-splitter');
 let bio = require('../lib/parsers/bio');
 let setup = require('../lib/parsers/setup');
 let environment = require('../lib/parsers/environment');
+let environmentHeader = require('../lib/parsers/environment-header');
 
 let globalSplitterInput = require('./stubs/parse/global-splitter--input');
 let globalSplitterOutput = require('./stubs/parse/global-splitter--output');
 
 let bioCleanInput = require('./stubs/parse/bio-clean--input');
 let bioCleanOutput = require('./stubs/parse/bio-clean--output');
-let bioTralingNewlinesInput = require('./stubs/parse/bio-traling-newlines--input');
-let bioTralingNewlinesOutput = require('./stubs/parse/bio-traling-newlines--output');
+let bioTrailingNewlinesInput = require('./stubs/parse/bio-trailing-newlines--input');
+let bioTrailingNewlinesOutput = require('./stubs/parse/bio-trailing-newlines--output');
 let bioCommentsInput = require('./stubs/parse/bio-comments--input');
 let bioCommentsOutput = require('./stubs/parse/bio-comments--output');
 
@@ -21,10 +22,10 @@ let setupOutput = require('./stubs/parse/setup--output');
 let environmentInput = require('./stubs/parse/environment--input');
 let environmentOutput = require('./stubs/parse/environment--output');
 
-const {
-  GLOBAL_PARSER_KEY,
-  BIO_PARSER_KEY
-} = require('../lib/constants');
+let environmentHeaderInput = require('./stubs/parse/environment-header--input');
+let environmentHeaderOutput = require('./stubs/parse/environment-header--output');
+
+const { GLOBAL_PARSER_KEY } = require('../lib/constants');
 
 describe('parse', () => {
   describe('global splitter', () => {
@@ -53,9 +54,9 @@ describe('parse', () => {
       const parsersMap = {
         [GLOBAL_PARSER_KEY]: bio
       };
-      let tree = parse(bioTralingNewlinesInput, parsersMap);
+      let tree = parse(bioTrailingNewlinesInput, parsersMap);
 
-      assert.deepEqual(tree, bioTralingNewlinesOutput);
+      assert.deepEqual(tree, bioTrailingNewlinesOutput);
     });
 
 
@@ -88,6 +89,17 @@ describe('parse', () => {
       let tree = parse(environmentInput, parsersMap);
 
       assert.deepEqual(tree, environmentOutput);
+    });
+  });
+
+  describe('environment header', () => {
+    it('splits environment header into title and description', () => {
+      const parsersMap = {
+        [GLOBAL_PARSER_KEY]: environmentHeader
+      };
+      let tree = parse(environmentHeaderInput, parsersMap);
+
+      assert.deepEqual(tree, environmentHeaderOutput);
     });
   });
 });
