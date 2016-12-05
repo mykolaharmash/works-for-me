@@ -5,6 +5,7 @@ let bio = require('../lib/parsers/bio');
 let setup = require('../lib/parsers/setup');
 let environment = require('../lib/parsers/environment');
 let environmentHeader = require('../lib/parsers/environment-header');
+let environmentDescription = require('../lib/parsers/environment-description');
 
 let globalSplitterInput = require('./stubs/parse/global-splitter--input');
 let globalSplitterOutput = require('./stubs/parse/global-splitter--output');
@@ -24,6 +25,9 @@ let environmentOutput = require('./stubs/parse/environment--output');
 
 let environmentHeaderInput = require('./stubs/parse/environment-header--input');
 let environmentHeaderOutput = require('./stubs/parse/environment-header--output');
+
+let environmentDescriptionInput = require('./stubs/parse/environment-description--input');
+let environmentDescriptionOutput = require('./stubs/parse/environment-description--output');
 
 const { GLOBAL_PARSER_KEY } = require('../lib/constants');
 
@@ -100,6 +104,19 @@ describe('parse', () => {
       let tree = parse(environmentHeaderInput, parsersMap);
 
       assert.deepEqual(tree, environmentHeaderOutput);
+    });
+  });
+
+  describe('environment descriptions', () => {
+    it('splits environment description into plain text and comments', () => {
+      const parsersMap = {
+        [GLOBAL_PARSER_KEY]: environmentDescription
+      };
+      let tree = parse(environmentDescriptionInput, parsersMap);
+
+      //console.log(JSON.stringify(tree, null, 2));
+
+      assert.deepEqual(tree, environmentDescriptionOutput);
     });
   });
 });
