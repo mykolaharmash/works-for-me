@@ -8,7 +8,7 @@ module.exports = [
     ]
   },
   {
-    type: 'environment-description',
+    type: 'description',
     content: [
       { type: 'word', content: 'desktop' },
       { type: 'word', content: 'env' },
