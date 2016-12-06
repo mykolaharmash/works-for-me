@@ -6,12 +6,10 @@ Just one thing to have in mind — it's not just about listing all your apps, bu
 
 ### How to add my setup?
 
-You can do this in 4 easy steps:
-
-* Fork repo
-* Copy `template.setup` to `setups/` folder and name it after you
-* Fill in new file with setup that works for you
-* Make a Pull Request to main repo
+1. Fork repo
+2. Copy `template.setup` to `setups/` folder and name it after you
+3. Fill in new file with setup that works for you
+4. Make a Pull Request to main repo
 
 ### Syntax
 
