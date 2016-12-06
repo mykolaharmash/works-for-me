@@ -6,6 +6,7 @@ let setup = require('../lib/parsers/setup');
 let environment = require('../lib/parsers/environment');
 let environmentHeader = require('../lib/parsers/environment-header');
 let description = require('../lib/parsers/description');
+let toolsList = require('../lib/parsers/tools-list');
 
 let globalSplitterInput = require('./stubs/parse/global-splitter--input');
 let globalSplitterOutput = require('./stubs/parse/global-splitter--output');
@@ -28,6 +29,9 @@ let environmentHeaderOutput = require('./stubs/parse/environment-header--output'
 
 let descriptionInput = require('./stubs/parse/description--input');
 let descriptionOutput = require('./stubs/parse/description--output');
+
+let toolsListInput = require('./stubs/parse/tools-list--input');
+let toolsListOutput = require('./stubs/parse/tools-list--output');
 
 const { GLOBAL_PARSER_KEY } = require('../lib/constants');
 
@@ -115,6 +119,17 @@ describe('parse', () => {
       let tree = parse(descriptionInput, parsersMap);
 
       assert.deepEqual(tree, descriptionOutput);
+    });
+  });
+
+  describe('tolls-list', () => {
+    it('splits tools list to separate tool-items', () => {
+      const parsersMap = {
+        [GLOBAL_PARSER_KEY]: toolsList
+      };
+      let tree = parse(toolsListInput, parsersMap);
+
+      assert.deepEqual(tree, toolsListOutput);
     });
   });
 });

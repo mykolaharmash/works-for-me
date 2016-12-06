@@ -1,32 +1,13 @@
 const {
-  WORD_LEXEME,
+  TOOL_ITEM_CONTEXT,
   TOOL_BULLET_LEXEME,
-  NEWLINE_LEXEME,
-  ENVIRONMENT_HEADER_CONTEXT,
-  TOOLS_LIST_CONTEXT,
-  ENV_BULLET_LEXEME,
-  COMMENT_BULLET_LEXEME
+  WORD_LEXEME,
+  NEWLINE_LEXEME
 } = require('../../../lib/constants');
 
 module.exports = [
   {
-    type: ENVIRONMENT_HEADER_CONTEXT,
-    content: [
-      { type: ENV_BULLET_LEXEME, content: '--' },
-      { type: WORD_LEXEME, content: 'desktop' },
-      { type: NEWLINE_LEXEME, content: '\n' },
-      { type: WORD_LEXEME, content: 'desktop' },
-      { type: WORD_LEXEME, content: 'env' },
-      { type: WORD_LEXEME, content: 'description' },
-      { type: NEWLINE_LEXEME, content: '\n' },
-      { type: COMMENT_BULLET_LEXEME, content: '//' },
-      { type: WORD_LEXEME, content: 'comment' },
-      { type: WORD_LEXEME, content: 'one' },
-      { type: NEWLINE_LEXEME, content: '\n' }
-    ]
-  },
-  {
-    type: TOOLS_LIST_CONTEXT,
+    type: TOOL_ITEM_CONTEXT,
     content: [
       { type: TOOL_BULLET_LEXEME, content: '>' },
       { type: WORD_LEXEME, content: 'editor:' },
@@ -37,6 +18,11 @@ module.exports = [
       { type: WORD_LEXEME, content: 'tool' },
       { type: WORD_LEXEME, content: 'description' },
       { type: NEWLINE_LEXEME, content: '\n' },
+    ]
+  },
+  {
+    type: TOOL_ITEM_CONTEXT,
+    content: [
       { type: TOOL_BULLET_LEXEME, content: '>' },
       { type: WORD_LEXEME, content: 'terminal:' },
       { type: WORD_LEXEME, content: 'iTerm' },
