@@ -4,8 +4,7 @@ const {
   NEWLINE_LEXEME,
   COMMENT_BULLET_LEXEME,
   TOOL_HEAD_CONTEXT,
-  DESCRIPTION_CONTEXT,
-  COMMENT_LINE_CONTEXT
+  DESCRIPTION_CONTEXT
 } = require('../../../lib/constants');
 
 module.exports = [
