@@ -17,7 +17,7 @@ module.exports = [
       { type: NEWLINE_LEXEME, content: '\n' },
       { type: WORD_LEXEME, content: 'tool' },
       { type: WORD_LEXEME, content: 'description' },
-      { type: NEWLINE_LEXEME, content: '\n' },
+      { type: NEWLINE_LEXEME, content: '\n' }
     ]
   },
   {
