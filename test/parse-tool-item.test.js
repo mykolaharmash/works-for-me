@@ -8,7 +8,7 @@ let output = require('./stubs/parse/tool-item--output');
 const { GLOBAL_PARSER_KEY } = require('../lib/constants');
 
 describe('tool item parser', () => {
-  it('splits tool item input head and description', () => {
+  it('splits tool item into head and description', () => {
     const parsersMap = {
       [GLOBAL_PARSER_KEY]: toolItem
     };
