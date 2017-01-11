@@ -1,3 +1,4 @@
+let Immutable = require('immutable');
 let assert = require('assert');
 let parse = require('../lib/parse');
 let toolName = require('../lib/parsers/tool-name');
@@ -14,23 +15,23 @@ let outputSpacedLink = require('./stubs/parse/tool-name-spaced-link--output');
 let inputMultiple = require('./stubs/parse/tool-name-multiple--input');
 let outputMultiple = require('./stubs/parse/tool-name-multiple--output');
 
-const { GLOBAL_PARSER_KEY } = require('../lib/constants');
+const { TOOL_NAME_PARSER_KEY } = require('../lib/constants');
 
 describe('tool name parser', () => {
   it('parses tool\'s title', () => {
     const parsersMap = {
-      [GLOBAL_PARSER_KEY]: toolName
+      [TOOL_NAME_PARSER_KEY]: toolName
     };
-    let tree = parse(inputBasic, parsersMap);
+    let tree = parse(Immutable.fromJS(inputBasic), parsersMap);
 
     assert.deepEqual(tree, outputBasic);
   });
 
   it('parses tool\'s title and optional link', () => {
     const parsersMap = {
-      [GLOBAL_PARSER_KEY]: toolName
+      [TOOL_NAME_PARSER_KEY]: toolName
     };
-    let tree = parse(inputLink, parsersMap);
+    let tree = parse(Immutable.fromJS(inputLink), parsersMap);
 
     assert.deepEqual(tree, outputLink);
   });
@@ -39,18 +40,18 @@ describe('tool name parser', () => {
       event when multiple words present`,
   () => {
     const parsersMap = {
-      [GLOBAL_PARSER_KEY]: toolName
+      [TOOL_NAME_PARSER_KEY]: toolName
     };
-    let tree = parse(inputSpacedLink, parsersMap);
+    let tree = parse(Immutable.fromJS(inputSpacedLink), parsersMap);
 
     assert.deepEqual(tree, outputSpacedLink);
   });
 
   it('parses multiple titles and multiple links within one tool-name', () => {
     const parsersMap = {
-      [GLOBAL_PARSER_KEY]: toolName
+      [TOOL_NAME_PARSER_KEY]: toolName
     };
-    let tree = parse(inputMultiple, parsersMap);
+    let tree = parse(Immutable.fromJS(inputMultiple), parsersMap);
 
     assert.deepEqual(tree, outputMultiple);
   });

@@ -1,8 +1,14 @@
-const { ENVIRONMENT_CONTEXT } = require('../../../lib/constants');
+const { ROOT_CONTEXT } = require('../../../lib/constants');
 
 module.exports = {
-  type: ENVIRONMENT_CONTEXT,
+  type: ROOT_CONTEXT,
   content: [
+    { type: 'newline', content: '\n' },
+    { type: 'word', content: 'name:' },
+    { type: 'word', content: 'John' },
+    { type: 'word', content: 'Doe' },
+    { type: 'newline', content: '\n' },
+    { type: 'newline', content: '\n' },
     { type: 'env-bullet', content: '--' },
     { type: 'word', content: 'desktop' },
     { type: 'newline', content: '\n' },
@@ -23,10 +29,7 @@ module.exports = {
     { type: 'word', content: 'tool' },
     { type: 'word', content: 'description' },
     { type: 'newline', content: '\n' },
-    { type: 'tool-bullet', content: '>' },
-    { type: 'word', content: 'terminal:' },
-    { type: 'word', content: 'iTerm' },
-    { type: 'word', content: '2' },
-    { type: 'word', content: '(https://www.iterm2.com/)' }
+    { type: 'env-bullet', content: '--' },
+    { type: 'word', content: 'mobile' }
   ]
 };

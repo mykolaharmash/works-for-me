@@ -1,10 +1,21 @@
-const { SETUP_CONTEXT } = require('../../../lib/constants');
+const { ROOT_CONTEXT } = require('../../../lib/constants');
 
 module.exports = {
-  type: SETUP_CONTEXT,
+  type: ROOT_CONTEXT,
   content: [
     {
-      type: 'environment',
+      type: 'bio',
+      content: [
+        { type: 'newline', content: '\n' },
+        { type: 'word', content: 'name:' },
+        { type: 'word', content: 'John' },
+        { type: 'word', content: 'Doe' },
+        { type: 'newline', content: '\n' },
+        { type: 'newline', content: '\n' }
+      ]
+    },
+    {
+      type: 'setup',
       content: [
         { type: 'env-bullet', content: '--' },
         { type: 'word', content: 'desktop' },
@@ -25,18 +36,9 @@ module.exports = {
         { type: 'newline', content: '\n' },
         { type: 'word', content: 'tool' },
         { type: 'word', content: 'description' },
-        { type: 'newline', content: '\n' }
-      ]
-    },
-    {
-      type: 'environment',
-      content: [
-        { type: 'env-bullet', content: '--' },
-        { type: 'word', content: 'mobile' },
         { type: 'newline', content: '\n' },
-        { type: 'tool-bullet', content: '>' },
-        { type: 'word', content: 'browser:' },
-        { type: 'word', content: 'Safari' }
+        { type: 'env-bullet', content: '--' },
+        { type: 'word', content: 'mobile' }
       ]
     }
   ]
