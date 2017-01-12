@@ -28,6 +28,9 @@
     "node": "~6.9.1"
   },
   "dependencies": {
-    "immutable": "^3.8.1"
+    "immutable": "^3.8.1",
+    "js-beautify": "^1.6.8",
+    "posthtml": "^0.9.1",
+    "posthtml-beautify": "^0.1.2"
   }
 }
