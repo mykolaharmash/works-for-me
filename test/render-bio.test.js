@@ -3,9 +3,9 @@ let assert = require('assert');
 let render = require('../lib/render');
 let bio = require('../lib/renderers/bio');
 
-const emptyInput = require('./stubs/render/bio-empty--input');
-const emptyOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-empty--output.html'))
+const input = require('./stubs/render/bio--input');
+const output = fs
+  .readFileSync(require.resolve('./stubs/render/bio--output.html'))
   .toString();
 
 const { BIO_RENDERER_KEY } = require('../lib/constants');
@@ -16,8 +16,8 @@ describe('bio renderer', () => {
   };
 
   it('renders empty bio context', () => {
-    let html = render(emptyInput, renderersMap);
+    let html = render(input, renderersMap);
 
-    assert.equal(html, emptyOutput);
+    assert.equal(html, output);
   });
 });
