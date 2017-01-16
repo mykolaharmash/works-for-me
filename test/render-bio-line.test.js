@@ -42,6 +42,11 @@ const linkTwitterNoAtOutput = fs
   .readFileSync(require.resolve('./stubs/render/bio-line-link-twitter-noat--output.html'))
   .toString();
 
+const linkEmailInput = require('./stubs/render/bio-line-link-email--input');
+const linkEmailOutput = fs
+  .readFileSync(require.resolve('./stubs/render/bio-line-link-email--output.html'))
+  .toString();
+
 const { BIO_LINE_RENDERER_KEY } = require('../lib/constants');
 
 describe('bio-line renderer', () => {
@@ -97,6 +102,12 @@ describe('bio-line renderer', () => {
       let html = render(linkTwitterNoAtInput, renderersMap);
 
       assert.equal(html, linkTwitterNoAtOutput);
+    });
+
+    it('renders email as mailto link', () => {
+      let html = render(linkEmailInput, renderersMap);
+
+      assert.equal(html, linkEmailOutput);
     });
   });
 });
