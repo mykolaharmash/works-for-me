@@ -10,7 +10,6 @@ module.exports = {
   type: TOOL_ITEM_CONTEXT,
   content: [
     { type: TOOL_BULLET_LEXEME, content: '>' },
-    { type: WORD_LEXEME, content: 'purpose:' },
     { type: WORD_LEXEME, content: 'some' },
     { type: WORD_LEXEME, content: 'awesome' },
     { type: WORD_LEXEME, content: 'tool' },

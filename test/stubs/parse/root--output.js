@@ -29,7 +29,6 @@ module.exports = {
         { type: 'word', content: 'one' },
         { type: 'newline', content: '\n' },
         { type: 'tool-bullet', content: '>' },
-        { type: 'word', content: 'editor:' },
         { type: 'word', content: 'Sublime' },
         { type: 'word', content: 'Text' },
         { type: 'word', content: '3' },
