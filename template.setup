@@ -1,62 +1,24 @@
 // See README.md for template syntax and 'setups/' folder for examples.
 // Feel free to add as many environments and tool-lists as you want.
 
+// Little information about you, only name is required
+
 name:
 info:
 location:
-contact:
+link:
 
--- desktop
+-- Desktop
 
-> os:
+> Tool's name (http://...)
 
-> browser:
+Optional description goes here
 
-> editor:
-
-> task tracking:
-
-> notes:
-
-> terminal:
-
-> calendar:
-
-> passwords manager:
-
-> personal finances:
-
-> music:
-
-> e-mail:
-
-> cloud storage:
-
-> photo gallery:
+>
 
 
--- mobile
+-- Mobile
 
-> os:
+>
 
-> browser:
-
-> e-mail:
-
-> calendar:
-
-> photo gallery:
-
-> camera:
-
-> twitter client:
-
-> podcasts:
-
-> messenger:
-
-> weather:
-
-> task tracking:
-
-> reading:
+>

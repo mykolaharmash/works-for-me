@@ -25,25 +25,44 @@ After any environment or tool you can add description if you want to highlight s
 
 ### Environments
 
-Environment is just a grupping title for a list of tools.
+Environment is just a grouping title for a list of tools.
+Just find a way to group your tools  you comfortable wit
+
+Bunch of examples:
+
+```
+-- Mobile
+```
+
+```
+-- Work
+```
+
+```
+-- Video editing
+```
+
+```
+-- Programming
+```
 
 ### Tool-line
 
 Your tool can be specified in a such format
 
 ```
-purpose: name
+> Tool's name
 ```
 
 Also, optional url can be added withing parentheses
 
 ```
-purpose: name (url)
+> Photoshop (http://www.adobe.com/photoshop)
 ```
 
 And if you have multiple tools for one purpose, just list them with comma
 
 ```
-purpose: name (url), name, name (url)
+> Sublime Text 3 (https://www.sublimetext.com/3), WebStorm (https://www.jetbrains.com/webstorm/)
 ```
 
