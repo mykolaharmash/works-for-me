@@ -9,6 +9,9 @@ const outputEmpty = fs.readFileSync(require.resolve('./stubs/render/tool-name-em
 const inputOnlyTitle = require('./stubs/render/tool-name-only-title--input');
 const outputOnlyTitle = fs.readFileSync(require.resolve('./stubs/render/tool-name-only-title--output.html'), 'utf8');
 
+const inputTitleAndUrl = require('./stubs/render/tool-name-title-and-url--input');
+const outputTitleAndUrl = fs.readFileSync(require.resolve('./stubs/render/tool-name-title-and-url--output.html'), 'utf8');
+
 const { TOOL_NAME_RENDERER_KEY } = require('../lib/constants');
 
 describe('tool name renderer', () => {
@@ -26,5 +29,11 @@ describe('tool name renderer', () => {
     let html = render(inputOnlyTitle, renderersMap);
 
     assert.equal(html, outputOnlyTitle);
+  });
+
+  it('renders name with title and url as a link', () => {
+    let html = render(inputTitleAndUrl, renderersMap);
+
+    assert.equal(html, outputTitleAndUrl);
   });
 });
