@@ -18,9 +18,9 @@ const nameOutput = fs
   .readFileSync(require.resolve('./stubs/render/bio-line-name--output.html'))
   .toString();
 
-const infoInput = require('./stubs/render/bio-line-info--input');
-const infoOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-info--output.html'))
+const occupationInput = require('./stubs/render/bio-line-occupation--input');
+const occupationOutput = fs
+  .readFileSync(require.resolve('./stubs/render/bio-line-occupation--output.html'))
   .toString();
 
 const locationInput = require('./stubs/render/bio-line-location--input');
@@ -72,9 +72,9 @@ describe('bio-line renderer', () => {
   });
 
   it('renders info', () => {
-    let html = render(infoInput, renderersMap);
+    let html = render(occupationInput, renderersMap);
 
-    assert.equal(html, infoOutput);
+    assert.equal(html, occupationOutput);
   });
 
   it('renders location', () => {
