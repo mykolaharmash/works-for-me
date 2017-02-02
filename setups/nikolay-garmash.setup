@@ -1,13 +1,7 @@
-// at the start
-
 name: Nikolay Garmash
 occupation: Front-end developer
-// some comment here
 location: Berlin, Germany
 link: https://twitter.com/garmashnikolay
-
-
-// another here
 
 -- desktop
 
@@ -16,8 +10,6 @@ My laptop is MacBook Pro (Retina, 15-inch, Mid 2015)
 > Chrome
 
 Developer tools are crucial for me.
-// multiline stuff
-// here
 
 > Sublime Text 3 (https://www.sublimetext.com/3)
 
@@ -72,8 +64,6 @@ I think it's best Google's service for a long time, I backup there photos from a
 
 
 -- mobile
-// maybe here
-// also
 
 I'm using elderly iPhone 5S. My phone usage is pretty straight forward - write some texts, read twitter, listen some music, ... No games at all.
 
@@ -115,6 +105,3 @@ I really like that I can save anything just with one click, without specifying f
 > Google Music (https://play.google.com/)
 
 > Google Photos (https://photos.google.com/)
-
-// ant for the end
-// also
