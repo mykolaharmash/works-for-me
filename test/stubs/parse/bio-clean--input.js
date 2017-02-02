@@ -11,7 +11,7 @@ module.exports = {
     { type: 'word', content: 'Kiev,' },
     { type: 'word', content: 'Ukraine' },
     { type: 'newline', content: '\n' },
-    { type: 'word', content: 'contact:' },
+    { type: 'word', content: 'link:' },
     { type: 'word', content: 'some@email.com' }
   ]
 };

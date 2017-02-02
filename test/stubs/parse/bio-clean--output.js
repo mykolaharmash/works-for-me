@@ -24,7 +24,7 @@ module.exports = {
     {
       type: 'bio-line',
       content: [
-        { type: 'word', content: 'contact:' },
+        { type: 'word', content: 'link:' },
         { type: 'word', content: 'some@email.com' }
       ]
     }

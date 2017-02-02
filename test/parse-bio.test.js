@@ -5,8 +5,8 @@ let bio = require('../lib/parsers/bio');
 
 let cleanInput = require('./stubs/parse/bio-clean--input');
 let cleanOutput = require('./stubs/parse/bio-clean--output');
-let trailingNewlinesInput = require('./stubs/parse/bio-trailing-newlines--input');
-let trailingNewlinesOutput = require('./stubs/parse/bio-trailing-newlines--output');
+let withDescriptionsInput = require('./stubs/parse/bio-with-descriptions--input');
+let withDescriptionsOutput = require('./stubs/parse/bio-with-descriptions--output');
 
 const { BIO_PARSER_KEY } = require('../lib/constants');
 
@@ -20,13 +20,12 @@ describe('bio parser', () => {
     assert.deepEqual(tree, cleanOutput);
   });
 
-  it(`saves traling newlines and newlines
-      between bio-lines as "plain" context`, () => {
+  it(`saves texts around bio lines into "descriptions" context`, () => {
     const parsersMap = {
       [BIO_PARSER_KEY]: bio
     };
-    let tree = parse(Immutable.fromJS(trailingNewlinesInput), parsersMap);
+    let tree = parse(Immutable.fromJS(withDescriptionsInput), parsersMap);
 
-    assert.deepEqual(tree, trailingNewlinesOutput);
+    assert.deepEqual(tree, withDescriptionsOutput);
   });
 });
