@@ -1,12 +1,14 @@
 const fs = require('fs-extra');
 const path = require('path');
-const setupAst = require('./setup-ast');
-const setupHtml = require('./setup-html');
+const generateSetupItemAst = require('./setup-ast');
+const generateSetupItemHtml = require('./setup-html');
+const generateSetupsListAst = require('./setups-list-ast');
+const generateSetupsListHtml = require('./setups-list-html');
 const setupsSrcDir = path.resolve(__dirname, '../setups');
 const distDir = path.resolve(__dirname, '../dist');
 const setupsDistDir = `${distDir}/setups`;
 
-function getSetupsList (setupsDir) {
+function getSetupFilesList (setupsDir) {
   return fs
     .readdirSync(setupsDir)
     .map(item => path.resolve(setupsDir, item))
@@ -24,7 +26,7 @@ function readSetupContent (filePath) {
 }
 
 function generateSetupAst (contentItem) {
-  let content = setupAst(contentItem.content);
+  let content = generateSetupItemAst(contentItem.content);
 
   return {
     name: contentItem.name,
@@ -33,7 +35,7 @@ function generateSetupAst (contentItem) {
 }
 
 function generateSetupHtml (astItem) {
-  let content = setupHtml(astItem.content);
+  let content = generateSetupItemHtml(astItem.content);
 
   return {
     name: astItem.name,
@@ -47,10 +49,23 @@ function saveSetupHtml (htmlItem) {
   fs.writeFileSync(`${setupsDistDir}/${filename}`, htmlItem.content);
 }
 
+function saveSetupsListHtml(listHtml) {
+  let filename = `index.html`;
+
+  fs.writeFileSync(`${distDir}/${filename}`, listHtml);
+}
+
 fs.ensureDirSync(setupsDistDir);
 
- getSetupsList(setupsSrcDir)
+ let setupsAst = getSetupFilesList(setupsSrcDir)
   .map(readSetupContent)
   .map(generateSetupAst)
+
+ setupsAst
   .map(generateSetupHtml)
   .map(saveSetupHtml);
+
+ let setupsListAst = generateSetupsListAst(setupsAst);
+ let setupsListHtml = generateSetupsListHtml(setupsListAst);
+
+saveSetupsListHtml(setupsListHtml);
