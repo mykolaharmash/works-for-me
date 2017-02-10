@@ -16,7 +16,7 @@ describe('setups-list-item renderer', () => {
     [SETUPS_LIST_ITEM_RENDERER_KEY]: setupsListItem
   };
 
-  it('renders wrapper for setups list', () => {
+  it('renders wrapper for setup item', () => {
     let html = render(basicInput, renderersMap);
 
     assert.equal(html, basicOutput);
