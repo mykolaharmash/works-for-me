@@ -4,5 +4,9 @@ const {
 
 module.exports = {
   type: SETUPS_LIST_CONTEXT,
-  content: []
+  content: [
+    {
+      content: '<span>test</span>'
+    }
+  ]
 };

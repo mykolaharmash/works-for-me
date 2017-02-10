@@ -66,11 +66,10 @@ setupsAst
  .map(saveSetupHtml);
 
 let setupsListAst = generateSetupsListAst(setupsAst);
-//let setupsListHtml = generateSetupsListHtml(setupsListAst);
-
+let setupsListHtml = generateSetupsListHtml(setupsListAst);
 
 fs.writeFileSync(
   `${path.resolve(__dirname, '../tmp')}/list.ast.js`,
   JSON.stringify(setupsListAst, null, 2)
 );
-//saveSetupsListHtml(setupsListHtml);
+saveSetupsListHtml(setupsListHtml);
