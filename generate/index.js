@@ -57,15 +57,20 @@ function saveSetupsListHtml(listHtml) {
 
 fs.ensureDirSync(setupsDistDir);
 
- let setupsAst = getSetupFilesList(setupsSrcDir)
-  .map(readSetupContent)
-  .map(generateSetupAst)
+let setupsAst = getSetupFilesList(setupsSrcDir)
+ .map(readSetupContent)
+ .map(generateSetupAst)
 
- setupsAst
-  .map(generateSetupHtml)
-  .map(saveSetupHtml);
+setupsAst
+ .map(generateSetupHtml)
+ .map(saveSetupHtml);
 
- let setupsListAst = generateSetupsListAst(setupsAst);
- let setupsListHtml = generateSetupsListHtml(setupsListAst);
+let setupsListAst = generateSetupsListAst(setupsAst);
+//let setupsListHtml = generateSetupsListHtml(setupsListAst);
 
-saveSetupsListHtml(setupsListHtml);
+
+fs.writeFileSync(
+  `${path.resolve(__dirname, '../tmp')}/list.ast.js`,
+  JSON.stringify(setupsListAst, null, 2)
+);
+//saveSetupsListHtml(setupsListHtml);
