@@ -4,6 +4,8 @@ const generateSetupItemAst = require('./setup-ast');
 const generateSetupItemHtml = require('./setup-html');
 const generateSetupsListAst = require('./setups-list-ast');
 const generateSetupsListHtml = require('./setups-list-html');
+const copyStatics = require('./copy-statics');
+
 const setupsSrcDir = path.resolve(__dirname, '../setups');
 const distDir = path.resolve(__dirname, '../dist');
 const setupsDistDir = `${distDir}/setups`;
@@ -73,3 +75,5 @@ fs.writeFileSync(
   JSON.stringify(setupsListAst, null, 2)
 );
 saveSetupsListHtml(setupsListHtml);
+
+copyStatics();
