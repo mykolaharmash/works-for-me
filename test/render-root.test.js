@@ -10,7 +10,7 @@ const output = fs
 
 const { ROOT_RENDERER_KEY } = require('../lib/constants');
 
-describe('bio renderer', () => {
+describe('setup root renderer', () => {
   const renderersMap = {
     [ROOT_RENDERER_KEY]: root
   };
