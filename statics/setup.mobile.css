@@ -1,0 +1,14 @@
+@media screen and (max-width: 560px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .bio {
+    text-align: left;
+    padding: 30px 0;
+  }
+
+  .setup {
+    max-width: 100%;
+  }
+}

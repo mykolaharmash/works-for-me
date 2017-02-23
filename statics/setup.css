@@ -30,7 +30,7 @@ a:visited {
 }
 
 .bio {
-  margin: 64px 0;
+  padding: 64px 0;
   text-align: center;
 }
 
@@ -48,7 +48,8 @@ a:visited {
 }
 
 .setup {
-  width: 660px;
+  max-width: 660px;
+  word-wrap: break-word;
 }
 
 .environment {
@@ -76,6 +77,7 @@ a:visited {
 
 .tool-names-list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tool-name {
