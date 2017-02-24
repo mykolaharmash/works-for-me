@@ -4,12 +4,10 @@
   "description": "A nice way to discover new tools by looking at setups which work for other people.",
   "main": "index.js",
   "directories": {
-    "test": "test",
-    "lib": "lib"
+    "test": "test"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "fs-extra": "^2.0.0",
     "mocha": "^3.1.2"
   },
   "scripts": {
@@ -26,12 +24,14 @@
   },
   "homepage": "https://github.com/nik-garmash/works-for-me#readme",
   "engines": {
-    "node": "~6.9.1"
+    "node": "~7.6.0"
   },
   "dependencies": {
     "immutable": "^3.8.1",
     "js-beautify": "^1.6.8",
     "posthtml": "^0.9.1",
-    "posthtml-beautify": "^0.1.2"
+    "posthtml-beautify": "^0.1.2",
+    "fs-extra": "^2.0.0",
+    "semver": "^5.3.0"
   }
 }

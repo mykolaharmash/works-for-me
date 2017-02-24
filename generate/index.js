@@ -1,3 +1,5 @@
+require('./check-node-version');
+
 const fs = require('fs-extra');
 const path = require('path');
 const generateSetupItemAst = require('./setup-ast');
@@ -61,7 +63,7 @@ fs.ensureDirSync(setupsDistDir);
 
 let setupsAst = getSetupFilesList(setupsSrcDir)
  .map(readSetupContent)
- .map(generateSetupAst)
+ .map(generateSetupAst);
 
 setupsAst
  .map(generateSetupHtml)
