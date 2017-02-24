@@ -25,12 +25,18 @@ a:visited {
   color: #5856D6;
 }
 
+.goto-list {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
 .description {
   line-height: 1.4em;
 }
 
 .bio {
-  padding: 64px 0;
+  padding: 94px 0;
   text-align: center;
 }
 
