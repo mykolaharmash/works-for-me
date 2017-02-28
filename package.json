@@ -8,7 +8,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "proxyquire": "^1.7.11",
+    "sinon": "^1.17.7"
   },
   "scripts": {
     "test": "mocha ./test/*.test.js"

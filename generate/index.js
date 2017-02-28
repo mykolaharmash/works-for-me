@@ -6,6 +6,7 @@ const generateSetupItemAst = require('./setup-ast');
 const generateSetupItemHtml = require('./setup-html');
 const generateSetupsListAst = require('./setups-list-ast');
 const generateSetupsListHtml = require('./setups-list-html');
+const fetchSetupMetadata = require('./fetch-setup-metadata');
 const copyStatics = require('./copy-statics');
 
 const setupsSrcDir = path.resolve(__dirname, '../setups');
@@ -25,6 +26,7 @@ function readSetupContent (filePath) {
 
   return {
     name: pathInfo.name,
+    filename: pathInfo.base,
     content
   };
 }
@@ -34,15 +36,17 @@ function generateSetupAst (contentItem) {
 
   return {
     name: contentItem.name,
+    filename: contentItem.filename,
     content
   };
 }
 
-function generateSetupHtml (astItem) {
-  let content = generateSetupItemHtml(astItem.content);
+function generateSetupHtml (astItem, setupMetadata) {
+  let content = generateSetupItemHtml(astItem.content, setupMetadata);
 
   return {
     name: astItem.name,
+    filename: astItem.filename,
     content
   };
 }
@@ -53,29 +57,49 @@ function saveSetupHtml (htmlItem) {
   fs.writeFileSync(`${setupsDistDir}/${filename}`, htmlItem.content);
 }
 
-function saveSetupsListHtml(listHtml) {
+function saveSetupsListAst (setupsListAst) {
+  fs.writeFileSync(
+    `${path.resolve(__dirname, '../tmp')}/list.ast.js`,
+    JSON.stringify(setupsListAst, null, 2)
+  );
+}
+
+function saveSetupsListHtml (listHtml) {
   let filename = `index.html`;
 
   fs.writeFileSync(`${distDir}/${filename}`, listHtml);
 }
 
-fs.ensureDirSync(setupsDistDir);
+async function generate () {
+  fs.ensureDirSync(setupsDistDir);
 
-let setupsAst = getSetupFilesList(setupsSrcDir)
- .map(readSetupContent)
- .map(generateSetupAst);
+  let setupsAst = getSetupFilesList(setupsSrcDir)
+    .map(readSetupContent)
+    .map(generateSetupAst);
 
-setupsAst
- .map(generateSetupHtml)
- .map(saveSetupHtml);
+  let setupsMetadata;
 
-let setupsListAst = generateSetupsListAst(setupsAst);
-let setupsListHtml = generateSetupsListHtml(setupsListAst);
+  try {
+    setupsMetadata = await Promise.all(setupsAst.map(fetchSetupMetadata));
+  } catch (e) {
+    console.error(e);
+  }
 
-fs.writeFileSync(
-  `${path.resolve(__dirname, '../tmp')}/list.ast.js`,
-  JSON.stringify(setupsListAst, null, 2)
-);
-saveSetupsListHtml(setupsListHtml);
+  setupsAst
+    .map((setupAst, index) => {
+      return generateSetupHtml(setupAst, setupsMetadata[index]);
+    })
+    .map(saveSetupHtml);
 
-copyStatics();
+  let setupsListAst = generateSetupsListAst(setupsAst);
+  let setupsListHtml = generateSetupsListHtml(setupsListAst);
+
+  saveSetupsListAst(setupsListAst);
+  saveSetupsListHtml(setupsListHtml);
+
+  copyStatics();
+}
+
+generate().catch(err => { throw err; });
+
+

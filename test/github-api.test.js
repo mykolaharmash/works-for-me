@@ -1,13 +1,20 @@
-const githubApiFactory = require('../lib/github-api');
-const assert = require('assert');
+const { assert } = require('chai');
+const sinon = require('sinon');
+const proxyquire = require('proxyquire');
+const EventEmmiter = require('events');
 
-const TOKEN = process.env.TOKEN;
-
-if (!TOKEN) {
-  throw new Error('TOKEN env variable was not provided');
-}
+const requestMethodStub = sinon.stub();
+const githubApiFactory = proxyquire('../lib/github-api', {
+  'https': {
+    request: requestMethodStub
+  }
+});
 
 describe('GitHub API', () => {
+  afterEach(() => {
+    requestMethodStub.reset();
+  });
+
   describe('instantiate without token', () => {
     it('throws an error', () => {
       let fn = () => githubApiFactory();
@@ -20,15 +27,70 @@ describe('GitHub API', () => {
     let githubApi;
 
     beforeEach(() => {
-      githubApi = githubApiFactory(TOKEN);
+      githubApi = githubApiFactory('token');
     });
 
-    // Test that script can connect to real API
-    // in order to check that token is correct and
-    // ssl certificate is not expired
-    describe('connectivity', () => {
-      it('can connect to real github api', () => {
-        return githubApi.fetchRepoInfo();
+    describe('fetchRepoInfo()', () => {
+      let reqMock;
+      let resMock;
+
+      beforeEach(() => {
+        reqMock = new EventEmmiter();
+        reqMock.end = () => {};
+        requestMethodStub.returns(reqMock);
+        resMock = new EventEmmiter();
+        resMock.setEncoding = () => {};
+      });
+
+      it('makes a request to repo endpoint', async () => {
+        githubApi.fetchRepoInfo();
+
+        let requestOptions = requestMethodStub.args[0][0];
+
+        assert.equal(requestOptions.path, '/repos/nik-garmash/works-for-me');
+      });
+
+      it('sends user agent header', async () => {
+        githubApi.fetchRepoInfo();
+
+        let requestOptions = requestMethodStub.args[0][0];
+
+        assert.isDefined(requestOptions.headers['User-Agent']);
+      });
+
+      it('rejects with error when response status is not 200', (done) => {
+        resMock.statusCode = 401;
+        resMock.statusMessage = 'Not Authorized';
+
+        githubApi.fetchRepoInfo()
+          .catch(err => {
+            assert.equal(err.message, resMock.statusMessage);
+            done();
+          });
+
+        let responseCallback = requestMethodStub.args[0][1];
+
+        responseCallback(resMock);
+      });
+
+      it('resolves with js object of response body', (done) => {
+        const bodyMock = '{"repo": "info"}';
+        const bodyJsonStub = { repo: 'info' };
+
+        resMock.statusCode = 200;
+
+        githubApi.fetchRepoInfo()
+          .then(res => {
+            assert.deepEqual(res, bodyJsonStub);
+            done();
+          })
+          .catch(done);
+
+        let responseCallback = requestMethodStub.args[0][1];
+
+        responseCallback(resMock);
+        resMock.emit('data', bodyMock);
+        resMock.emit('end');
       });
     });
   });
