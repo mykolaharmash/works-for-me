@@ -44,7 +44,6 @@ describe('GitHub API', () => {
 
       it('makes a request to repo endpoint', async () => {
         githubApi.fetchRepoInfo();
-
         let requestOptions = requestMethodStub.args[0][0];
 
         assert.equal(requestOptions.path, '/repos/nik-garmash/works-for-me');
@@ -80,6 +79,70 @@ describe('GitHub API', () => {
         resMock.statusCode = 200;
 
         githubApi.fetchRepoInfo()
+          .then(res => {
+            assert.deepEqual(res, bodyJsonStub);
+            done();
+          })
+          .catch(done);
+
+        let responseCallback = requestMethodStub.args[0][1];
+
+        responseCallback(resMock);
+        resMock.emit('data', bodyMock);
+        resMock.emit('end');
+      });
+    });
+
+    describe('fetchCommitsList()', () => {
+      let reqMock;
+      let resMock;
+
+      beforeEach(() => {
+        reqMock = new EventEmmiter();
+        reqMock.end = () => {};
+        requestMethodStub.returns(reqMock);
+        resMock = new EventEmmiter();
+        resMock.setEncoding = () => {};
+      });
+
+      it('makes a request to commits endpoint', async () => {
+        githubApi.fetchCommitsList();
+
+        let requestOptions = requestMethodStub.args[0][0];
+
+        assert.equal(requestOptions.path, '/repos/nik-garmash/works-for-me/commits');
+      });
+
+      it('sends user agent header', async () => {
+        githubApi.fetchCommitsList();
+
+        let requestOptions = requestMethodStub.args[0][0];
+
+        assert.isDefined(requestOptions.headers['User-Agent']);
+      });
+
+      it('rejects with error when response status is not 200', (done) => {
+        resMock.statusCode = 401;
+        resMock.statusMessage = 'Not Authorized';
+
+        githubApi.fetchCommitsList()
+          .catch(err => {
+            assert.equal(err.message, resMock.statusMessage);
+            done();
+          });
+
+        let responseCallback = requestMethodStub.args[0][1];
+
+        responseCallback(resMock);
+      });
+
+      it('resolves with js object of response body', (done) => {
+        const bodyMock = '[{"commit": "first"}, {"commit-1": "second"}]';
+        const bodyJsonStub = [{ 'commit': 'first' }, { 'commit-1': 'second' }]
+
+        resMock.statusCode = 200;
+
+        githubApi.fetchCommitsList()
           .then(res => {
             assert.deepEqual(res, bodyJsonStub);
             done();
