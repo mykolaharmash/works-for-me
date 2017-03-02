@@ -4,7 +4,8 @@ const {
   SETUPS_LIST_ITEM_CONTEXT,
   SETUPS_LIST_ITEM_KEY_CONTEXT,
   SETUPS_LIST_ROOT_CONTEXT,
-  SETUPS_LIST_CONTEXT
+  SETUPS_LIST_CONTEXT,
+  SETUP_LATEST_COMMIT_DATE_CONTEXT
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
@@ -15,7 +16,7 @@ function findBioContext (setupAst) {
     .find(context => context.get('type') === BIO_CONTEXT);
 }
 
-function generateSetupListItem (setupAst) {
+function generateSetupListItem (setupAst, setupMetadata) {
   let bio = findBioContext(setupAst);
   let key = setupAst.get('name');
   let content = [];
@@ -27,6 +28,13 @@ function generateSetupListItem (setupAst) {
     });
   }
 
+  if (setupMetadata) {
+    content.push({
+      type: SETUP_LATEST_COMMIT_DATE_CONTEXT,
+      content: setupMetadata.latestCommit.committer.date
+    });
+  }
+
   content.push(bio);
 
   return Immutable.fromJS({
@@ -35,12 +43,14 @@ function generateSetupListItem (setupAst) {
   });
 }
 
-function generate (setupsAstList = []) {
+function generate (setupsAstList = [], setupsMetadataList = []) {
   let setupsListItems = Immutable.fromJS(setupsAstList)
     .filter(setupAst => {
       return findBioContext(setupAst) !== undefined;
     })
-    .map(generateSetupListItem);
+    .map((setupAst, index) => {
+      return generateSetupListItem(setupAst, setupsMetadataList[index]);
+    });
 
   return {
     type: SETUPS_LIST_ROOT_CONTEXT,

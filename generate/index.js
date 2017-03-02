@@ -13,13 +13,6 @@ const setupsSrcDir = path.resolve(__dirname, '../setups');
 const distDir = path.resolve(__dirname, '../dist');
 const setupsDistDir = `${distDir}/setups`;
 
-function getSetupFilesList (setupsDir) {
-  return fs
-    .readdirSync(setupsDir)
-    .map(item => path.resolve(setupsDir, item))
-    .filter(itemPath => fs.statSync(itemPath).isFile());
-}
-
 function readSetupContent (filePath) {
   let pathInfo = path.parse(filePath);
   let content = fs.readFileSync(filePath, 'utf8');
@@ -31,8 +24,8 @@ function readSetupContent (filePath) {
   };
 }
 
-function generateSetupAst (contentItem) {
-  let content = generateSetupItemAst(contentItem.content);
+function generateSetupAst (contentItem, metadataItem) {
+  let content = generateSetupItemAst(contentItem.content, metadataItem);
 
   return {
     name: contentItem.name,
@@ -41,8 +34,8 @@ function generateSetupAst (contentItem) {
   };
 }
 
-function generateSetupHtml (astItem, setupMetadata) {
-  let content = generateSetupItemHtml(astItem.content, setupMetadata);
+function generateSetupHtml (astItem) {
+  let content = generateSetupItemHtml(astItem.content);
 
   return {
     name: astItem.name,
@@ -70,28 +63,43 @@ function saveSetupsListHtml (listHtml) {
   fs.writeFileSync(`${distDir}/${filename}`, listHtml);
 }
 
+function readSetupsContent () {
+  return fs
+    .readdirSync(setupsSrcDir)
+    .map(item => path.resolve(setupsSrcDir, item))
+    .filter(itemPath => fs.statSync(itemPath).isFile())
+    .map(readSetupContent);
+}
+
+function fetchSetupsMetadata (setupsContent) {
+  return Promise.all(
+    setupsContent.map(contentItem => fetchSetupMetadata(contentItem.filename))
+  );
+}
+
+function generateSetupsAst (setupsContent, setupsMetadata) {
+  return setupsContent
+    .map((contentItem, index) => {
+      return generateSetupAst(contentItem, setupsMetadata[index]);
+    });
+}
+
 async function generate () {
+  let setupsContent;
+  let setupsMetadata;
+  let setupsAst;
+
   fs.ensureDirSync(setupsDistDir);
 
-  let setupsAst = getSetupFilesList(setupsSrcDir)
-    .map(readSetupContent)
-    .map(generateSetupAst);
-
-  let setupsMetadata;
-
-  try {
-    setupsMetadata = await Promise.all(setupsAst.map(fetchSetupMetadata));
-  } catch (e) {
-    console.error(e);
-  }
+  setupsContent = readSetupsContent();
+  setupsMetadata = await fetchSetupsMetadata(setupsContent);
+  setupsAst = generateSetupsAst(setupsContent, setupsMetadata);
 
   setupsAst
-    .map((setupAst, index) => {
-      return generateSetupHtml(setupAst, setupsMetadata[index]);
-    })
+    .map(generateSetupHtml)
     .map(saveSetupHtml);
 
-  let setupsListAst = generateSetupsListAst(setupsAst);
+  let setupsListAst = generateSetupsListAst(setupsAst, setupsMetadata);
   let setupsListHtml = generateSetupsListHtml(setupsListAst);
 
   saveSetupsListAst(setupsListAst);
@@ -100,6 +108,6 @@ async function generate () {
   copyStatics();
 }
 
-generate().catch(err => { throw err; });
+generate().catch(err => console.error(err));
 
 

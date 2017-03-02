@@ -43,7 +43,7 @@ const parsersMap = {
   [TOOL_NAME_PARSER_KEY]: toolNameParser
 };
 
-module.exports = function (content = '') {
+module.exports = function (content = '', metadata = {}) {
   let chars = [...content];
   let tokens = tokenize(chars);
   let lexemes = lex(tokens);

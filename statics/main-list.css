@@ -42,7 +42,7 @@ a:visited {
 }
 
 .main,
-.links {
+.external-links {
   width: 500px;
 }
 
@@ -51,18 +51,27 @@ a:visited {
 }
 
 .list-caption,
-.links-caption {
+.external-links-caption {
   margin: 0 0 16px 0;
 }
 
 .setups-list,
-.links-list {
+.external-links-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .setup-item + .setup-item,
-.link-item + .link-item {
+.external-link-item + .external-link-item {
   margin-top: 16px;
+}
+
+.setup-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-date {
+  color: #989898;
 }
