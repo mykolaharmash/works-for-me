@@ -136,24 +136,47 @@ describe('GitHub API', () => {
         responseCallback(resMock);
       });
 
-      it('resolves with js object of response body', (done) => {
-        const bodyMock = '[{"commit": "first"}, {"commit-1": "second"}]';
-        const bodyJsonStub = [{ 'commit': 'first' }, { 'commit-1': 'second' }]
+      it('fetches commits from all available pages', (done) => {
+        const firstBodyMock = '[{"first": "commit"}]';
+        const secondBodyMock = '[{"second": "commit"}]';
 
-        resMock.statusCode = 200;
+        const commitsListStub = [{ 'first': 'commit' }, { 'second': 'commit' }];
 
         githubApi.fetchCommitsList()
           .then(res => {
-            assert.deepEqual(res, bodyJsonStub);
+            assert.deepEqual(res, commitsListStub);
             done();
           })
           .catch(done);
 
-        let responseCallback = requestMethodStub.args[0][1];
+        // first response
+        let firstResponseCallback = requestMethodStub.args[0][1];
+        let firstRes = new EventEmmiter();
 
-        responseCallback(resMock);
-        resMock.emit('data', bodyMock);
-        resMock.emit('end');
+        firstRes.setEncoding = () => {};
+        firstRes.statusCode = 200;
+        firstRes.headers = {
+          'link': '<https://some.com/commits>; rel="next"'
+        };
+        firstResponseCallback(firstRes);
+        firstRes.emit('data', firstBodyMock);
+        firstRes.emit('end');
+
+        // second response, handler for previous 'end' event
+        // will be triggered asynchronously, so we need to schedule
+        // next response for later tick
+        setTimeout(() => {
+          let secondResponseCallback = requestMethodStub.args[1][1];
+          let secondRes = new EventEmmiter();
+
+          secondRes.setEncoding = () => {};
+          secondRes.statusCode = 200;
+          secondRes.headers = {};
+
+          secondResponseCallback(secondRes);
+          secondRes.emit('data', secondBodyMock);
+          secondRes.emit('end');
+        });
       });
     });
   });
