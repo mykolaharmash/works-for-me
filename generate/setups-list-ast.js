@@ -31,7 +31,7 @@ function generateSetupListItem (setupAst, setupMetadata) {
   if (setupMetadata) {
     content.push({
       type: SETUP_LATEST_COMMIT_DATE_CONTEXT,
-      content: setupMetadata.latestCommit.committer.date
+      content: setupMetadata.latestCommit.date
     });
   }
 

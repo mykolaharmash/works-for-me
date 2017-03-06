@@ -6,7 +6,7 @@ const generateSetupItemAst = require('./setup-ast');
 const generateSetupItemHtml = require('./setup-html');
 const generateSetupsListAst = require('./setups-list-ast');
 const generateSetupsListHtml = require('./setups-list-html');
-const fetchSetupMetadata = require('./fetch-setup-metadata');
+const getSetupMetadata = require('./get-setup-metadata');
 const copyStatics = require('./copy-statics');
 
 const setupsSrcDir = path.resolve(__dirname, '../setups');
@@ -71,10 +71,9 @@ function readSetupsContent () {
     .map(readSetupContent);
 }
 
-function fetchSetupsMetadata (setupsContent) {
-  return Promise.all(
-    setupsContent.map(contentItem => fetchSetupMetadata(contentItem.filename))
-  );
+function getSetupsMetadata (setupsContent) {
+  return setupsContent
+    .map(contentItem => getSetupMetadata(contentItem.filename));
 }
 
 function generateSetupsAst (setupsContent, setupsMetadata) {
@@ -84,7 +83,7 @@ function generateSetupsAst (setupsContent, setupsMetadata) {
     });
 }
 
-async function generate () {
+function generate () {
   let setupsContent;
   let setupsMetadata;
   let setupsAst;
@@ -92,7 +91,7 @@ async function generate () {
   fs.ensureDirSync(setupsDistDir);
 
   setupsContent = readSetupsContent();
-  setupsMetadata = await fetchSetupsMetadata(setupsContent);
+  setupsMetadata = getSetupsMetadata(setupsContent);
   setupsAst = generateSetupsAst(setupsContent, setupsMetadata);
 
   setupsAst
@@ -108,6 +107,6 @@ async function generate () {
   copyStatics();
 }
 
-generate().catch(err => console.error(err));
+generate();
 
 
