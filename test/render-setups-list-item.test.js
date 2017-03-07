@@ -9,8 +9,8 @@ const basicOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/
 const noKeyInput = require('./stubs/render/setups-list/setups-list-item-no-key--input');
 const noKeyOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-no-key--output.html'), 'utf8');
 
-const latestCommitDateInput = require('./stubs/render/setups-list/setups-list-item-latest-commit-date--input');
-const latestCommitDateOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-latest-commit-date--output.html'), 'utf8');
+const updateDateInput = require('./stubs/render/setups-list/setups-list-item-update-date--input');
+const updateDateOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-update-date--output.html'), 'utf8');
 
 const { SETUPS_LIST_ITEM_RENDERER_KEY } = require('../lib/constants');
 
@@ -19,7 +19,7 @@ describe('setups-list-item renderer', () => {
     [SETUPS_LIST_ITEM_RENDERER_KEY]: setupsListItem
   };
 
-  it('renders wrapper for setup item', () => {
+  it('renders wrapper for setup item with link to setup and create date', () => {
     let html = render(basicInput, renderersMap);
 
     assert.equal(html, basicOutput);
@@ -31,9 +31,9 @@ describe('setups-list-item renderer', () => {
     assert.equal(html, noKeyOutput);
   });
 
-  it('renders latest commit date', () => {
-    let html = render(latestCommitDateInput, renderersMap);
+  it('renders update date if there is update date context', () => {
+    let html = render(updateDateInput, renderersMap);
 
-    assert.equal(html, latestCommitDateOutput);
+    assert.equal(html, updateDateOutput);
   });
 });

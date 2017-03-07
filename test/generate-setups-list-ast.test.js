@@ -8,8 +8,11 @@ const basicOutput = require('./stubs/generate/setups-list-ast-basic--output');
 const noBioInput = require('./stubs/generate/setups-list-ast-no-bio--input');
 const noBioOutput = require('./stubs/generate/setups-list-ast-no-bio--output');
 
-const metadataInput = require('./stubs/generate/setups-list-ast-metadata--input');
-const metadataOutput = require('./stubs/generate/setups-list-ast-metadata--output');
+const metadataUpdatesInput = require('./stubs/generate/setups-list-ast-metadata-updates--input');
+const metadataUpdatesOutput = require('./stubs/generate/setups-list-ast-metadata-updates--output');
+
+const metadataInitialInput = require('./stubs/generate/setups-list-ast-metadata-updates--input');
+const metadataInitialOutput = require('./stubs/generate/setups-list-ast-metadata-updates--output');
 
 describe('setups-list-ast generator', () => {
   it(`generates AST of setups list page from 
@@ -26,8 +29,14 @@ describe('setups-list-ast generator', () => {
   });
 
   it('adds latest update date context based on setup\'s metadata', () => {
-    let ast = generateSetupsListAst(metadataInput.setupsAst, metadataInput.setupsMetadata);
+    let ast = generateSetupsListAst(metadataUpdatesInput.setupsAst, metadataUpdatesInput.setupsMetadata);
 
-    assert.deepEqual(ast, metadataOutput);
+    assert.deepEqual(ast, metadataUpdatesOutput);
+  });
+
+  it('adds create date context based on setup\'s metadata', () => {
+    let ast = generateSetupsListAst(metadataInitialInput.setupsAst, metadataInitialInput.setupsMetadata);
+
+    assert.deepEqual(ast, metadataInitialOutput);
   });
 });

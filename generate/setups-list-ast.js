@@ -5,7 +5,8 @@ const {
   SETUPS_LIST_ITEM_KEY_CONTEXT,
   SETUPS_LIST_ROOT_CONTEXT,
   SETUPS_LIST_CONTEXT,
-  SETUP_UPDATE_DATE_CONTEXT
+  SETUP_UPDATE_DATE_CONTEXT,
+  SETUP_CREATE_DATE_CONTEXT
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
@@ -16,25 +17,43 @@ function findBioContext (setupAst) {
     .find(context => context.get('type') === BIO_CONTEXT);
 }
 
-function generateSetupListItem (setupAst, setupMetadata) {
-  let bio = findBioContext(setupAst);
-  let key = setupAst.get('name');
-  let content = [];
+function generateMetadataContexts (key, metadata) {
+  let contextsList = [];
 
   if (key) {
-    content.push({
+    contextsList.push({
       type: SETUPS_LIST_ITEM_KEY_CONTEXT,
       content: key
     });
   }
 
-  if (setupMetadata) {
-    content.push({
+  if (!metadata) {
+    return contextsList;
+  }
+
+  if (metadata.updates.length) {
+    contextsList.push({
       type: SETUP_UPDATE_DATE_CONTEXT,
-      content: setupMetadata.latestUpdate.date
+      content: metadata.updates[0].date
+    });
+  } else {
+    contextsList.push({
+      type: SETUP_CREATE_DATE_CONTEXT,
+      content: metadata.initial.date
     });
   }
 
+  return contextsList;
+}
+
+function generateSetupListItem (setupAst, setupMetadata) {
+  let bio = findBioContext(setupAst);
+  let key = setupAst.get('name');
+  let content = [];
+
+  let metadataContexts = generateMetadataContexts(key, setupMetadata);
+
+  content = content.concat(metadataContexts);
   content.push(bio);
 
   return Immutable.fromJS({

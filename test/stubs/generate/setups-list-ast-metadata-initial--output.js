@@ -3,11 +3,10 @@ const {
   SETUPS_LIST_CONTEXT,
   SETUPS_LIST_ITEM_CONTEXT,
   SETUPS_LIST_ITEM_KEY_CONTEXT,
-  SETUP_CREATE_DATE_CONTEXT,
-  SETUP_UPDATE_DATE_CONTEXT,
   BIO_CONTEXT,
   BIO_LINE_CONTEXT,
-  WORD_LEXEME
+  WORD_LEXEME,
+  SETUP_CREATE_DATE_CONTEXT
 } = require('../../../lib/constants');
 
 module.exports = {
@@ -21,11 +20,11 @@ module.exports = {
           content: [
             {
               type: SETUPS_LIST_ITEM_KEY_CONTEXT,
-              content: 'some-guy'
+              content: 'first-guy'
             },
             {
-              type: SETUP_CREATE_DATE_CONTEXT,
-              content: '2017-01-02T08:28:53+02:00'
+              type:  SETUP_CREATE_DATE_CONTEXT,
+              content: '2016-11-14T12:23:03+01:00'
             },
             {
               type: BIO_CONTEXT,
@@ -39,7 +38,7 @@ module.exports = {
                     },
                     {
                       type: WORD_LEXEME,
-                      content: 'Some'
+                      content: 'First'
                     },
                     {
                       type: WORD_LEXEME,
@@ -56,11 +55,11 @@ module.exports = {
           content: [
             {
               type: SETUPS_LIST_ITEM_KEY_CONTEXT,
-              content: 'some-other-guy'
+              content: 'second-guy'
             },
             {
-              type: SETUP_UPDATE_DATE_CONTEXT,
-              content: '2017-03-07T10:32:51+02:00'
+              type:  SETUP_CREATE_DATE_CONTEXT,
+              content: '2016-12-29T17:54:01+02:00'
             },
             {
               type: BIO_CONTEXT,
@@ -74,32 +73,11 @@ module.exports = {
                     },
                     {
                       type: WORD_LEXEME,
-                      content: 'Some'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'Other'
+                      content: 'Second'
                     },
                     {
                       type: WORD_LEXEME,
                       content: 'Guy'
-                    }
-                  ]
-                },
-                {
-                  type: BIO_LINE_CONTEXT,
-                  content: [
-                    {
-                      type: WORD_LEXEME,
-                      content: 'occupation:'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'Software'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'developer'
                     }
                   ]
                 }
