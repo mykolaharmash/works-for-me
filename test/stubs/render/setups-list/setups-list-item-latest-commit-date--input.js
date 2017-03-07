@@ -14,7 +14,7 @@ module.exports = {
     },
     {
       type: SETUP_LATEST_COMMIT_DATE_CONTEXT,
-      content: '2017-02-02T08:28:53Z'
+      content: '2017-02-02T08:28:53+02:00'
     },
     {
       type: BIO_CONTEXT,

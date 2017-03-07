@@ -8,10 +8,10 @@ const {
 module.exports = {
   setupsMetadata: [
     {
-      latestCommit: { committer: { date: '2017-02-02T08:28:53Z' } }
+      latestCommit: { date: '2016-11-14T12:23:03+01:00' }
     },
     {
-      latestCommit: { committer: { date: '2016-12-29T17:54:01Z' } }
+      latestCommit: { date: '2016-12-29T17:54:01+02:00' }
     }
   ],
   setupsAst: [

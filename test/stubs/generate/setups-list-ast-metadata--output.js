@@ -24,7 +24,7 @@ module.exports = {
             },
             {
               type:  SETUP_LATEST_COMMIT_DATE_CONTEXT,
-              content: '2017-02-02T08:28:53Z'
+              content: '2016-11-14T12:23:03+01:00'
             },
             {
               type: BIO_CONTEXT,
@@ -59,7 +59,7 @@ module.exports = {
             },
             {
               type:  SETUP_LATEST_COMMIT_DATE_CONTEXT,
-              content: '2016-12-29T17:54:01Z'
+              content: '2016-12-29T17:54:01+02:00'
             },
             {
               type: BIO_CONTEXT,
