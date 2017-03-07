@@ -2,7 +2,7 @@ const {
   BIO_CONTEXT,
   SETUPS_LIST_ITEM_CONTEXT,
   SETUPS_LIST_ITEM_KEY_CONTEXT,
-  SETUP_LATEST_COMMIT_DATE_CONTEXT
+  SETUP_UPDATE_DATE_CONTEXT
 } = require('../../../../lib/constants');
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
       content: 'setup-key'
     },
     {
-      type: SETUP_LATEST_COMMIT_DATE_CONTEXT,
+      type: SETUP_UPDATE_DATE_CONTEXT,
       content: '2017-02-02T08:28:53+02:00'
     },
     {

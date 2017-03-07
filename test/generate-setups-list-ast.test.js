@@ -25,7 +25,7 @@ describe('setups-list-ast generator', () => {
     assert.deepEqual(ast, noBioOutput);
   });
 
-  it('adds latest commit context based on setup\'s metadata', () => {
+  it('adds latest update date context based on setup\'s metadata', () => {
     let ast = generateSetupsListAst(metadataInput.setupsAst, metadataInput.setupsMetadata);
 
     assert.deepEqual(ast, metadataOutput);

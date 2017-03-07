@@ -6,7 +6,7 @@ module.exports = function (setupFilename) {
   );
 
   return {
-    latestCommit: setupCommitsList[0]
+    latestUpdate: setupCommitsList[0]
   };
 };
 

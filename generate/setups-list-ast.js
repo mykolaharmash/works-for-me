@@ -5,7 +5,7 @@ const {
   SETUPS_LIST_ITEM_KEY_CONTEXT,
   SETUPS_LIST_ROOT_CONTEXT,
   SETUPS_LIST_CONTEXT,
-  SETUP_LATEST_COMMIT_DATE_CONTEXT
+  SETUP_UPDATE_DATE_CONTEXT
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
@@ -30,8 +30,8 @@ function generateSetupListItem (setupAst, setupMetadata) {
 
   if (setupMetadata) {
     content.push({
-      type: SETUP_LATEST_COMMIT_DATE_CONTEXT,
-      content: setupMetadata.latestCommit.date
+      type: SETUP_UPDATE_DATE_CONTEXT,
+      content: setupMetadata.latestUpdate.date
     });
   }
 
