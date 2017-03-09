@@ -1,5 +1,4 @@
 let Immutable = require('immutable');
-let fs = require('fs');
 let tokenize = require('./../lib/tokenize');
 let lex = require('./../lib/lex');
 let sanitize = require('./../lib/sanitize');
@@ -18,6 +17,8 @@ let toolNameParser = require('./../lib/parsers/tool-name');
 
 const {
   ROOT_CONTEXT,
+  SETUP_CONTEXT,
+  SETUP_LATEST_UPDATE_CONTEXT,
   ROOT_PARSER_KEY,
   BIO_PARSER_KEY,
   SETUP_PARSER_KEY,
@@ -43,7 +44,42 @@ const parsersMap = {
   [TOOL_NAME_PARSER_KEY]: toolNameParser
 };
 
-module.exports = function (content = '', metadata = {}) {
+function generateLatestUpdateContext (latestUpdate) {
+  return {
+    type: SETUP_LATEST_UPDATE_CONTEXT,
+    content: latestUpdate
+  };
+}
+
+/**
+ * Inserts context with latest update into setup context
+ * and updates resulting ast with new sup context
+ * @param ast — setup's AST
+ * @param metadata — should contain updates list
+ * @returns updated setup AST
+ */
+function insertLatestUpdateContext (ast, metadata) {
+  if (!metadata.updates.length) {
+    return ast;
+  }
+
+  let setupContextIndex = ast.get('content')
+    .findIndex(context => context.get('type') === SETUP_CONTEXT);
+
+  let setupContext = ast.get('content').get(setupContextIndex);
+
+  let updatedSetupContext = setupContext.update('content', content => {
+    let latestUpdateContext = generateLatestUpdateContext(metadata.updates[0]);
+
+    return content.insert(0, latestUpdateContext);
+  });
+
+  return ast.update('content', content => {
+    return content.splice(setupContextIndex, 1, updatedSetupContext);
+  });
+}
+
+module.exports = function (content = '', metadata) {
   let chars = [...content];
   let tokens = tokenize(chars);
   let lexemes = lex(tokens);
@@ -53,5 +89,11 @@ module.exports = function (content = '', metadata = {}) {
     content: sanitizedLexemes
   });
 
-  return parse(rootContext, parsersMap);
+  let contentAst = Immutable.fromJS(
+    parse(rootContext, parsersMap)
+  );
+
+  let ast = insertLatestUpdateContext(contentAst, metadata);
+
+  return ast.toJS();
 };
