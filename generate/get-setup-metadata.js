@@ -1,12 +1,11 @@
 const gitApi = require('../lib/git-api');
-
-const UPDATE_TAG = 'update:'
+const { UPDATE_TAG_TOKEN } = require('../lib/constants');
 
 function findUpdates(commitsList) {
   return commitsList.filter(commit => {
     let message = commit.message.trim();
 
-    return message.startsWith(UPDATE_TAG);
+    return message.startsWith(UPDATE_TAG_TOKEN);
   });
 }
 

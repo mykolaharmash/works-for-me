@@ -19,6 +19,8 @@ const {
   ROOT_CONTEXT,
   SETUP_CONTEXT,
   SETUP_LATEST_UPDATE_CONTEXT,
+  SETUP_UPDATE_DATE_CONTEXT,
+  SETUP_UPDATE_MESSAGE_CONTEXT,
   ROOT_PARSER_KEY,
   BIO_PARSER_KEY,
   SETUP_PARSER_KEY,
@@ -47,7 +49,16 @@ const parsersMap = {
 function generateLatestUpdateContext (latestUpdate) {
   return {
     type: SETUP_LATEST_UPDATE_CONTEXT,
-    content: latestUpdate
+    content: [
+      {
+        type: SETUP_UPDATE_DATE_CONTEXT,
+        content: latestUpdate.date
+      },
+      {
+        type: SETUP_UPDATE_MESSAGE_CONTEXT,
+        content: latestUpdate.message
+      }
+    ]
   };
 }
 
