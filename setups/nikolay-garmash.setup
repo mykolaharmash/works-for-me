@@ -11,19 +11,13 @@ My laptop is MacBook Pro (Retina, 15-inch, Mid 2015)
 
 Developer tools are crucial for me.
 
-> Sublime Text 3 (https://www.sublimetext.com/3)
+> WebStorm (https://www.jetbrains.com/webstorm/)
 
-Really like it for it's speed and builtin projects-management.
-Couple of useful plugins installed:
+Its refactoring features really save me a lot of time. Autocompletion works pretty well, especially with typed languages. Multiple projects management is done the way I like — isolated environment and dedicated configuration for every project.
 
-* Vintageous - vim-mode is must have for me (http://guillermooo.bitbucket.org/Vintageous/)
-* AutoFileName (https://github.com/BoundInCode/AutoFileName)
-* FileRename (https://github.com/brianlow/FileRename)
-* Path Tools (https://github.com/pjdietz/sublime-path-tools)
-* Statusbar Path (https://github.com/unphased/SublimeStatusbarPath)
+I use Vim–mode for editing and custom key–bindings for other stuff like navigation. Also I'm always in "Distraction Free" mode, so I see only two splits with code, all other stuff popup by hotkeys.
 
-Theme is "Boxy Ocean" (https://github.com/oivva/st-boxy).
-Font is awesome "Source Code Pro" from Adobe (https://github.com/adobe-fonts/source-code-pro).
+One of most important — it is stable and heavily maintained.
 
 > Todoist (https://todoist.com)
 
