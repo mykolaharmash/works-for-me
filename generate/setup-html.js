@@ -15,6 +15,7 @@ let toolNamesListRenderer = require('./../lib/renderers/tool-names-list');
 let toolNameRenderer = require('./../lib/renderers/tool-name');
 let toolTitleRenderer = require('./../lib/renderers/tool-title');
 let toolLinkRenderer = require('./../lib/renderers/tool-link');
+let setupLatestUpdateRenderer = require('./../lib/renderers/latest-update');
 
 const {
   ROOT_RENDERER_KEY,
@@ -31,7 +32,8 @@ const {
   TOOL_NAMES_LIST_RENDERER_KEY,
   TOOL_NAME_RENDERER_KEY,
   TOOL_TITLE_RENDERER_KEY,
-  TOOL_LINK_RENDERER_KEY
+  TOOL_LINK_RENDERER_KEY,
+  SETUP_LATEST_UPDATE_RENDERER_KEY
 } = require('./../lib/constants');
 
 const renderersMap = {
@@ -49,7 +51,8 @@ const renderersMap = {
   [TOOL_NAMES_LIST_RENDERER_KEY]: toolNamesListRenderer,
   [TOOL_NAME_RENDERER_KEY]: toolNameRenderer,
   [TOOL_TITLE_RENDERER_KEY]: toolTitleRenderer,
-  [TOOL_LINK_RENDERER_KEY]: toolLinkRenderer
+  [TOOL_LINK_RENDERER_KEY]: toolLinkRenderer,
+  [SETUP_LATEST_UPDATE_RENDERER_KEY]: setupLatestUpdateRenderer
 };
 
 module.exports = function (tree = {}) {

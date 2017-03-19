@@ -12,6 +12,10 @@
     text-align: left;
     padding: 30px 0;
   }
+  
+  .latest-update {
+    margin-bottom: 30px;
+  }
 
   .setup {
     max-width: 100%;

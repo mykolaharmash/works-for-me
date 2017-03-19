@@ -14,9 +14,6 @@ const {
   TOOL_TITLE_CONTEXT,
   TOOL_LINK_CONTEXT,
   DESCRIPTION_CONTEXT,
-  SETUP_LATEST_UPDATE_CONTEXT,
-  SETUP_UPDATE_DATE_CONTEXT,
-  SETUP_UPDATE_MESSAGE_CONTEXT,
   ENV_BULLET_LEXEME,
   WORD_LEXEME,
   NEWLINE_LEXEME
@@ -86,22 +83,10 @@ module.exports = {
         },
       ]
     },
+
     {
       type: SETUP_CONTEXT,
       content: [
-        {
-          type: SETUP_LATEST_UPDATE_CONTEXT,
-          content: [
-            {
-              type: SETUP_UPDATE_DATE_CONTEXT,
-              content: '2017-02-03T09:55:27+01:00'
-            },
-            {
-              type: SETUP_UPDATE_MESSAGE_CONTEXT,
-              content: 'update: Changed IDE'
-            }
-          ]
-        },
         {
           type: ENVIRONMENT_CONTEXT,
           content: [

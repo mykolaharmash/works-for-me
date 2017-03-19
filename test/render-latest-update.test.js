@@ -9,13 +9,22 @@ const renderersMap = {
   [SETUP_LATEST_UPDATE_RENDERER_KEY]: latestUpdateRenderer
 };
 
-const input = require('./stubs/render/latest-update--input');
-const output = fs.readFileSync(path.resolve(__dirname, './stubs/render/latest-update--output.html'), 'utf8');
+const basicInput = require('./stubs/render/latest-update-basic--input');
+const basicOutput = fs.readFileSync(path.resolve(__dirname, './stubs/render/latest-update-basic--output.html'), 'utf8');
+
+const onlyTitleInput = require('./stubs/render/latest-update-only-title--input');
+const onlyTitleOutput = fs.readFileSync(path.resolve(__dirname, './stubs/render/latest-update-only-title--output.html'), 'utf8');
 
 describe('latest-update renderer', () => {
-  it('renders update date and message', () => {
-    let html = render(input, renderersMap);
+  it('renders latest update date, title and message body', () => {
+    let html = render(basicInput, renderersMap);
 
-    assert.deepEqual(html, output);
+    assert.deepEqual(html, basicOutput);
+  });
+
+  it('renders latest update without message body', () => {
+    let html = render(onlyTitleInput, renderersMap);
+
+    assert.deepEqual(html, onlyTitleOutput);
   });
 });
