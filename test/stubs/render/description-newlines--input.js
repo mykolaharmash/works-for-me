@@ -7,11 +7,15 @@ const {
 module.exports = {
   type: DESCRIPTION_CONTEXT,
   content: [
+    { type: NEWLINE_LEXEME, content: '\n' },
+    { type: NEWLINE_LEXEME, content: '\n' },
     { type: WORD_LEXEME, content: 'some' },
     { type: WORD_LEXEME, content: 'text' },
     { type: NEWLINE_LEXEME, content: '\n' },
+    { type: NEWLINE_LEXEME, content: '\n' },
     { type: WORD_LEXEME, content: 'and' },
     { type: WORD_LEXEME, content: 'little' },
+    { type: NEWLINE_LEXEME, content: '\n' },
     { type: WORD_LEXEME, content: 'more' },
     { type: NEWLINE_LEXEME, content: '\n' }
   ]
