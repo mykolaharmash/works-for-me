@@ -72,6 +72,12 @@ a:visited {
   justify-content: space-between;
 }
 
+.item-link {
+  padding-right: 20px;
+}
+
 .item-date {
+  min-width: 120px;
+  text-align: right;
   color: #989898;
 }
