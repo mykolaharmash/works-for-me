@@ -58,7 +58,8 @@ a:visited {
 }
 
 .latest-update-date {
-  margin-bottom: 8px;
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 
 .latest-update-title {
