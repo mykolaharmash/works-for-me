@@ -57,13 +57,12 @@ a:visited {
 
 .latest-update {
   margin-bottom: 64px;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #f5f5f5;
+  padding: 0 20px;
 }
 
 .latest-update-date {
   margin-bottom: 8px;
+  font-size: 0.7rem;
 }
 
 .latest-update-title {
