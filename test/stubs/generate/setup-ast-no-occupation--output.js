@@ -1,9 +1,9 @@
 const {
   ROOT_CONTEXT,
   HEAD_CONTEXT,
-  BODY_CONTEXT,
   HEAD_TITLE_CONTEXT,
   HEAD_DESCRIPTION_CONTEXT,
+  BODY_CONTEXT,
   BIO_CONTEXT,
   BIO_LINE_CONTEXT,
   SETUP_CONTEXT,
@@ -35,7 +35,7 @@ module.exports = {
         },
         {
           type: HEAD_DESCRIPTION_CONTEXT,
-          content: 'Designer\'s software setup'
+          content: 'John Doe\'s software setup'
         }
       ]
     },
@@ -68,23 +68,6 @@ module.exports = {
                 {
                   type: WORD_LEXEME,
                   content: 'Doe'
-                },
-                {
-                  type: NEWLINE_LEXEME,
-                  content: '\n'
-                }
-              ]
-            },
-            {
-              type: BIO_LINE_CONTEXT,
-              content: [
-                {
-                  type: WORD_LEXEME,
-                  content: 'occupation:'
-                },
-                {
-                  type: WORD_LEXEME,
-                  content: 'Designer'
                 },
                 {
                   type: NEWLINE_LEXEME,

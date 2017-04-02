@@ -1,7 +1,7 @@
-const { ROOT_CONTEXT } = require('../../../lib/constants');
+const { BODY_CONTEXT } = require('../../../lib/constants');
 
 module.exports = {
-  type: ROOT_CONTEXT,
+  type: BODY_CONTEXT,
   content: [
     {
       type: 'bio',

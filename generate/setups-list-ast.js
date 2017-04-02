@@ -1,6 +1,7 @@
 const Immutable = require('immutable');
 const {
   BIO_CONTEXT,
+  BODY_CONTEXT,
   SETUPS_LIST_ITEM_CONTEXT,
   SETUPS_LIST_ITEM_KEY_CONTEXT,
   SETUPS_LIST_ROOT_CONTEXT,
@@ -10,9 +11,16 @@ const {
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
-  let rootContext = setupAst.get('content');
+  let bodyContext = setupAst
+    .get('content') // AST content
+    .get('content') // root-context content
+    .find(context => context.get('type') === BODY_CONTEXT);
 
-  return rootContext
+  if (!bodyContext) {
+    return;
+  }
+
+  return bodyContext
     .get('content')
     .find(context => context.get('type') === BIO_CONTEXT);
 }

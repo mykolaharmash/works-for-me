@@ -1,5 +1,9 @@
 const {
   ROOT_CONTEXT,
+  HEAD_CONTEXT,
+  HEAD_TITLE_CONTEXT,
+  HEAD_DESCRIPTION_CONTEXT,
+  BODY_CONTEXT,
   BIO_CONTEXT,
   BIO_LINE_CONTEXT,
   SETUP_CONTEXT,
@@ -23,303 +27,242 @@ module.exports = {
   type: ROOT_CONTEXT,
   content: [
     {
-      type: BIO_CONTEXT,
+      type: HEAD_CONTEXT,
       content: [
         {
-          type: DESCRIPTION_CONTEXT,
-          content: [
-            {
-              type: NEWLINE_LEXEME,
-              content: '\n'
-            }
-          ]
+          type: HEAD_TITLE_CONTEXT,
+          content: 'John Doe'
         },
         {
-          type: BIO_LINE_CONTEXT,
-          content: [
-            {
-              type: WORD_LEXEME,
-              content: 'name:'
-            },
-            {
-              type: WORD_LEXEME,
-              content: 'John'
-            },
-            {
-              type: WORD_LEXEME,
-              content: 'Doe'
-            },
-            {
-              type: NEWLINE_LEXEME,
-              content: '\n'
-            }
-          ]
-        },
-        {
-          type: BIO_LINE_CONTEXT,
-          content: [
-            {
-              type: WORD_LEXEME,
-              content: 'occupation:'
-            },
-            {
-              type: WORD_LEXEME,
-              content: 'Designer'
-            },
-            {
-              type: NEWLINE_LEXEME,
-              content: '\n'
-            }
-          ]
-        },
-        {
-          type: DESCRIPTION_CONTEXT,
-          content: [
-            {
-              type: NEWLINE_LEXEME,
-              content: '\n'
-            }
-          ]
-        },
+          type: HEAD_DESCRIPTION_CONTEXT,
+          content: 'Designer\'s software setup'
+        }
       ]
     },
-
     {
-      type: SETUP_CONTEXT,
+      type: BODY_CONTEXT,
       content: [
         {
-          type: ENVIRONMENT_CONTEXT,
+          type: BIO_CONTEXT,
           content: [
             {
-              type: TOOLS_LIST_CONTEXT,
+              type: DESCRIPTION_CONTEXT,
               content: [
                 {
-                  type: TOOL_ITEM_CONTEXT,
-                  content: [
-                    {
-                      type: TOOL_HEAD_CONTEXT,
-                      content: [
-                        {
-                          type: TOOL_NAMES_LIST_CONTEXT,
-                          content: [
-                            {
-                              type: TOOL_NAME_CONTEXT,
-                              content: [
-                                {
-                                  type: TOOL_TITLE_CONTEXT,
-                                  content: [
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'Awesome'
-                                    },
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'Tool'
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      type: DESCRIPTION_CONTEXT,
-                      content: [
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'some'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'description'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'even'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'multiline'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  type: TOOL_ITEM_CONTEXT,
-                  content: [
-                    {
-                      type: TOOL_HEAD_CONTEXT,
-                      content: [
-                        {
-                          type: TOOL_NAMES_LIST_CONTEXT,
-                          content: [
-                            {
-                              type: TOOL_NAME_CONTEXT,
-                              content: [
-                                {
-                                  type: TOOL_TITLE_CONTEXT,
-                                  content: [
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'Another'
-                                    },
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'Tool'
-                                    }
-                                  ]
-                                },
-                                {
-                                  type: TOOL_LINK_CONTEXT,
-                                  content: [
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'https://some.com'
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      type: DESCRIPTION_CONTEXT,
-                      content: [
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        }
-                      ]
-                    }
-                  ]
+                  type: NEWLINE_LEXEME,
+                  content: '\n'
                 }
               ]
-            }
-          ]
-        },
-        {
-          type: ENVIRONMENT_CONTEXT,
-          content: [
+            },
             {
-              type: ENVIRONMENT_HEADER_CONTEXT,
+              type: BIO_LINE_CONTEXT,
               content: [
                 {
-                  type: ENVIRONMENT_TITLE_CONTEXT,
-                  content: [
-                    {
-                      type: ENV_BULLET_LEXEME,
-                      content: '--'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'Work'
-                    },
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    },
-                  ]
+                  type: WORD_LEXEME,
+                  content: 'name:'
                 },
                 {
-                  type: DESCRIPTION_CONTEXT,
+                  type: WORD_LEXEME,
+                  content: 'John'
+                },
+                {
+                  type: WORD_LEXEME,
+                  content: 'Doe'
+                },
+                {
+                  type: NEWLINE_LEXEME,
+                  content: '\n'
+                }
+              ]
+            },
+            {
+              type: BIO_LINE_CONTEXT,
+              content: [
+                {
+                  type: WORD_LEXEME,
+                  content: 'occupation:'
+                },
+                {
+                  type: WORD_LEXEME,
+                  content: 'Designer'
+                },
+                {
+                  type: NEWLINE_LEXEME,
+                  content: '\n'
+                }
+              ]
+            },
+            {
+              type: DESCRIPTION_CONTEXT,
+              content: [
+                {
+                  type: NEWLINE_LEXEME,
+                  content: '\n'
+                }
+              ]
+            },
+          ]
+        },
+
+        {
+          type: SETUP_CONTEXT,
+          content: [
+            {
+              type: ENVIRONMENT_CONTEXT,
+              content: [
+                {
+                  type: TOOLS_LIST_CONTEXT,
                   content: [
                     {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
+                      type: TOOL_ITEM_CONTEXT,
+                      content: [
+                        {
+                          type: TOOL_HEAD_CONTEXT,
+                          content: [
+                            {
+                              type: TOOL_NAMES_LIST_CONTEXT,
+                              content: [
+                                {
+                                  type: TOOL_NAME_CONTEXT,
+                                  content: [
+                                    {
+                                      type: TOOL_TITLE_CONTEXT,
+                                      content: [
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'Awesome'
+                                        },
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'Tool'
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          type: DESCRIPTION_CONTEXT,
+                          content: [
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'some'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'description'
+                            },
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'even'
+                            },
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'multiline'
+                            },
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            },
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
-                      type: WORD_LEXEME,
-                      content: 'Context'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'description'
-                    },
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'goes'
-                    },
-                    {
-                      type: WORD_LEXEME,
-                      content: 'here'
-                    },
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    },
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
+                      type: TOOL_ITEM_CONTEXT,
+                      content: [
+                        {
+                          type: TOOL_HEAD_CONTEXT,
+                          content: [
+                            {
+                              type: TOOL_NAMES_LIST_CONTEXT,
+                              content: [
+                                {
+                                  type: TOOL_NAME_CONTEXT,
+                                  content: [
+                                    {
+                                      type: TOOL_TITLE_CONTEXT,
+                                      content: [
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'Another'
+                                        },
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'Tool'
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      type: TOOL_LINK_CONTEXT,
+                                      content: [
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'https://some.com'
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          type: DESCRIPTION_CONTEXT,
+                          content: [
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
               ]
             },
             {
-              type: TOOLS_LIST_CONTEXT,
+              type: ENVIRONMENT_CONTEXT,
               content: [
                 {
-                  type: TOOL_ITEM_CONTEXT,
+                  type: ENVIRONMENT_HEADER_CONTEXT,
                   content: [
                     {
-                      type: TOOL_HEAD_CONTEXT,
+                      type: ENVIRONMENT_TITLE_CONTEXT,
                       content: [
                         {
-                          type: TOOL_NAMES_LIST_CONTEXT,
-                          content: [
-                            {
-                              type: TOOL_NAME_CONTEXT,
-                              content: [
-                                {
-                                  type: TOOL_TITLE_CONTEXT,
-                                  content: [
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'Tool'
-                                    },
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'within'
-                                    },
-                                    {
-                                      type: WORD_LEXEME,
-                                      content: 'context'
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
+                          type: ENV_BULLET_LEXEME,
+                          content: '--'
+                        },
+                        {
+                          type: WORD_LEXEME,
+                          content: 'Work'
+                        },
+                        {
+                          type: NEWLINE_LEXEME,
+                          content: '\n'
+                        },
                       ]
                     },
                     {
@@ -331,11 +274,23 @@ module.exports = {
                         },
                         {
                           type: WORD_LEXEME,
-                          content: 'another'
+                          content: 'Context'
                         },
                         {
                           type: WORD_LEXEME,
                           content: 'description'
+                        },
+                        {
+                          type: NEWLINE_LEXEME,
+                          content: '\n'
+                        },
+                        {
+                          type: WORD_LEXEME,
+                          content: 'goes'
+                        },
+                        {
+                          type: WORD_LEXEME,
+                          content: 'here'
                         },
                         {
                           type: NEWLINE_LEXEME,
@@ -350,27 +305,94 @@ module.exports = {
                   ]
                 },
                 {
-                  type: TOOL_ITEM_CONTEXT,
+                  type: TOOLS_LIST_CONTEXT,
                   content: [
                     {
-                      type: TOOL_HEAD_CONTEXT,
+                      type: TOOL_ITEM_CONTEXT,
                       content: [
                         {
-                          type: TOOL_NAMES_LIST_CONTEXT,
+                          type: TOOL_HEAD_CONTEXT,
                           content: [
                             {
-                              type: TOOL_NAME_CONTEXT,
+                              type: TOOL_NAMES_LIST_CONTEXT,
                               content: [
                                 {
-                                  type: TOOL_TITLE_CONTEXT,
+                                  type: TOOL_NAME_CONTEXT,
                                   content: [
                                     {
-                                      type: WORD_LEXEME,
-                                      content: 'One'
-                                    },
+                                      type: TOOL_TITLE_CONTEXT,
+                                      content: [
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'Tool'
+                                        },
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'within'
+                                        },
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'context'
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          type: DESCRIPTION_CONTEXT,
+                          content: [
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'another'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'description'
+                            },
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            },
+                            {
+                              type: NEWLINE_LEXEME,
+                              content: '\n'
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      type: TOOL_ITEM_CONTEXT,
+                      content: [
+                        {
+                          type: TOOL_HEAD_CONTEXT,
+                          content: [
+                            {
+                              type: TOOL_NAMES_LIST_CONTEXT,
+                              content: [
+                                {
+                                  type: TOOL_NAME_CONTEXT,
+                                  content: [
                                     {
-                                      type: WORD_LEXEME,
-                                      content: 'more'
+                                      type: TOOL_TITLE_CONTEXT,
+                                      content: [
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'One'
+                                        },
+                                        {
+                                          type: WORD_LEXEME,
+                                          content: 'more'
+                                        }
+                                      ]
                                     }
                                   ]
                                 }

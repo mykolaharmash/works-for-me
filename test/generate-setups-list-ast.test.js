@@ -16,7 +16,7 @@ const metadataInitialOutput = require('./stubs/generate/setups-list-ast-metadata
 
 describe('setups-list-ast generator', () => {
   it(`generates AST of setups list page from 
-    a list of individual setups AST`, () => {
+      a list of individual setups AST`, () => {
     let ast = generateSetupsListAst(basicInput);
 
     assert.deepEqual(ast, basicOutput);

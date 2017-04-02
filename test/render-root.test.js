@@ -4,9 +4,7 @@ let render = require('../lib/render');
 let root = require('../lib/renderers/root');
 
 const input = require('./stubs/render/root--input');
-const output = fs
-  .readFileSync(require.resolve('./stubs/render/root--output.html'))
-  .toString();
+const output = fs.readFileSync(require.resolve('./stubs/render/root--output.html'), 'utf8');
 
 const { ROOT_RENDERER_KEY } = require('../lib/constants');
 
@@ -15,7 +13,7 @@ describe('setup root renderer', () => {
     [ROOT_RENDERER_KEY]: root
   };
 
-  it('renders empty root context', () => {
+  it('renders root html wrapper', () => {
     let html = render(input, renderersMap);
 
     assert.equal(html, output);

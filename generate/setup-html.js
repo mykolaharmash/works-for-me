@@ -1,6 +1,8 @@
 let render = require('./../lib/render');
 
 let rootRenderer = require('./../lib/renderers/root');
+let headRenderer = require('./../lib/renderers/head');
+let bodyRenderer = require('./../lib/renderers/body');
 let bioRenderer = require('./../lib/renderers/bio');
 let bioLineRenderer = require('./../lib/renderers/bio-line');
 let setupRenderer = require('./../lib/renderers/setup');
@@ -19,6 +21,8 @@ let setupLatestUpdateRenderer = require('./../lib/renderers/latest-update');
 
 const {
   ROOT_RENDERER_KEY,
+  HEAD_RENDERER_KEY,
+  BODY_RENDERER_KEY,
   BIO_RENDERER_KEY,
   BIO_LINE_RENDERER_KEY,
   SETUP_RENDERER_KEY,
@@ -38,6 +42,8 @@ const {
 
 const renderersMap = {
   [ROOT_RENDERER_KEY]: rootRenderer,
+  [HEAD_RENDERER_KEY]: headRenderer,
+  [BODY_RENDERER_KEY]: bodyRenderer,
   [BIO_RENDERER_KEY]: bioRenderer,
   [BIO_LINE_RENDERER_KEY]: bioLineRenderer,
   [SETUP_RENDERER_KEY]: setupRenderer,

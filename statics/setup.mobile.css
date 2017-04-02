@@ -15,9 +15,16 @@
   
   .latest-update {
     margin-bottom: 30px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
   }
 
   .setup {
     max-width: 100%;
+  }
+
+  .environment {
+    padding: 0;
   }
 }
