@@ -15,14 +15,15 @@ module.exports = function (setupFilename) {
   );
 
   if (!commitsList.length) {
-    throw new Error(`Can not find any commits for setup: ${ setupFilename }`);
+    throw new Error(`No commits for setup: ${ setupFilename }`);
   }
 
   let updatesList = findUpdates(commitsList);
 
   return {
     updates: updatesList,
-    initial: commitsList[commitsList.length - 1]
+    initial: commitsList[commitsList.length - 1],
+    allCommits: commitsList
   };
 };
 

@@ -1,7 +1,10 @@
 module.exports = {
   metadata: {
     updates: [],
-    initial: { date: 'Thu Mar 09 2017 10:35:55 GMT+0100 (CET)', message: 'Initial' }
+    initial: {
+      date: 'Thu Mar 09 2017 10:35:55 GMT+0100 (CET)',
+      message: 'Initial'
+    }
   },
   content: `
     name: John Doe

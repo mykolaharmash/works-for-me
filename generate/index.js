@@ -8,6 +8,7 @@ const generateSetupsListAst = require('./setups-list-ast');
 const generateSetupsListHtml = require('./setups-list-html');
 const getSetupMetadata = require('./get-setup-metadata');
 const copyStatics = require('./copy-statics');
+const generateRssAst = require('./rss-ast');
 
 const setupsSrcDir = path.resolve(__dirname, '../setups');
 const distDir = path.resolve(__dirname, '../dist');
@@ -83,6 +84,16 @@ function generateSetupsAst (setupsContent, setupsMetadata) {
     });
 }
 
+function generateRss (setupsAst, setupsMetadata) {
+  let ast = generateRssAst(setupsAst, setupsMetadata);
+
+  return ast;
+}
+
+function saveRss (rss) {
+  fs.writeFileSync(`${distDir}/rss.xml`, rss);
+}
+
 function generate () {
   let setupsContent;
   let setupsMetadata;
@@ -105,6 +116,10 @@ function generate () {
   saveSetupsListHtml(setupsListHtml);
 
   copyStatics();
+
+  let rss = generateRss(setupsAst, setupsMetadata);
+
+  saveRss(rss);
 }
 
 generate();

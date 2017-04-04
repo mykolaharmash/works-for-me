@@ -15,23 +15,23 @@ describe('git api', () => {
   });
 
   describe('getCommitsList()', () => {
-    it('gets array of commits with date and message', () => {
+    it('gets array of commits with date, message and hash', () => {
       const commitsListMock = `
-        2016-11-14T12:23:03+01:00\u{1f}message mock
+        2016-11-14T12:23:03+01:00\u{1f}message mock\u{1f}001
         \u{1e}
-        2016-11-04T12:27:05+01:00\u{1f}another message\nmock
+        2016-11-04T12:27:05+01:00\u{1f}another message\nmock\u{1f}002
       `;
       const resMock = {
         stderr: new Buffer(''),
         stdout: new Buffer(commitsListMock)
       };
       const commitsListStub = [
-        { date: '2016-11-14T12:23:03+01:00', message: 'message mock' },
-        { date: '2016-11-04T12:27:05+01:00', message: 'another message\nmock' }
+        { date: '2016-11-14T12:23:03+01:00', message: 'message mock', hash: '001' },
+        { date: '2016-11-04T12:27:05+01:00', message: 'another message\nmock', hash: '002' }
       ];
 
       spawnStub
-        .withArgs('git', ['log', '--format=%cI%x1f%B%x1e'])
+        .withArgs('git', ['log', '--format=%cI%x1f%B%x1f%H%x1e'])
         .returns(resMock);
 
       let commitsList = gitApi.getCommitsList();
@@ -41,19 +41,19 @@ describe('git api', () => {
 
     it('gets array of commits for passed path', () => {
       const commitsListMock = `
-        2016-11-04T12:27:05+01:00\u{1f}message\nmock
+        2016-11-04T12:27:05+01:00\u{1f}message\nmock\u{1f}001
       `;
       const resMock = {
         stderr: new Buffer(''),
         stdout: new Buffer(commitsListMock)
       };
       const commitsListStub = [
-        { date: '2016-11-04T12:27:05+01:00', message: 'message\nmock' }
+        { date: '2016-11-04T12:27:05+01:00', message: 'message\nmock', hash: '001' }
       ];
       const pathMock = 'setups/some-guy.setup';
 
       spawnStub
-        .withArgs('git', ['log', '--format=%cI%x1f%B%x1e', pathMock])
+        .withArgs('git', ['log', '--format=%cI%x1f%B%x1f%H%x1e', pathMock])
         .returns(resMock);
 
       let commitsList = gitApi.getCommitsList(pathMock);
