@@ -9,7 +9,10 @@ const {
   RSS_ITEM_TITLE_CONTEXT,
   RSS_NEW_SETUP_TITLE_CONTEXT,
   RSS_UPDATE_SETUP_TITLE_CONTEXT,
-  RSS_ITEM_METADATA_CONTEXT
+  RSS_ITEM_DESCRIPTION,
+  RSS_ITEM_AUTHOR,
+  RSS_ITEM_PUB_DATE,
+  RSS_ITEM_ID
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
@@ -50,9 +53,9 @@ function generateCommitsList (setupsAst, setupsMetadata) {
   }, []);
 }
 
-function generateItemTitle (commitItem) {
-  let bioContext = findBioContext(commitItem.setupAst);
-  let message = commitItem.commit.message.trim();
+function generateItemTitle (setupAst, commit) {
+  let bioContext = findBioContext(setupAst);
+  let message = commit.message.trim();
   let titleTypeContext;
 
   if (message.startsWith(NEW_SETUP_TAG_TOKEN)) {
@@ -76,17 +79,53 @@ function generateItemTitle (commitItem) {
   };
 }
 
+function generateItemDescription (commit) {
+  return {
+    type: RSS_ITEM_DESCRIPTION,
+    content: commit.message
+  };
+}
+
+function generateItemAuthor (setupAst) {
+  let bioContext = findBioContext(setupAst);
+
+  return {
+    type: RSS_ITEM_AUTHOR,
+    content: [
+      bioContext
+    ]
+  };
+}
+
+function generateItemPubDate (commit) {
+  return {
+    type: RSS_ITEM_PUB_DATE,
+    content: commit.date
+  };
+}
+
+function generateItemId (commit) {
+  return {
+    type: RSS_ITEM_ID,
+    content: commit.hash
+  };
+}
+
 function generateFeedItem (commitItem) {
-  let itemTitle = generateItemTitle(commitItem);
+  let title = generateItemTitle(commitItem.setupAst, commitItem.commit);
+  let description = generateItemDescription(commitItem.commit);
+  let author = generateItemAuthor(commitItem.setupAst);
+  let pubDate = generateItemPubDate(commitItem.commit);
+  let id = generateItemId(commitItem.commit) ;
 
   return {
     type: RSS_ITEM_CONTEXT,
     content: [
-      itemTitle,
-      {
-        type: RSS_ITEM_METADATA_CONTEXT,
-        content: commitItem.commit.message
-      }
+      title,
+      description,
+      author,
+      pubDate,
+      id
     ]
   };
 }

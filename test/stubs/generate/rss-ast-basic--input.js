@@ -44,7 +44,7 @@ module.exports = {
       },
       allCommits: [
         {
-          date: 'update: Thu Mar 08 2017 10:35:55 GMT+0100 (CET)',
+          date: 'Thu Mar 08 2017 10:35:55 GMT+0100 (CET)',
           message: 'update: Switch to WebStorm',
           hash: '002'
         },
