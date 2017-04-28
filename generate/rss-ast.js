@@ -9,10 +9,13 @@ const {
   RSS_ITEM_TITLE_CONTEXT,
   RSS_NEW_SETUP_TITLE_CONTEXT,
   RSS_UPDATE_SETUP_TITLE_CONTEXT,
-  RSS_ITEM_DESCRIPTION,
-  RSS_ITEM_AUTHOR,
-  RSS_ITEM_PUB_DATE,
-  RSS_ITEM_ID
+  RSS_ITEM_DESCRIPTION_CONTEXT,
+  RSS_ITEM_AUTHOR_CONTEXT,
+  RSS_ITEM_PUB_DATE_CONTEXT,
+  RSS_ITEM_ID_CONTEXT,
+  COMMIT_MESSAGE_CONTEXT,
+  COMMIT_DATE_CONTEXT,
+  COMMIT_HASH_CONTEXT
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
@@ -81,8 +84,13 @@ function generateItemTitle (setupAst, commit) {
 
 function generateItemDescription (commit) {
   return {
-    type: RSS_ITEM_DESCRIPTION,
-    content: commit.message
+    type: RSS_ITEM_DESCRIPTION_CONTEXT,
+    content: [
+      {
+        type: COMMIT_MESSAGE_CONTEXT,
+        content: commit.message
+      }
+    ]
   };
 }
 
@@ -90,7 +98,7 @@ function generateItemAuthor (setupAst) {
   let bioContext = findBioContext(setupAst);
 
   return {
-    type: RSS_ITEM_AUTHOR,
+    type: RSS_ITEM_AUTHOR_CONTEXT,
     content: [
       bioContext
     ]
@@ -99,15 +107,25 @@ function generateItemAuthor (setupAst) {
 
 function generateItemPubDate (commit) {
   return {
-    type: RSS_ITEM_PUB_DATE,
-    content: commit.date
+    type: RSS_ITEM_PUB_DATE_CONTEXT,
+    content: [
+      {
+        type: COMMIT_DATE_CONTEXT,
+        content: commit.date
+      }
+    ]
   };
 }
 
 function generateItemId (commit) {
   return {
-    type: RSS_ITEM_ID,
-    content: commit.hash
+    type: RSS_ITEM_ID_CONTEXT,
+    content: [
+      {
+        type: COMMIT_HASH_CONTEXT,
+        content: commit.hash
+      }
+    ]
   };
 }
 
