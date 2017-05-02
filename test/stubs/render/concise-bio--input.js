@@ -8,11 +8,11 @@ module.exports = {
   content: [
     {
       type: BIO_LINE_CONTEXT,
-      content: '<span>Some thing</span>'
+      content: 'John Doe'
     },
     {
       type: BIO_LINE_CONTEXT,
-      content: '<span>Some other thing</span>'
+      content: '(Software Engineer)'
     }
   ]
 };
