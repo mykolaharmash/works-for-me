@@ -1,4 +1,5 @@
 const {
+  BASE_URL,
   BIO_CONTEXT,
   RSS_CONTEXT,
   RSS_ITEM_CONTEXT,
@@ -9,13 +10,15 @@ const {
   RSS_ITEM_AUTHOR_CONTEXT,
   RSS_ITEM_PUB_DATE_CONTEXT,
   RSS_ITEM_ID_CONTEXT,
+  RSS_ITEM_LINK_CONTEXT,
   DESCRIPTION_CONTEXT,
   NEWLINE_LEXEME,
   BIO_LINE_CONTEXT,
   WORD_LEXEME,
   COMMIT_HASH_CONTEXT,
   COMMIT_DATE_CONTEXT,
-  COMMIT_MESSAGE_CONTEXT
+  COMMIT_MESSAGE_CONTEXT,
+  SETUP_URL_CONTEXT
 } = require('../../../lib/constants');
 
 module.exports = {
@@ -89,7 +92,7 @@ module.exports = {
                       content: '\n'
                     }
                   ]
-                },
+                }
               ]
             }
           ]
@@ -184,6 +187,15 @@ module.exports = {
             {
               type: COMMIT_HASH_CONTEXT,
               content: '000'
+            }
+          ]
+        },
+        {
+          type: RSS_ITEM_LINK_CONTEXT,
+          content: [
+            {
+              type: SETUP_URL_CONTEXT,
+              content: `${ BASE_URL }/setups/john-doe.html`
             }
           ]
         }
@@ -320,6 +332,15 @@ module.exports = {
               content: '002'
             }
           ]
+        },
+        {
+          type: RSS_ITEM_LINK_CONTEXT,
+          content: [
+            {
+              type: SETUP_URL_CONTEXT,
+              content: `${ BASE_URL }/setups/john-smith.html`
+            }
+          ]
         }
       ]
     },
@@ -452,6 +473,15 @@ module.exports = {
             {
               type: COMMIT_HASH_CONTEXT,
               content: '001'
+            }
+          ]
+        },
+        {
+          type: RSS_ITEM_LINK_CONTEXT,
+          content: [
+            {
+              type: SETUP_URL_CONTEXT,
+              content: `${ BASE_URL }/setups/john-smith.html`
             }
           ]
         }

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const {
+  BASE_URL,
   NEW_SETUP_TAG_TOKEN,
   UPDATE_TAG_TOKEN,
   BODY_CONTEXT,
@@ -13,9 +14,11 @@ const {
   RSS_ITEM_AUTHOR_CONTEXT,
   RSS_ITEM_PUB_DATE_CONTEXT,
   RSS_ITEM_ID_CONTEXT,
+  RSS_ITEM_LINK_CONTEXT,
   COMMIT_MESSAGE_CONTEXT,
   COMMIT_DATE_CONTEXT,
-  COMMIT_HASH_CONTEXT
+  COMMIT_HASH_CONTEXT,
+  SETUP_URL_CONTEXT
 } = require('../lib/constants');
 
 function findBioContext (setupAst) {
@@ -129,12 +132,25 @@ function generateItemId (commit) {
   };
 }
 
+function generateItemLink (setupKey) {
+  return {
+    type: RSS_ITEM_LINK_CONTEXT,
+    content: [
+      {
+        type: SETUP_URL_CONTEXT,
+        content: `${ BASE_URL }/setups/${ setupKey }.html`
+      }
+    ]
+  };
+}
+
 function generateFeedItem (commitItem) {
   let title = generateItemTitle(commitItem.setupAst, commitItem.commit);
   let description = generateItemDescription(commitItem.commit);
   let author = generateItemAuthor(commitItem.setupAst);
   let pubDate = generateItemPubDate(commitItem.commit);
-  let id = generateItemId(commitItem.commit) ;
+  let id = generateItemId(commitItem.commit);
+  let link = generateItemLink(commitItem.key);
 
   return {
     type: RSS_ITEM_CONTEXT,
@@ -143,7 +159,8 @@ function generateFeedItem (commitItem) {
       description,
       author,
       pubDate,
-      id
+      id,
+      link
     ]
   };
 }
