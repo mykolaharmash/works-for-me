@@ -13,12 +13,12 @@ describe('setup html generator', () => {
   it('generates setup html from AST by putting in place all needed renderers', () => {
     let html = generateSetupHtml(basicInput);
 
-    assert.deepEqual(html, basicOutput);
+    assert.deepEqual(html, basicOutput, './stubs/generate/setup-html-basic--output.html');
   });
 
   it('generates setup html with latest update', () => {
     let html = generateSetupHtml(withUpdatesInput);
 
-    assert.deepEqual(html, withUpdatesOutput);
+    assert.deepEqual(html, withUpdatesOutput, './stubs/generate/setup-html-with-updates--output.html');
   });
 });

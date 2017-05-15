@@ -29,11 +29,9 @@
     "node": "~6.10.0"
   },
   "dependencies": {
+    "fs-extra": "^2.0.0",
     "immutable": "^3.8.1",
     "js-beautify": "^1.6.8",
-    "posthtml": "^0.9.2",
-    "posthtml-beautify": "^0.1.5",
-    "fs-extra": "^2.0.0",
     "semver": "^5.3.0"
   }
 }

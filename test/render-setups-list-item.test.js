@@ -22,18 +22,18 @@ describe('setups-list-item renderer', () => {
   it('renders wrapper for setup item with link to setup and create date', () => {
     let html = render(basicInput, renderersMap);
 
-    assert.equal(html, basicOutput);
+    assert.equal(html, basicOutput, './stubs/render/setups-list/setups-list-item-basic--output.html');
   });
 
   it('does not render item which has no "key" context', () => {
     let html = render(noKeyInput, renderersMap);
 
-    assert.equal(html, noKeyOutput);
+    assert.equal(html, noKeyOutput, './stubs/render/setups-list/setups-list-item-no-key--output.html');
   });
 
   it('renders update date if there is update date context', () => {
     let html = render(updateDateInput, renderersMap);
 
-    assert.equal(html, updateDateOutput);
+    assert.equal(html, updateDateOutput, './stubs/render/setups-list/setups-list-item-update-date--output.html');
   });
 });

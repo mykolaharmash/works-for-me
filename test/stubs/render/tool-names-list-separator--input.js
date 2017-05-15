@@ -8,15 +8,15 @@ module.exports = {
   content: [
     {
       type: TOOL_NAME_CONTEXT,
-      content: 'First'
+      content: '<span>First</span>'
     },
     {
       type: TOOL_NAME_CONTEXT,
-      content: 'Second'
+      content: '<span>Second</span>'
     },
     {
       type: TOOL_NAME_CONTEXT,
-      content: 'Third'
+      content: '<span>Third</span>'
     }
   ]
 };

@@ -9,7 +9,7 @@ const generateSetupsListHtml = require('./setups-list-html');
 const getSetupMetadata = require('./get-setup-metadata');
 const copyStatics = require('./copy-statics');
 const generateRssAst = require('./rss-ast');
-const generateRssHtml = require('./rss-html');
+const generateRssXml = require('./rss-xml');
 
 const setupsSrcDir = path.resolve(__dirname, '../setups');
 const distDir = path.resolve(__dirname, '../dist');
@@ -88,7 +88,7 @@ function generateSetupsAst (setupsContent, setupsMetadata) {
 function generateRss (setupsAst, setupsMetadata) {
   let ast = generateRssAst(setupsAst, setupsMetadata);
 
-  return generateRssHtml(ast);
+  return generateRssXml(ast);
 }
 
 function saveRss (rss) {
