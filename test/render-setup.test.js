@@ -1,12 +1,12 @@
 let fs = require('fs');
 let assert = require('assert');
+
 let render = require('../lib/render');
 let setup = require('../lib/renderers/setup');
+const htmlBeautify = require('../lib/html-beautify');
 
 const input = require('./stubs/render/setup--input');
-const output = fs
-  .readFileSync(require.resolve('./stubs/render/setup--output.html'))
-  .toString();
+const output = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setup--output.html'), 'utf8'));
 
 const { SETUP_RENDERER_KEY } = require('../lib/constants');
 

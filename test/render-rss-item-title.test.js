@@ -1,17 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 const { assert } = require('chai');
+
 const render = require('../lib/render');
 const rssItemTitleRenderer = require('../lib/renderers/rss-item-title')
-const {
-  RSS_ITEM_TITLE_RENDERER_KEY
-} = require('../lib/constants');
+const htmlBeautify = require('../lib/html-beautify');
+const { RSS_ITEM_TITLE_RENDERER_KEY } = require('../lib/constants');
 
 const newSetupInput = require('./stubs/render/rss-item-title-new-setup--input');
-const newSetupOutput = fs.readFileSync(path.resolve(__dirname, './stubs/render/rss-item-title-new-setup--output.xml'), 'utf8');
+const newSetupOutput = htmlBeautify(fs.readFileSync(path.resolve(__dirname, './stubs/render/rss-item-title-new-setup--output.xml'), 'utf8'));
 
 const updatedSetupInput = require('./stubs/render/rss-item-title-updated-setup--input');
-const updatedSetupOutput = fs.readFileSync(path.resolve(__dirname, './stubs/render/rss-item-title-updated-setup--output.xml'), 'utf8');
+const updatedSetupOutput = htmlBeautify(fs.readFileSync(path.resolve(__dirname, './stubs/render/rss-item-title-updated-setup--output.xml'), 'utf8'));
 
 describe('rss-item-title renderer', () => {
   const renderersMap = {

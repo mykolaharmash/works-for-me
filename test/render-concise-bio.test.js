@@ -1,10 +1,12 @@
-let fs = require('fs');
-let assert = require('assert');
-let render = require('../lib/render');
-let conciseBio = require('../lib/renderers/concise-bio');
+const fs = require('fs');
+const assert = require('assert');
+
+const render = require('../lib/render');
+const conciseBio = require('../lib/renderers/concise-bio');
+const htmlBeautify = require('../lib/html-beautify');
 
 const input = require('./stubs/render/concise-bio--input');
-const output = fs.readFileSync(require.resolve('./stubs/render/concise-bio--output.html'), 'utf8');
+const output = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/concise-bio--output.html'), 'utf8'));
 
 const { BIO_RENDERER_KEY } = require('../lib/constants');
 

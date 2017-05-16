@@ -1,51 +1,36 @@
 let fs = require('fs');
 let assert = require('assert');
+
 let render = require('../lib/render');
 let bioLine = require('../lib/renderers/bio-line');
+const htmlBeautify = require('../lib/html-beautify');
 
 const emptyInput = require('./stubs/render/bio-line-empty--input');
-const emptyOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-empty--output.html'))
-  .toString();
+const emptyOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-empty--output.html'), 'utf8'));
 
 const invalidKeyinput = require('./stubs/render/bio-line-invalid-key--input');
-const invalidKeyOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-invalid-key--output.html'))
-  .toString();
+const invalidKeyOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-invalid-key--output.html'), 'utf8'));
 
 const nameInput = require('./stubs/render/bio-line-name--input');
-const nameOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-name--output.html'))
-  .toString();
+const nameOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-name--output.html'), 'utf8'));
 
 const occupationInput = require('./stubs/render/bio-line-occupation--input');
-const occupationOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-occupation--output.html'))
-  .toString();
+const occupationOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-occupation--output.html'), 'utf8'));
 
 const locationInput = require('./stubs/render/bio-line-location--input');
-const locationOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-location--output.html'))
-  .toString();
+const locationOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-location--output.html'), 'utf8'));
 
 const linkBasicInput = require('./stubs/render/bio-line-link-basic--input');
-const linkBasicOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-link-basic--output.html'))
-  .toString();
+const linkBasicOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-link-basic--output.html'), 'utf8'));
 
 const linkTwitterAtInput = require('./stubs/render/bio-line-link-twitter-at--input');
-const linkTwitterAtOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-link-twitter-at--output.html'))
-  .toString();
+const linkTwitterAtOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-link-twitter-at--output.html'), 'utf8'));
+
 const linkTwitterNoAtInput = require('./stubs/render/bio-line-link-twitter-noat--input');
-const linkTwitterNoAtOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-link-twitter-noat--output.html'))
-  .toString();
+const linkTwitterNoAtOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-link-twitter-noat--output.html'), 'utf8'));
 
 const linkEmailInput = require('./stubs/render/bio-line-link-email--input');
-const linkEmailOutput = fs
-  .readFileSync(require.resolve('./stubs/render/bio-line-link-email--output.html'))
-  .toString();
+const linkEmailOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/bio-line-link-email--output.html'), 'utf8'));
 
 const { BIO_LINE_RENDERER_KEY } = require('../lib/constants');
 

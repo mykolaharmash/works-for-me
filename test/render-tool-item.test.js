@@ -1,12 +1,12 @@
 let fs = require('fs');
 let assert = require('assert');
+
 let render = require('../lib/render');
 let toolItem = require('../lib/renderers/tool-item');
+const htmlBeautify = require('../lib/html-beautify');
 
 const input = require('./stubs/render/tool-item--input');
-const output = fs
-  .readFileSync(require.resolve('./stubs/render/tool-item--output.html'))
-  .toString();
+const output = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/tool-item--output.html'), 'utf8'))
 
 const { TOOL_ITEM_RENDERER_KEY } = require('../lib/constants');
 

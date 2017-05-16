@@ -1,13 +1,15 @@
 let fs = require('fs');
 let assert = require('assert');
+
 let render = require('../lib/render');
 let toolNamesList = require('../lib/renderers/tool-names-list');
+const htmlBeautify = require('../lib/html-beautify');
 
 const inputEmpty = require('./stubs/render/tool-names-list-empty--input');
-const outputEmpty = fs.readFileSync(require.resolve('./stubs/render/tool-names-list-empty--output.html'), 'utf8');
+const outputEmpty = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/tool-names-list-empty--output.html'), 'utf8'));
 
 const inputSeparator = require('./stubs/render/tool-names-list-separator--input');
-const outputSeparator = fs.readFileSync(require.resolve('./stubs/render/tool-names-list-separator--output.html'), 'utf8');
+const outputSeparator = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/tool-names-list-separator--output.html'), 'utf8'));
 
 const { TOOL_NAMES_LIST_RENDERER_KEY } = require('../lib/constants');
 

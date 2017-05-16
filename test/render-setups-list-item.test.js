@@ -1,16 +1,18 @@
 let fs = require('fs');
 let assert = require('assert');
+
 let render = require('../lib/render');
 let setupsListItem = require('../lib/renderers/setups-list-item');
+const htmlBeautify = require('../lib/html-beautify');
 
 const basicInput = require('./stubs/render/setups-list/setups-list-item-basic--input');
-const basicOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-basic--output.html'), 'utf8');
+const basicOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-basic--output.html'), 'utf8'));
 
 const noKeyInput = require('./stubs/render/setups-list/setups-list-item-no-key--input');
-const noKeyOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-no-key--output.html'), 'utf8');
+const noKeyOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-no-key--output.html'), 'utf8'));
 
 const updateDateInput = require('./stubs/render/setups-list/setups-list-item-update-date--input');
-const updateDateOutput = fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-update-date--output.html'), 'utf8');
+const updateDateOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-update-date--output.html'), 'utf8'));
 
 const { SETUPS_LIST_ITEM_RENDERER_KEY } = require('../lib/constants');
 

@@ -1,12 +1,12 @@
 let fs = require('fs');
 let assert = require('assert');
+
 let render = require('../lib/render');
 let environmentHeader = require('../lib/renderers/environment-header');
+const htmlBeautify = require('../lib/html-beautify');
 
 const input = require('./stubs/render/environment-header--input');
-const output = fs
-  .readFileSync(require.resolve('./stubs/render/environment-header--output.html'))
-  .toString();
+const output = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/environment-header--output.html'), 'utf8'));
 
 const { ENVIRONMENT_HEADER_RENDERER_KEY } = require('../lib/constants');
 

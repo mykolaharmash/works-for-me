@@ -9,8 +9,6 @@ describe('rss AST generator', () => {
       and updated setups`, () => {
       let ast = generateRssAst(basicInput.content, basicInput.metadata);
 
-      //console.log(ast);
-
       assert.deepEqual(ast, basicOutput);
   });
 });

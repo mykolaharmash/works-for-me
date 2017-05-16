@@ -4,9 +4,7 @@ const { assert } = require('chai');
 const render = require('../lib/render');
 const rssItemAuthorRenderer = require('../lib/renderers/rss-item-author');
 const htmlBeautify = require('../lib/html-beautify');
-const {
-  RSS_ITEM_AUTHOR_RENDERER_KEY
-} = require('../lib/constants');
+const { RSS_ITEM_AUTHOR_RENDERER_KEY } = require('../lib/constants');
 
 const testSets = {
   basic: {
