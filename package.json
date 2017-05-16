@@ -30,8 +30,10 @@
   },
   "dependencies": {
     "fs-extra": "^2.0.0",
+    "html-minifier": "^3.5.0",
     "immutable": "^3.8.1",
     "js-beautify": "^1.6.8",
+    "parse5": "^3.0.2",
     "semver": "^5.3.0"
   }
 }

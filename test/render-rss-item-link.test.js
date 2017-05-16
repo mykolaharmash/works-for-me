@@ -15,7 +15,7 @@ describe('rss-item-link renderer', () => {
     [RSS_ITEM_LINK_RENDERER_KEY]: rssItemLinkRenderer
   };
 
-  it('renders wrapper for setup\'s url', () => {
+  it('renders wrapper for rss item url', () => {
     let html = render(basicInput, renderersMap);
 
     assert.deepEqual(html, basicOutput);
