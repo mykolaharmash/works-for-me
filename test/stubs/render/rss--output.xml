@@ -1,6 +1,11 @@
 <rss version="2.0">
   <channel>
     <title>Works For Me</title>
+    <description>Collection of setups from people who cares about tools they use</description>
+    <!-- htmlmin:ignore -->
+    <link>https://works-for-me.github.io</link>
+    <!-- htmlmin:ignore -->
+    <language>en</language>
 
     <item>item 0</item>
     <item>item 1</item>

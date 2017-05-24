@@ -14,7 +14,8 @@
     "sinon": "^2.0.0-pre.3"
   },
   "scripts": {
-    "test": "mocha ./test/*.test.js"
+    "test": "mocha -R mocha-better-spec-reporter ${TEST:-'./test/*.test.js'}",
+    "generate": "node ./generate/index.js"
   },
   "repository": {
     "type": "git",
