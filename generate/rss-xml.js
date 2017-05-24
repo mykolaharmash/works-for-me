@@ -8,6 +8,7 @@ const conciseBioRenderer = require('../lib/renderers/concise-bio');
 const conciseBioLineRenderer = require('../lib/renderers/concise-bio-line');
 const rssItemAuthorRenderer = require('../lib/renderers/rss-item-author');
 const rssItemPubDateRenderer = require('../lib/renderers/rss-item-pub-date');
+const rssItemIdRenderer = require('../lib/renderers/rss-item-id');
 
 const {
   RSS_RENDERER_KEY,
@@ -18,7 +19,8 @@ const {
   BIO_RENDERER_KEY,
   BIO_LINE_RENDERER_KEY,
   RSS_ITEM_AUTHOR_RENDERER_KEY,
-  RSS_ITEM_PUB_DATE_RENDERER_KEY
+  RSS_ITEM_PUB_DATE_RENDERER_KEY,
+  RSS_ITEM_ID_RENDERER_KEY
 } = require('../lib/constants');
 
 const renderersMap = {
@@ -30,7 +32,8 @@ const renderersMap = {
   [BIO_RENDERER_KEY]: conciseBioRenderer,
   [BIO_LINE_RENDERER_KEY]: conciseBioLineRenderer,
   [RSS_ITEM_AUTHOR_RENDERER_KEY]: rssItemAuthorRenderer,
-  [RSS_ITEM_PUB_DATE_RENDERER_KEY]: rssItemPubDateRenderer
+  [RSS_ITEM_PUB_DATE_RENDERER_KEY]: rssItemPubDateRenderer,
+  [RSS_ITEM_ID_RENDERER_KEY]: rssItemIdRenderer
 };
 
 module.exports = function (ast = {}) {
