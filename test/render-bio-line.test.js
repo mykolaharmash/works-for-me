@@ -82,7 +82,7 @@ describe('bio-line renderer', () => {
     });
 
     it(`renders twitter link with @username even 
-        if no @ symbol in login`,
+           if no @ symbol in login`,
     () => {
       let html = render(linkTwitterNoAtInput, renderersMap);
 

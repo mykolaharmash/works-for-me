@@ -10081,17 +10081,26 @@ if (typeof undefined === "function" && undefined.amd) {
 }
 });
 
+//const minify = require('html-minifier').minify;
 const htmlBeautify = index.html;
 
-function minify (html) {
-   return html
+var htmlBeautify_1 = function beautify (content = '') {
+  //let minified = minify(content.trim(), {
+  //  caseSensitive: true, // XML required (e.g. pubDate)
+  //  collapseWhitespace: true,
+  //  collapseInlineTagWhitespace: true,
+  //  keepClosingSlash: true
+  //});
+  //let minified = content;
+
+  //console.log('raw', content);
+
+  let minified = content
     .replace(/(\w)\n+(\w)/g, (match, start, end) => `${ start } ${ end }`)
     .replace(/\n/g, '')
     .replace(/>([\s\w]+)</g, (match, content) => `>${ content.trim() }<`);
-}
 
-var htmlBeautify_1 = function beautify (content = '') {
-  let minified = minify(content);
+  //console.log('min', minified);
 
   let beautified = htmlBeautify(minified, {
     'indent_char': ' ',
@@ -10104,6 +10113,8 @@ var htmlBeautify_1 = function beautify (content = '') {
     'end_with_newline': true,
     'extra_liners': ['html', '/html', 'head', 'body']
   });
+
+  //console.log('beaut', beautified);
 
   if (beautified === '\n') {
     return ''
