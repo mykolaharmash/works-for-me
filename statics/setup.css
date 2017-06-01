@@ -10,7 +10,13 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
+}
+
+.setup-root {
+  width: 700px;
+  margin: 0 auto;
   padding: 0 30px;
+  box-sizing: border-box;
 }
 
 a {
@@ -40,6 +46,11 @@ a:visited {
 .bio {
   padding: 94px 0;
   text-align: center;
+}
+
+.bio > .description {
+  text-align: left;
+  margin-top: 8px;
 }
 
 .name {
@@ -82,7 +93,6 @@ a:visited {
 
 .environment {
   margin-bottom: 64px;
-  padding: 0 20px;
 }
 
 .environment-header {

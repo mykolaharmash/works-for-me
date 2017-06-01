@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../statics/setup.css" type="text/css">
+    <link rel="stylesheet" href="./playground.css" type="text/css">
+
+    <script defer src="./playground.bundle.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="playground">
+      <div class="cheatsheet hidden">
+        <div class="bio-cheat">
+          <div class="cheat-title">
+            Author's info
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-body">
+              name: <span class="example-data">John Doe</span><br>
+              occupation: <span class="example-data">Designer</span><br>
+              location: <span class="example-data">Berlin, Germany</span><br>
+              link:
+              <span class="example-data">https://twitter.com/johndoe</span><br>
+              link: <span class="example-data">https://johns-blog.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="context-cheat">
+          <div class="cheat-title">
+            Optional grouping title
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-body">
+              -- <span class="example-data">Programming</span>
+            </div>
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-body">
+              -- <span class="example-data">Video editing</span>
+            </div>
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-title">
+              with a description
+            </div>
+
+            <div class="cheat-example-body">
+              -- <span class="example-data">On my phone</span><br>
+              <span class="example-data">My phone is...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-cheat">
+          <div class="cheat-title">
+            Tool
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-body">
+              > <span class="example-data">WebStorm (https://www.jetbrains.com/webstorm/)</span>
+            </div>
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-title">
+              with a description
+            </div>
+
+            <div class="cheat-example-body">
+              > <span class="example-data">Sketch</span><br>
+              <span class="example-data">Couple of useful plugins...</span>
+            </div>
+          </div>
+
+          <div class="cheat-example">
+            <div class="cheat-example-title">
+              inline similar tools
+            </div>
+
+            <div class="cheat-example-body">
+              > <span class="example-data">Telegram (https://telegram.org/), Slack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="setup-area">
+        <div class="editor">
+          <textarea class="input">
+name: John 😎 Doe
+occupation: Software Engineer
+location: Berlin, Germany
+link: https://en.wikipedia.org/wiki/John_Doe
+
+          </textarea>
+
+          <div class="controls">
+            <button class="cheatsheet-trigger">
+              <span class="cheatsheet-trigger-title">Cheatsheet</span>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="result"></div>
+      </div>
+
+
+    </div>
+  </body>
+</html>
