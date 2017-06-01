@@ -1,4 +1,8 @@
 @media screen and (max-width: 700px) {
+  body {
+    align-items: flex-start;
+  }
+
   .setup-root {
     width: auto;
   }

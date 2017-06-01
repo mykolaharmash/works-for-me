@@ -53,5 +53,5 @@ const renderersMap = {
 };
 
 module.exports = function (tree = {}) {
-  return render(tree, renderersMap);
+  return render(tree, renderersMap, false);
 };
