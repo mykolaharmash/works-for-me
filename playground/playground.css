@@ -102,6 +102,7 @@
 
 .cheat-example-body {
   padding: 8px 14px;
+  white-space: nowrap;
   font-family: monospace;
   line-height: 1.5em;
   letter-spacing: -0.2px;
