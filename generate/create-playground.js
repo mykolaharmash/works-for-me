@@ -5,12 +5,6 @@ let rollupNodeResolver = require('rollup-plugin-node-resolve');
 let rollupCommonJs = require('rollup-plugin-commonjs');
 let rollupReplace = require('rollup-plugin-re');
 
-const { DIST_FOLDER } = require('../lib/constants');
-
-let distPath = path.resolve(__dirname, `../${ DIST_FOLDER }`);
-let originalPlaygroundPath = path.resolve(__dirname, '../playground');
-let distPlaygroundPath = `${ distPath }/playground`;
-
 const ROLLUP_CONFIG = {
   entry: path.resolve(__dirname, '../playground/playground.js'),
   plugins: [
@@ -33,8 +27,11 @@ const ROLLUP_CONFIG = {
   ]
 };
 
-module.exports = function () {
-  fs.copySync(originalPlaygroundPath, distPlaygroundPath);
+module.exports = function (distDir) {
+  let originalPlaygroundPath = path.resolve(__dirname, '../playground');
+  let distPlaygroundDir = `${ distDir }/playground`;
+
+  fs.copySync(originalPlaygroundPath, distPlaygroundDir);
 
   rollup.rollup(ROLLUP_CONFIG)
     .then(bundle => {
@@ -44,7 +41,7 @@ module.exports = function () {
       });
 
       fs.writeFileSync(
-        path.resolve(__dirname, `${ distPlaygroundPath }/playground.bundle.js`),
+        path.resolve(__dirname, `${ distPlaygroundDir }/playground.bundle.js`),
         result.code
       );
     })

@@ -11,10 +11,8 @@ const copyStatics = require('./copy-statics');
 const generateRssAst = require('./rss-ast');
 const generateRssXml = require('./rss-xml');
 const createPlayground = require('./create-playground');
+const { DIST_FOLDER } = require('../lib/constants');
 
-const setupsSrcDir = path.resolve(__dirname, '../setups');
-const distDir = path.resolve(__dirname, '../dist');
-const setupsDistDir = `${distDir}/setups`;
 
 function readSetupContent (filePath) {
   let pathInfo = path.parse(filePath);
@@ -47,7 +45,7 @@ function generateSetupHtml (astItem) {
   };
 }
 
-function saveSetupHtml (htmlItem) {
+function saveSetupHtml (setupsDistDir, htmlItem) {
   let filename = `${htmlItem.name}.html`;
 
   fs.writeFileSync(`${setupsDistDir}/${filename}`, htmlItem.content);
@@ -55,18 +53,18 @@ function saveSetupHtml (htmlItem) {
 
 function saveSetupsListAst (setupsListAst) {
   fs.writeFileSync(
-    `${path.resolve(__dirname, '../tmp')}/list.ast.js`,
+    `${ path.resolve(__dirname, '../tmp') }/list.ast.js`,
     JSON.stringify(setupsListAst, null, 2)
   );
 }
 
-function saveSetupsListHtml (listHtml) {
+function saveSetupsListHtml (distDir, listHtml) {
   let filename = `index.html`;
 
   fs.writeFileSync(`${distDir}/${filename}`, listHtml);
 }
 
-function readSetupsContent () {
+function readSetupsContent (setupsSrcDir) {
   return fs
     .readdirSync(setupsSrcDir)
     .map(item => path.resolve(setupsSrcDir, item))
@@ -92,40 +90,54 @@ function generateRss (setupsAst, setupsMetadata) {
   return generateRssXml(ast);
 }
 
-function saveRss (rss) {
-  fs.writeFileSync(`${distDir}/rss.xml`, rss);
+function saveRss (distDir, rss) {
+  fs.writeFileSync(`${ distDir }/rss.xml`, rss);
 }
 
-function generate () {
+function generate (customDistDir) {
+  let distDir;
+
+  if (customDistDir) {
+    distDir = path.resolve(customDistDir);
+  } else {
+    distDir = path.resolve(__dirname, `../${ DIST_FOLDER }`);
+  }
+
+  let setupsDistDir = `${ distDir }/setups`;
+  let setupsSrcDir = path.resolve(__dirname, '../setups');
+
   let setupsContent;
   let setupsMetadata;
   let setupsAst;
 
+  fs.ensureDirSync(distDir);
   fs.ensureDirSync(setupsDistDir);
 
-  setupsContent = readSetupsContent();
+  setupsContent = readSetupsContent(setupsSrcDir);
   setupsMetadata = getSetupsMetadata(setupsContent);
   setupsAst = generateSetupsAst(setupsContent, setupsMetadata);
 
   setupsAst
     .map(generateSetupHtml)
-    .map(saveSetupHtml);
+    .map(setupHtmlItem => saveSetupHtml(setupsDistDir, setupHtmlItem));
 
   let setupsListAst = generateSetupsListAst(setupsAst, setupsMetadata);
   let setupsListHtml = generateSetupsListHtml(setupsListAst);
 
   saveSetupsListAst(setupsListAst);
-  saveSetupsListHtml(setupsListHtml);
+  saveSetupsListHtml(distDir, setupsListHtml);
 
-  copyStatics();
+  copyStatics(distDir);
 
   let rss = generateRss(setupsAst, setupsMetadata);
 
-  saveRss(rss);
+  saveRss(distDir, rss);
 
-  createPlayground();
+  createPlayground(distDir);
 }
 
-generate();
+let customDistDir = process.argv.slice(2)[0];
+
+generate(customDistDir);
 
 
