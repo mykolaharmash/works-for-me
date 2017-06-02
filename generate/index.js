@@ -10,6 +10,7 @@ const getSetupMetadata = require('./get-setup-metadata');
 const copyStatics = require('./copy-statics');
 const generateRssAst = require('./rss-ast');
 const generateRssXml = require('./rss-xml');
+const createPlayground = require('./create-playground');
 
 const setupsSrcDir = path.resolve(__dirname, '../setups');
 const distDir = path.resolve(__dirname, '../dist');
@@ -121,6 +122,8 @@ function generate () {
   let rss = generateRss(setupsAst, setupsMetadata);
 
   saveRss(rss);
+
+  createPlayground();
 }
 
 generate();

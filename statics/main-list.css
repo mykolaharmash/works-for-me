@@ -26,6 +26,22 @@ a:visited {
   color: #5856D6;
 }
 
+.external-links {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 16px;
+}
+
+.external-link-item {
+  padding: 30px 0;
+  display: block;
+}
+
+.external-link-item + .external-link-item {
+  margin-left: 20px;
+}
+
 .header {
   padding: 94px 0;
   text-align: center;
@@ -41,8 +57,7 @@ a:visited {
   margin: 8px 0 0 0;
 }
 
-.main,
-.external-links {
+.main {
   width: 500px;
 }
 
@@ -50,20 +65,17 @@ a:visited {
   margin-bottom: 48px;
 }
 
-.list-caption,
-.external-links-caption {
+.list-caption {
   margin: 0 0 16px 0;
 }
 
-.setups-list,
-.external-links-list {
+.setups-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.setup-item + .setup-item,
-.external-link-item + .external-link-item {
+.setup-item + .setup-item {
   margin-top: 16px;
 }
 

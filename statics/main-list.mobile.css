@@ -9,6 +9,19 @@
     align-items: flex-start;
   }
 
+  .external-links {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .external-link-item {
+    padding: 10px 0;
+  }
+
+  .external-link-item + .external-link-item {
+    margin-left: 0;
+  }
+
   .header {
     text-align: left;
     padding: 30px 0 48px 0;
@@ -28,5 +41,3 @@
     text-align: left;
   }
 }
-
-

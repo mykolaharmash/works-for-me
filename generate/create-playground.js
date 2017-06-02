@@ -11,9 +11,7 @@ let distPath = path.resolve(__dirname, `../${ DIST_FOLDER }`);
 let originalPlaygroundPath = path.resolve(__dirname, '../playground');
 let distPlaygroundPath = `${ distPath }/playground`;
 
-fs.copySync(originalPlaygroundPath, distPlaygroundPath);
-
-rollup.rollup({
+const ROLLUP_CONFIG = {
   entry: path.resolve(__dirname, '../playground/playground.js'),
   plugins: [
     rollupReplace({
@@ -33,18 +31,24 @@ rollup.rollup({
       sourceMap: false
     })
   ]
-})
-  .then(bundle => {
-    let result = bundle.generate({
-      format: 'iife',
-      moduleName: 'playground'
-    });
+};
 
-    fs.writeFileSync(
-      path.resolve(__dirname, `${ distPlaygroundPath }/playground.bundle.js`),
-      result.code
-    );
-  })
-  .catch(err => {
-    console.log(err);
-  });
+module.exports = function () {
+  fs.copySync(originalPlaygroundPath, distPlaygroundPath);
+
+  rollup.rollup(ROLLUP_CONFIG)
+    .then(bundle => {
+      let result = bundle.generate({
+        format: 'iife',
+        moduleName: 'playground'
+      });
+
+      fs.writeFileSync(
+        path.resolve(__dirname, `${ distPlaygroundPath }/playground.bundle.js`),
+        result.code
+      );
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
