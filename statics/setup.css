@@ -39,6 +39,7 @@ a:visited {
 }
 
 .description {
+  font-size: 0.85rem;
   line-height: 1.3em;
   letter-spacing: 0.016em;
 }

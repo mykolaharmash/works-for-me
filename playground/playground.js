@@ -31,6 +31,4 @@ function hideCheatsheet () {
 
 renderSetup(inputElement.value);
 
-
-
-
+inputElement.focus();
