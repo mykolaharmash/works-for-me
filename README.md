@@ -75,7 +75,7 @@ Such line won't be rendered.
 
 RSS-feed is based on commit-messages.
 
-If you are about to commit new setup start commit message with `new: `
+If you are about to commit new setup start commit-message with `new: `
 
 ```
 new: John Doe (Software Engineer)
@@ -83,7 +83,7 @@ new: John Doe (Software Engineer)
 
 You can add a few words about you, commit-message goes to the feed.
 
-For updates in existing setup, use `update: `, that also goes to RSS.
+For major updates to existing setup, use `update: `, that also goes to RSS.
 
 ```
 update: Changed IDE
