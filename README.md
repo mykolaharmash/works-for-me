@@ -1,68 +1,96 @@
 ### Works For Me
 
-This repository is a nice way to discover new tools by looking at setups which work for other people. And of course you can share your own cozy, carefully-crafted tooling to help others.
+A nice way to discover new tools and share ones which work for you. 
 
-Just one thing to have in mind — it's not just about listing all your apps, but highlighting tools that help you do your work better or make your life easier.
+All contributed setups are compiled to [Works For Me site](https://works-for-me.github.io).<br>
+Try [the Playground](https://works-for-me.github.io/playground/playground.html) to see how your setup will look like.<br>
+Subscribe to [RSS-feed](https://works-for-me.github.io/rss.xml) to get new setups and updates to existing ones.
 
-### How to add my setup?
+## Index
 
-1. Fork repo
-2. Copy `template.setup` to `setups/` folder and name it after you
-3. Fill in new file with setup that works for you
-4. Make a Pull Request to main repo
+- [How to add my setup?](#how-to-add-my-setup)
+- [Setup structure](#setup-structure)
+- [What goes to RSS-feed](#what-goes-to-rss-feed)
 
-### Syntax
+## How to add my setup?
 
-See `setups/` folder for examples. But, overall, syntax is very simple.
+1. Fork  [original repository](https://github.com/nik-garmash/works-for-me)
+1. Create a new file within `setups/` folder and describe your setup there
+1. Make a Pull Request
 
-`--` separates environments like desktop, mobile, ... or any custom one
+## Setup structure
 
-`>` indicates tool-line
-
-`//` comment line
-
-After any environment or tool you can add description if you want to highlight some use cases or emphasize features you like.
-
-### Environments
-
-Environment is just a grouping title for a list of tools.
-Just find a way to group your tools  you comfortable wit
-
-Bunch of examples:
+Start with little information about you.
+Essentially, only name is required to make sense.
 
 ```
--- Mobile
+name: John 🚀 Doe
+occupation: Software Engineer 
+location: Berlin, Germany
+link: https://www.google.com/search?q=john+doe
 ```
 
-```
--- Work
-```
+![Rendered author's information](./bio-rendered.png)
+ 
+
+Add your tools.
 
 ```
--- Video editing
+> WebStorm (https://www.jetbrains.com/webstorm/)
+
+My main work instrument.
+Has pretty much everything out of the box, but still I have some usefull plugins installed:
+• IdeaVim
+• Markdown Support
+...
 ```
+
+![Rendered tool with description](./tool-rendered.png)
+
+
+Optionally add grouping titles.
 
 ```
 -- Programming
+
+My laptop is MacBook Pro (Retina, 15-inch, Mid 2015), 2,5 GHz Intel Core i7, 16GB of RAM.
+
+> iTerm 2 (https://www.iterm2.com/), tmux (https://tmux.github.io/)
+
+> Docker
+
+All software with more or less heavy dependence goes into containers to not pollute the system...
 ```
 
-### Tool-line
+![Rendered grouping title with corresponding tools](./context-rendered.png)
 
-Your tool can be specified in a such format
-
+You can leave a comment inside setup.
 ```
-> Tool's name
-```
-
-Also, optional url can be added withing parentheses
-
-```
-> Photoshop (http://www.adobe.com/photoshop)
+// Add some description...
 ```
 
-And if you have multiple tools for one purpose, just list them with comma
+Such line won't be rendered.
+
+## What goes to RSS-feed
+
+RSS-feed is based on commit-messages.
+
+If you are about to commit new setup start commit message with `new: `
 
 ```
-> Sublime Text 3 (https://www.sublimetext.com/3), WebStorm (https://www.jetbrains.com/webstorm/)
+new: John Doe (Software Engineer)
 ```
 
+You can add a few words about you, commit-message goes to the feed.
+
+For updates in existing setup, use `update: `, that also goes to RSS.
+
+```
+update: Changed IDE
+```
+
+If you want to fix some typos or make minor chages, use `fix: `, no-one will see that one.
+
+```
+fix: Fixing typos
+```
