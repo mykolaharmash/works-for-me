@@ -72,6 +72,8 @@
   transition-property: transform, opacity;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* to overlay textarea with grammarly plugin */
+  z-index: 1;
 }
 .cheatsheet.hidden {
   opacity: 0;
