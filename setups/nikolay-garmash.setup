@@ -11,11 +11,11 @@ My laptop is MacBook Pro (Retina, 15-inch, Mid 2015) with 2,5 GHz Intel Core i7 
 
 > WebStorm (https://www.jetbrains.com/webstorm/)
 
-For a long time I was strongly against "heavy" IDEs and was switching between different editors like Sublime Text, Atom, VSCode, etc. At some point I realised I want more routine to be done for me so I could concentrate on more important stuff.
+For a long time, I was strongly against "heavy" IDEs and was switching between different editors like Sublime Text, Atom, VSCode, etc. At some point, I realized I want more routine to be done for me so I could concentrate on more important stuff.
 
-At the second attempt I finally switched to WebStorm and it's just awesome. It takes some time (couple of weeks in my case) to get out of your comfort zone and learn new key-bindings, configure everything just like you want and wrap your head around some of the local concepts, but it's totally worth it.
+At the second attempt, I finally switched to WebStorm and it's just awesome. It takes some time (a couple of weeks in my case) to get out of your comfort zone and learn new key-bindings, configure everything just like you want and wrap your head around some of the local concepts, but it's totally worth it.
 
-Refactoring feature — one of the most underestimated be me in the past, it saves me a lot of time every single day. Rename a project-wide constant, rename variable in scope, rename/move a file and refactor all imports, move function to another file — ones of the most used.
+Refactoring feature — one of the most underestimated be me in the past, it saves me a lot of time every single day. Rename a project-wide constant, rename a variable in scope, rename/move a file and refactor all imports, move function to another file — ones of the most used.
 
 Autocompletion is great, especially with statically-typed languages.
 
@@ -25,12 +25,12 @@ I work all the time in "Distraction Free" mode, so I see only my code and everyt
 
 My font for a couple of years already is "Source Code Pro", could not find anything better yet.
 
-If you are a web-developer, give WebStorm a try, it's fast, stable and being developed with a good pace.
+If you are a web-developer, give WebStorm a try, it's fast, stable and being developed at a good pace.
 
 
 > iTerm 2 (https://www.iterm2.com/)
 
-My second most used tool while work.
+My second most used tool while working.
 It has two features that stop me from switching to default macOS Terminal app:
 • Select to copy — really handy to copy anything from terminal by just selecting it
 • Cmd+click on a link to open it — very common case when developing web-applications
@@ -40,14 +40,14 @@ It has two features that stop me from switching to default macOS Terminal app:
 
 Set of plugins and completions for your bash shell.
 
-I've tried ZSH and Fish-shell (latter is super nice btw) but often those shells were a problem for third-party applications which was written with thought that bash is the only possible shell in the universe.
+I've tried ZSH and Fish-shell (latter is super nice btw) but often those shells were a problem for third-party applications which was written with the thought that bash is the only possible shell in the universe.
 
 Bash-it does not cover all of the nice features in ZSH or Fish, but it covers a lot. It has good git-plugin to suggest your current branch and stuff like this, commands history, etc. All kinds of completions are there as well as different themes.
 
 
 > diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
 
-Little tool which makes your git-diffs much more legible.
+A little tool which makes your git-diffs much more legible.
 
 
 > HTTPie (https://github.com/jakubroztocil/httpie)
@@ -59,7 +59,7 @@ Nice CLI tool, user-friendly curl-replacement. I just can't help to forget curl 
 
 If you often need to pick colors from everywhere on a screen, Sip is doing this pretty well.
 
-It has some advanced features like managing colors collections, but for me it's mostly getting color-picker with a shortcut, picking color from any pixel and after that quickly accessing picked colors from system's main menu.
+It has some advanced features like managing colors collections, but for me it's mostly getting color-picker with a shortcut, picking a color from any pixel and after that quickly accessing picked colors from system's main menu.
 
 
 > Sketch (https://www.sketchapp.com/)
@@ -73,7 +73,7 @@ I very like the idea of keeping my development environment in some kind of self-
 
 Previously it was Vagrant, now it's container, as they are much more lightweight.
 
-Also I put into containers software which has dependencies I don't want to be in my host OS. E.g. something needs Python or Ruby or whatever — it goes to container, it's the nice way to keep your system clean.
+Also, I put into containers software which has dependencies I don't want to be in my host OS. E.g. something needs Python or Ruby or whatever — it goes to a container, it's the nice way to keep your system clean.
 
 
 -- Consuming information
@@ -87,14 +87,14 @@ These two work in pair, Feedly manages RSS-subscriptions, and Reeder has really 
 
 > Instapaper (https://www.instapaper.com/)
 
-I have it installed on a phone and as an extension in a browser, very handy to save something for late read with just one click.
+I have it installed on a phone and as an extension in a browser, very handy to save something for later reading with just one click.
 
 It is also hooked up into Reeder app, so when feeds are empty I can read saved articles within the same app.
 
 
 > Tweetbot (http://tapbots.com/tweetbot/)
 
-Besides some entertaining, twitter for me is a source of programming-related articles which go to Instapaper. Tweetbot so far i the best client at least because it shows everything in natural chronological order.
+Besides some entertaining, Twitter for me is a source of programming-related articles which go to Instapaper. Tweetbot so far is the best client at least because it shows everything in natural chronological order.
 
 
 > Podcasts app
@@ -115,11 +115,11 @@ Russian:
 • RadioJS
 • Брендятина (http://radiomayak.ru/podcasts/podcast/id/45/)
 
-If you have never tried podcasts, start with Serial, it's high quality detective audio-show.
+If you have never tried podcasts, start with Serial, it's high-quality detective audio-show.
 
 > Telegram (https://telegram.org/)
 
-Despite it's a messenger, it has so called Channels — thematic feeds, where people post short (mainly) news or thoughts, not cluttered like twitter and one channel is dedicated to some specific topic.
+Despite it's a messenger, it has so-called Channels — thematic feeds, where people post short (mainly) news or thoughts, not cluttered like Twitter and one channel is dedicated to some specific topic.
 
 You can find services which generate RSS-feed out of a channel, so you can read them in one place with your usual subscriptions.
 
@@ -128,14 +128,13 @@ You can find services which generate RSS-feed out of a channel, so you can read 
 
 > Notes
 
-I've tried millions on different todo and notes taking apps and all of a sudden realised that key to productivity with such tools is to use as simple solution as possible, so tool does not provoke you to spend time on over-organising things and do some real work instead.
+I've tried millions on different todo and notes taking apps and all of a sudden realized that key to productivity with such tools is to use the as simple solution as possible, so the tool does not provoke you to spend time on over-organising things and do some real work instead.
 
 The standard Notes app in macOS fits this task perfectly, it's just a bunch of text files with some flavor like checkboxes and simple formatting.
 
-For me it's always one note for one project where I collect all todos, URLs to some resources, random notes with ideas, etc. Each project has it's own workspace with unique structure, which is very useful when it comes to creative process of shaping some idea.
+For me, it's always one note for one project where I collect all todos, URLs to some resources, random notes with ideas, etc. Each project has its own workspace with a unique structure, which is very useful when it comes to a creative process of shaping some idea.
 
 
 > 1Password (https://1password.com/)
 
-Very nice app to store not only passwords but also documents, bank-cards information and secret notes, all is encrypted, of course, and, what's important, stored locally.
-
+Very nice app to store not only passwords but also documents, bank cards information and secret notes, all is encrypted, of course, and, what's important, stored locally.
