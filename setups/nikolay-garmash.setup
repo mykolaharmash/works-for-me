@@ -1,101 +1,141 @@
 name: Nikolay Garmash
-occupation: Front-end developer
+occupation: Frontend developer
 location: Berlin, Germany
 link: https://twitter.com/garmashnikolay
 
--- desktop
+-- Frontend development
 
-My laptop is MacBook Pro (Retina, 15-inch, Mid 2015)
+Core toolkit to be productive and creative when doing my job.
+My laptop is MacBook Pro (Retina, 15-inch, Mid 2015) with 2,5 GHz Intel Core i7 and 16GB of RAM.
 
-> Chrome
-
-Developer tools are crucial for me.
 
 > WebStorm (https://www.jetbrains.com/webstorm/)
 
-Its refactoring features really save me a lot of time. Autocompletion works pretty well, especially with typed languages. Multiple projects management is done the way I like — isolated environment and dedicated configuration for every project.
+For a long time I was strongly against "heavy" IDEs and was switching between different editors like Sublime Text, Atom, VSCode, etc. At some point I realised I want more routine to be done for me so I could concentrate on more important stuff.
 
-I use Vim–mode for editing and custom key–bindings for other stuff like navigation. Also I'm always in "Distraction Free" mode, so I see only two splits with code, all other stuff popup by hotkeys.
+At the second attempt I finally switched to WebStorm and it's just awesome. It takes some time (couple of weeks in my case) to get out of your comfort zone and learn new key-bindings, configure everything just like you want and wrap your head around some of the local concepts, but it's totally worth it.
 
-One of most important — it is stable and heavily maintained.
+Refactoring feature — one of the most underestimated be me in the past, it saves me a lot of time every single day. Rename a project-wide constant, rename variable in scope, rename/move a file and refactor all imports, move function to another file — ones of the most used.
 
-> Todoist (https://todoist.com)
+Autocompletion is great, especially with statically-typed languages.
 
-Not really fond of this app... Using it like a straight forward checkboxes list.
+One of my must-have plugins is IdeaVim. I'm not a power vim-user but navigation and window-management with vim-shortcuts are much faster and, somehow, intuitive for me).
 
-> Notes
+I work all the time in "Distraction Free" mode, so I see only my code and everything else is done with shortcuts.
 
-Default macOS Notes app has out of the box everything: create notes quickly, simple reach-editing, sync across all devices.
+My font for a couple of years already is "Source Code Pro", could not find anything better yet.
+
+If you are a web-developer, give WebStorm a try, it's fast, stable and being developed with a good pace.
+
 
 > iTerm 2 (https://www.iterm2.com/)
 
-Has two features that stop me from switching to default macOS Terminal:
-
-* Select to copy - really handy to copy anything from terminal by selecting it
-* Cmd+click on a link to open it
-
-> 1Password (https://1password.com/)
-
-Stores for me not only password but also important documents, notes, credit card, etc.
-
-> Google Music (https://play.google.com/), Vox (http://coppertino.com/)
-
-Google Music subscription is mostly for mobile but at desktop it's a nice way to check new albums, playlists, etc.
-Vox for hi-res audio.
-
-> Mail, Google Inbox (https://inbox.google.com/)
-
-Default Mail app is for work mail, and Google Inbox is for personal.
-
-> Dropbox (https://www.dropbox.com/), Yandex.Disk (https://disk.yandex.ru/)
-
-Dropbox has nice integration with lot of services, I use it to store small files and documents.
-And my Yandex.Disk has 260GB free as I former Yandex employee. Photo backups from my phone go there and any large files I need to sync.
-
-> Google Photos (https://photos.google.com/)
-
-I think it's best Google's service for a long time, I backup there photos from all devices, make simple editing and share albums.
+My second most used tool while work.
+It has two features that stop me from switching to default macOS Terminal app:
+• Select to copy — really handy to copy anything from terminal by just selecting it
+• Cmd+click on a link to open it — very common case when developing web-applications
 
 
--- mobile
+> Bash-it (https://github.com/Bash-it/bash-it)
 
-I'm using elderly iPhone 5S. My phone usage is pretty straight forward - write some texts, read twitter, listen some music, ... No games at all.
+Set of plugins and completions for your bash shell.
 
-> Safari
+I've tried ZSH and Fish-shell (latter is super nice btw) but often those shells were a problem for third-party applications which was written with thought that bash is the only possible shell in the universe.
 
-It just have nice integration with other system components.
-Also it is faster then Chrome on my opinion.
+Bash-it does not cover all of the nice features in ZSH or Fish, but it covers a lot. It has good git-plugin to suggest your current branch and stuff like this, commands history, etc. All kinds of completions are there as well as different themes.
 
-> Google Inbox (https://inbox.google.com/)
 
-> Tweetbot (http://tapbots.com/tweetbot/)
+> diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
 
-It has no dull feed sorting as official client and UI is more convenient for me.
+Little tool which makes your git-diffs much more legible.
 
-> Podcasts
 
-Default iOS Podcasts app. Switched back from Overcast (https://overcast.fm/), which was very good for a long time but then it became less maintained, ad-banner was added, UI started to feel little noisy. My podcasts list for now looks like this:
+> HTTPie (https://github.com/jakubroztocil/httpie)
 
-Just a couple are in English:
-* Serial (https://serialpodcast.org/)
-* Javascript Air (https://javascriptair.com/)
+Nice CLI tool, user-friendly curl-replacement. I just can't help to forget curl flags every time I use it 😁
 
-And all others are in Russian:
-* Radio-T (https://radio-t.com/)
-* Web-standards (https://itunes.apple.com/ru/podcast/veb-standarty/id1080500016)
-* UWP (http://podcast.umputun.com/)
-* Evergreen Podcast (http://podtema.com/)
-* RadioJS (https://radiojs.ru/)
-* Брендятина (http://radiomayak.ru/podcasts/podcast/id/45/)
 
-> Telegram (https://telegram.org/)
+> Sip (http://sipapp.io/)
 
-I use it not only for messaging with single person, but also for group chats and channels. Channels have become for me another information feed. One of my favourite channel - https://telegram.me/addmeto (Russian).
+If you often need to pick colors from everywhere on a screen, Sip is doing this pretty well.
+
+It has some advanced features like managing colors collections, but for me it's mostly getting color-picker with a shortcut, picking color from any pixel and after that quickly accessing picked colors from system's main menu.
+
+
+> Sketch (https://www.sketchapp.com/)
+
+Time after time I make mockups for my pet-projects and at least for web-design Sketch fits really well. Heard some good stuff about Adobe XD though, but never really tried it.
+
+
+> Docker (https://www.docker.com)
+
+I very like the idea of keeping my development environment in some kind of self-contained boxes, so no matter what happens to my OS (I like to try some early betas of macOS) my projects are safe and ready to run.
+
+Previously it was Vagrant, now it's container, as they are much more lightweight.
+
+Also I put into containers software which has dependencies I don't want to be in my host OS. E.g. something needs Python or Ruby or whatever — it goes to container, it's the nice way to keep your system clean.
+
+
+-- Consuming information
+
+That mostly happens on my elderly iPhone 5S.
+
+> Reeder (http://reederapp.com), Feedly (http://feedly.com)
+
+These two work in pair, Feedly manages RSS-subscriptions, and Reeder has really good UI for reading feeds (reading something directly in Feedly is a torture btw, don't do that)
+
 
 > Instapaper (https://www.instapaper.com/)
 
-I really like that I can save anything just with one click, without specifying folders, tags or anything. And clients for all platforms are very nice.
+I have it installed on a phone and as an extension in a browser, very handy to save something for late read with just one click.
 
-> Google Music (https://play.google.com/)
+It is also hooked up into Reeder app, so when feeds are empty I can read saved articles within the same app.
 
-> Google Photos (https://photos.google.com/)
+
+> Tweetbot (http://tapbots.com/tweetbot/)
+
+Besides some entertaining, twitter for me is a source of programming-related articles which go to Instapaper. Tweetbot so far i the best client at least because it shows everything in natural chronological order.
+
+
+> Podcasts app
+
+Podcasts for me are one of the main sources of information, not just technical, but in general, and some entertainment of course. I use native iOS Podcasts app, have tried Overcast, but came back. They are mostly in Russian but also few in English.
+
+English:
+• Serial
+• S-Town
+• Stuff You Should Know
+
+Russian:
+• Радио-Т
+• Веб-стандарты
+• UWP — Еженедельный подкаст от Umputun
+• Evergreen Podcast
+• Хекслет
+• RadioJS
+• Брендятина (http://radiomayak.ru/podcasts/podcast/id/45/)
+
+If you have never tried podcasts, start with Serial, it's high quality detective audio-show.
+
+> Telegram (https://telegram.org/)
+
+Despite it's a messenger, it has so called Channels — thematic feeds, where people post short (mainly) news or thoughts, not cluttered like twitter and one channel is dedicated to some specific topic.
+
+You can find services which generate RSS-feed out of a channel, so you can read them in one place with your usual subscriptions.
+
+
+-- Organizing myself
+
+> Notes
+
+I've tried millions on different todo and notes taking apps and all of a sudden realised that key to productivity with such tools is to use as simple solution as possible, so tool does not provoke you to spend time on over-organising things and do some real work instead.
+
+The standard Notes app in macOS fits this task perfectly, it's just a bunch of text files with some flavor like checkboxes and simple formatting.
+
+For me it's always one note for one project where I collect all todos, URLs to some resources, random notes with ideas, etc. Each project has it's own workspace with unique structure, which is very useful when it comes to creative process of shaping some idea.
+
+
+> 1Password (https://1password.com/)
+
+Very nice app to store not only passwords but also documents, bank-cards information and secret notes, all is encrypted, of course, and, what's important, stored locally.
+
