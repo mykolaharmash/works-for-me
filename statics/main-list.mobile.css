@@ -29,7 +29,7 @@
 
   .main,
   .links {
-    width: auto;
+    width: 100%;
   }
 
   .setup-item {
