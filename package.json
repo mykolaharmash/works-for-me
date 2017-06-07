@@ -39,6 +39,7 @@
     "node": "~6.10.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "fs-extra": "^2.0.0",
     "immutable": "^3.8.1",
     "js-beautify": "^1.6.8",

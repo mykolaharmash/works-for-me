@@ -1,3 +1,5 @@
+require('babel-polyfill');
+
 const generateSetupAst = require('../generate/setup-ast-playground');
 const generateSetupHtml = require('../generate/setup-html-playground');
 
