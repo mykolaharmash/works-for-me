@@ -4,6 +4,7 @@ let rollup = require('rollup');
 let rollupNodeResolver = require('rollup-plugin-node-resolve');
 let rollupCommonJs = require('rollup-plugin-commonjs');
 let rollupReplace = require('rollup-plugin-re');
+let rollupBabel = require('rollup-plugin-babel');
 
 const ROLLUP_CONFIG = {
   entry: path.resolve(__dirname, '../playground/playground.js'),
@@ -23,6 +24,20 @@ const ROLLUP_CONFIG = {
     }),
     rollupCommonJs({
       sourceMap: false
+    }),
+    rollupBabel({
+      exclude: 'node_modules/**',
+      presets: [
+        [
+          "es2015",
+          {
+            modules: false
+          }
+        ]
+      ],
+      plugins: [
+        "external-helpers"
+      ]
     })
   ]
 };
