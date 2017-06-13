@@ -129,9 +129,6 @@ a:visited {
 .tool-names-list {
   display: flex;
   flex-wrap: wrap;
-}
-
-.tool-name {
   font-size: 1.125rem;
 }
 
