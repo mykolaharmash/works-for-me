@@ -1,19 +1,21 @@
-let Immutable = require('immutable');
-let tokenize = require('./../lib/tokenize');
-let lex = require('./../lib/lex');
-let sanitize = require('./../lib/sanitize');
-let parse = require('./../lib/parse');
+let Immutable = require('immutable')
 
-let bodyParser = require('./../lib/parsers/body');
-let bioParser = require('./../lib/parsers/bio');
-let setupParser = require('./../lib/parsers/setup');
-let environmentParser = require('./../lib/parsers/environment');
-let environmentHeaderParser = require('./../lib/parsers/environment-header');
-let toolsListParser = require('./../lib/parsers/tools-list');
-let toolItemParser = require('./../lib/parsers/tool-item');
-let toolHeadParser = require('./../lib/parsers/tool-head');
-let toolNamesListParser = require('./../lib/parsers/tool-names-list');
-let toolNameParser = require('./../lib/parsers/tool-name');
+let tokenize = require('../lib/tokenize')
+let lex = require('../lib/lex')
+let sanitize = require('../lib/sanitize')
+let parse = require('../lib/parse')
+
+let bodyParser = require('../lib/parsers/body')
+let bioParser = require('../lib/parsers/bio')
+let setupParser = require('../lib/parsers/setup')
+let environmentParser = require('../lib/parsers/environment')
+let environmentHeaderParser = require('./../lib/parsers/environment-header')
+let toolsListParser = require('../lib/parsers/tools-list')
+let toolItemParser = require('../lib/parsers/tool-item')
+let toolHeadParser = require('../lib/parsers/tool-head')
+let toolNamesListParser = require('../lib/parsers/tool-names-list')
+let toolNameParser = require('../lib/parsers/tool-name')
+let descriptionParser = require('../lib/parsers/description')
 
 const {
   ROOT_CONTEXT,
@@ -39,8 +41,9 @@ const {
   TOOL_HEAD_PARSER_KEY,
   TOOL_NAMES_LIST_PARSER_KEY,
   TOOL_NAME_PARSER_KEY,
+  DESCRIPTION_PARSER_KEY,
   NEWLINE_LEXEME
-} = require('./../lib/constants');
+} = require('../lib/constants')
 
 const parsersMap = {
   [BODY_PARSER_KEY]: bodyParser,
@@ -52,19 +55,20 @@ const parsersMap = {
   [TOOL_ITEM_PARSER_KEY]: toolItemParser,
   [TOOL_HEAD_PARSER_KEY]: toolHeadParser,
   [TOOL_NAMES_LIST_PARSER_KEY]: toolNamesListParser,
-  [TOOL_NAME_PARSER_KEY]: toolNameParser
-};
+  [TOOL_NAME_PARSER_KEY]: toolNameParser,
+  [DESCRIPTION_PARSER_KEY]: descriptionParser
+}
 
 function findBioLine (bioContext, lineTypeToken) {
   let bioLineContexts = bioContext.get('content')
-    .filter(context => context.get('type') === BIO_LINE_CONTEXT);
+    .filter(context => context.get('type') === BIO_LINE_CONTEXT)
 
   return bioLineContexts
     .find(context => {
-      let firstLexeme = context.get('content').get(0).get('content');
+      let firstLexeme = context.get('content').get(0).get('content')
 
-      return firstLexeme === lineTypeToken;
-    });
+      return firstLexeme === lineTypeToken
+    })
 }
 
 function generateLatestUpdateContext (latestUpdate) {
@@ -80,7 +84,7 @@ function generateLatestUpdateContext (latestUpdate) {
         content: latestUpdate.message
       }
     ]
-  });
+  })
 }
 
 function getBioLineContentString (bioLineContext) {
@@ -89,30 +93,30 @@ function getBioLineContentString (bioLineContext) {
     .slice(1)
     .filter(lexeme => lexeme.get('type') !== NEWLINE_LEXEME)
     .map(lexeme => lexeme.get('content'))
-    .join(' ');
+    .join(' ')
 }
 
 function generateHeadTitleContext (nameBioLineContext) {
-  let name = getBioLineContentString(nameBioLineContext);
+  let name = getBioLineContentString(nameBioLineContext)
 
   return Immutable.fromJS({
     type: HEAD_TITLE_CONTEXT,
     content: name
-  });
+  })
 }
 
 function generateHeadDescriptionContext (nameBioLineContext, occupationBioLineContext) {
-  let name = getBioLineContentString(nameBioLineContext);
-  let occupation;
+  let name = getBioLineContentString(nameBioLineContext)
+  let occupation
 
   if (occupationBioLineContext) {
-    occupation = getBioLineContentString(occupationBioLineContext);
+    occupation = getBioLineContentString(occupationBioLineContext)
   }
 
   return Immutable.fromJS({
     type: HEAD_DESCRIPTION_CONTEXT,
     content: `${ occupation ? occupation : name }'s software setup`
-  });
+  })
 }
 
 /**
@@ -124,15 +128,15 @@ function generateHeadDescriptionContext (nameBioLineContext, occupationBioLineCo
  */
 function generateHeadAst (bodyAst) {
   let bioContext = bodyAst.get('content')
-    .find(context => context.get('type') === BIO_CONTEXT);
-  let nameBioLineContext = findBioLine(bioContext, BIO_LINE_TYPE_NAME_TOKEN);
-  let occupationBioLineContext = findBioLine(bioContext, BIO_LINE_TYPE_OCCUPATION_TOKEN);
+    .find(context => context.get('type') === BIO_CONTEXT)
+  let nameBioLineContext = findBioLine(bioContext, BIO_LINE_TYPE_NAME_TOKEN)
+  let occupationBioLineContext = findBioLine(bioContext, BIO_LINE_TYPE_OCCUPATION_TOKEN)
 
-  let titleContext = generateHeadTitleContext(nameBioLineContext);
+  let titleContext = generateHeadTitleContext(nameBioLineContext)
   let descriptionContext = generateHeadDescriptionContext(
     nameBioLineContext,
     occupationBioLineContext
-  );
+  )
 
   return Immutable.fromJS({
     type: HEAD_CONTEXT,
@@ -140,7 +144,7 @@ function generateHeadAst (bodyAst) {
       titleContext.toJS(),
       descriptionContext.toJS()
     ]
-  });
+  })
 }
 
 /**
@@ -152,41 +156,41 @@ function generateHeadAst (bodyAst) {
  */
 function insertLatestUpdateContext (ast, metadata) {
   if (!metadata.updates.length) {
-    return ast;
+    return ast
   }
 
   let setupContextIndex = ast.get('content')
-    .findIndex(context => context.get('type') === SETUP_CONTEXT);
+    .findIndex(context => context.get('type') === SETUP_CONTEXT)
 
-  let setupContext = ast.get('content').get(setupContextIndex);
+  let setupContext = ast.get('content').get(setupContextIndex)
 
   let updatedSetupContext = setupContext.update('content', content => {
-    let latestUpdateContext = generateLatestUpdateContext(metadata.updates[0]);
+    let latestUpdateContext = generateLatestUpdateContext(metadata.updates[0])
 
-    return content.insert(0, latestUpdateContext);
-  });
+    return content.insert(0, latestUpdateContext)
+  })
 
   return ast.update('content', content => {
-    return content.splice(setupContextIndex, 1, updatedSetupContext);
-  });
+    return content.splice(setupContextIndex, 1, updatedSetupContext)
+  })
 }
 
 module.exports = function (content = '', metadata) {
-  let chars = [...content];
-  let tokens = tokenize(chars);
-  let lexemes = lex(tokens);
-  let sanitizedLexemes = sanitize(lexemes);
+  let chars = [...content]
+  let tokens = tokenize(chars)
+  let lexemes = lex(tokens)
+  let sanitizedLexemes = sanitize(lexemes)
   let bodyContext = Immutable.fromJS({
     type: BODY_CONTEXT,
     content: sanitizedLexemes
-  });
+  })
 
   let bodyAst = Immutable.fromJS(
     parse(bodyContext, parsersMap)
-  );
-  bodyAst = insertLatestUpdateContext(bodyAst, metadata);
+  )
+  bodyAst = insertLatestUpdateContext(bodyAst, metadata)
 
-  let headAst = generateHeadAst(bodyAst);
+  let headAst = generateHeadAst(bodyAst)
 
   return {
     type: ROOT_CONTEXT,
@@ -194,5 +198,5 @@ module.exports = function (content = '', metadata) {
       headAst.toJS(),
       bodyAst.toJS()
     ]
-  };
-};
+  }
+}

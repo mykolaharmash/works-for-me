@@ -44,6 +44,14 @@ a:visited {
   font-size: 0.85rem;
   line-height: 1.3em;
   letter-spacing: 0.016em;
+  margin-bottom: 38px;
+}
+
+.description-paragraph {
+  margin: 0;
+}
+.description-paragraph + .description-paragraph {
+  margin-top: 16px;
 }
 
 .bio {
@@ -107,13 +115,15 @@ a:visited {
   font-weight: 300;
 }
 
-.environment-header .description,
-.tool-item .description {
-  margin-top: 8px;
+.environment-header .description {
+  margin-top: 4px;
 }
 
+.tool-item .description {
+  margin-top: 4px;
+}
 .tool-item + .tool-item {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .tool-names-list {

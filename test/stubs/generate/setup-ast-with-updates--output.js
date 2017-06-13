@@ -21,6 +21,7 @@ const {
   SETUP_LATEST_UPDATE_CONTEXT,
   SETUP_UPDATE_DATE_CONTEXT,
   SETUP_UPDATE_MESSAGE_CONTEXT,
+  DESCRIPTION_PARAGRAPH_CONTEXT,
   ENV_BULLET_LEXEME,
   WORD_LEXEME,
   NEWLINE_LEXEME
@@ -50,12 +51,7 @@ module.exports = {
           content: [
             {
               type: DESCRIPTION_CONTEXT,
-              content: [
-                {
-                  type: NEWLINE_LEXEME,
-                  content: '\n'
-                }
-              ]
+              content: []
             },
             {
               type: BIO_LINE_CONTEXT,
@@ -97,12 +93,7 @@ module.exports = {
             },
             {
               type: DESCRIPTION_CONTEXT,
-              content: [
-                {
-                  type: NEWLINE_LEXEME,
-                  content: '\n'
-                }
-              ]
+              content: []
             },
           ]
         },
@@ -163,40 +154,35 @@ module.exports = {
                           type: DESCRIPTION_CONTEXT,
                           content: [
                             {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
+                              type: DESCRIPTION_PARAGRAPH_CONTEXT,
+                              content: [
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'some'
+                                },
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'description'
+                                }
+                              ]
                             },
                             {
-                              type: WORD_LEXEME,
-                              content: 'some'
+                              type: DESCRIPTION_PARAGRAPH_CONTEXT,
+                              content: [
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'even'
+                                }
+                              ]
                             },
                             {
-                              type: WORD_LEXEME,
-                              content: 'description'
-                            },
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
-                            },
-                            {
-                              type: WORD_LEXEME,
-                              content: 'even'
-                            },
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
-                            },
-                            {
-                              type: WORD_LEXEME,
-                              content: 'multiline'
-                            },
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
-                            },
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
+                              type: DESCRIPTION_PARAGRAPH_CONTEXT,
+                              content: [
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'multiline'
+                                }
+                              ]
                             }
                           ]
                         }
@@ -244,12 +230,7 @@ module.exports = {
                         },
                         {
                           type: DESCRIPTION_CONTEXT,
-                          content: [
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
-                            }
-                          ]
+                          content: []
                         }
                       ]
                     }
@@ -284,36 +265,30 @@ module.exports = {
                       type: DESCRIPTION_CONTEXT,
                       content: [
                         {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
+                          type: DESCRIPTION_PARAGRAPH_CONTEXT,
+                          content: [
+                            {
+                              type: WORD_LEXEME,
+                              content: 'Context'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'description'
+                            }
+                          ]
                         },
                         {
-                          type: WORD_LEXEME,
-                          content: 'Context'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'description'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'goes'
-                        },
-                        {
-                          type: WORD_LEXEME,
-                          content: 'here'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
-                        },
-                        {
-                          type: NEWLINE_LEXEME,
-                          content: '\n'
+                          type: DESCRIPTION_PARAGRAPH_CONTEXT,
+                          content: [
+                            {
+                              type: WORD_LEXEME,
+                              content: 'goes'
+                            },
+                            {
+                              type: WORD_LEXEME,
+                              content: 'here'
+                            }
+                          ]
                         }
                       ]
                     }
@@ -361,24 +336,17 @@ module.exports = {
                           type: DESCRIPTION_CONTEXT,
                           content: [
                             {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
-                            },
-                            {
-                              type: WORD_LEXEME,
-                              content: 'another'
-                            },
-                            {
-                              type: WORD_LEXEME,
-                              content: 'description'
-                            },
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
-                            },
-                            {
-                              type: NEWLINE_LEXEME,
-                              content: '\n'
+                              type: DESCRIPTION_PARAGRAPH_CONTEXT,
+                              content: [
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'another'
+                                },
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'description'
+                                }
+                              ]
                             }
                           ]
                         }

@@ -1,19 +1,21 @@
 let Immutable = require('immutable');
-let tokenize = require('./../lib/tokenize');
-let lex = require('./../lib/lex');
-let sanitize = require('./../lib/sanitize');
-let parse = require('./../lib/parse');
 
-let bodyParser = require('./../lib/parsers/body');
-let bioParser = require('./../lib/parsers/bio');
-let setupParser = require('./../lib/parsers/setup');
-let environmentParser = require('./../lib/parsers/environment');
-let environmentHeaderParser = require('./../lib/parsers/environment-header');
-let toolsListParser = require('./../lib/parsers/tools-list');
-let toolItemParser = require('./../lib/parsers/tool-item');
-let toolHeadParser = require('./../lib/parsers/tool-head');
-let toolNamesListParser = require('./../lib/parsers/tool-names-list');
-let toolNameParser = require('./../lib/parsers/tool-name');
+let tokenize = require('../lib/tokenize');
+let lex = require('../lib/lex');
+let sanitize = require('../lib/sanitize');
+let parse = require('../lib/parse');
+
+let bodyParser = require('../lib/parsers/body');
+let bioParser = require('../lib/parsers/bio');
+let setupParser = require('../lib/parsers/setup');
+let environmentParser = require('../lib/parsers/environment');
+let environmentHeaderParser = require('../lib/parsers/environment-header');
+let toolsListParser = require('../lib/parsers/tools-list');
+let toolItemParser = require('../lib/parsers/tool-item');
+let toolHeadParser = require('../lib/parsers/tool-head');
+let toolNamesListParser = require('../lib/parsers/tool-names-list');
+let toolNameParser = require('../lib/parsers/tool-name');
+let descriptionParser = require('../lib/parsers/description')
 
 const {
   BODY_CONTEXT,
@@ -26,8 +28,9 @@ const {
   TOOL_ITEM_PARSER_KEY,
   TOOL_HEAD_PARSER_KEY,
   TOOL_NAMES_LIST_PARSER_KEY,
-  TOOL_NAME_PARSER_KEY
-} = require('./../lib/constants');
+  TOOL_NAME_PARSER_KEY,
+  DESCRIPTION_PARSER_KEY
+} = require('../lib/constants');
 
 const parsersMap = {
   [BODY_PARSER_KEY]: bodyParser,
@@ -39,7 +42,8 @@ const parsersMap = {
   [TOOL_ITEM_PARSER_KEY]: toolItemParser,
   [TOOL_HEAD_PARSER_KEY]: toolHeadParser,
   [TOOL_NAMES_LIST_PARSER_KEY]: toolNamesListParser,
-  [TOOL_NAME_PARSER_KEY]: toolNameParser
+  [TOOL_NAME_PARSER_KEY]: toolNameParser,
+  [DESCRIPTION_PARSER_KEY]: descriptionParser
 };
 
 module.exports = function (content = '') {

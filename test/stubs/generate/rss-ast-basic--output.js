@@ -39,12 +39,7 @@ module.exports = {
               content: [
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
                 {
                   type: BIO_LINE_CONTEXT,
@@ -86,12 +81,7 @@ module.exports = {
                 },
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 }
               ]
             }
@@ -114,12 +104,7 @@ module.exports = {
               content: [
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
                 {
                   type: BIO_LINE_CONTEXT,
@@ -161,12 +146,7 @@ module.exports = {
                 },
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
               ]
             }
@@ -216,12 +196,7 @@ module.exports = {
               content: [
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
                 {
                   type: BIO_LINE_CONTEXT,
@@ -246,12 +221,7 @@ module.exports = {
                 },
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 }
               ]
             }
@@ -274,12 +244,7 @@ module.exports = {
               content: [
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
                 {
                   type: BIO_LINE_CONTEXT,
@@ -304,12 +269,7 @@ module.exports = {
                 },
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 }
               ]
             }
@@ -359,12 +319,7 @@ module.exports = {
               content: [
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
                 {
                   type: BIO_LINE_CONTEXT,
@@ -389,12 +344,7 @@ module.exports = {
                 },
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 }
               ]
             }
@@ -417,12 +367,7 @@ module.exports = {
               content: [
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 },
                 {
                   type: BIO_LINE_CONTEXT,
@@ -447,12 +392,7 @@ module.exports = {
                 },
                 {
                   type: DESCRIPTION_CONTEXT,
-                  content: [
-                    {
-                      type: NEWLINE_LEXEME,
-                      content: '\n'
-                    }
-                  ]
+                  content: []
                 }
               ]
             }

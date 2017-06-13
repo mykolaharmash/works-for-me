@@ -37,7 +37,7 @@ describe('tool name parser', () => {
   });
 
   it(`parses all content within parentheses as link, 
-      event when multiple words present`,
+      even when multiple words present`,
   () => {
     const parsersMap = {
       [TOOL_NAME_PARSER_KEY]: toolName
