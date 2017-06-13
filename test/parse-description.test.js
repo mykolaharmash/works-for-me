@@ -23,7 +23,7 @@ describe('description parser', () => {
     assert.deepEqual(tree, outputParagraphs)
   })
 
-  it.only(`parses starting paragraph`, () => {
+  it(`parses starting paragraph`, () => {
     let tree = parse(Immutable.fromJS(inputStartWithText), parsersMap)
 
     assert.deepEqual(tree, outputStartWithText)
