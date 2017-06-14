@@ -4,8 +4,8 @@ let parse = require('../lib/parse')
 
 let descriptionParser = require('../lib/parsers/description')
 
-let inputParagraphs = require('./stubs/parse/description-paragraphs--input')
-let outputParagraphs = require('./stubs/parse/description-paragraphs--output')
+let inputSplitParagraphs = require('./stubs/parse/description-split-paragraphs--input')
+let outputSplitParagraphs = require('./stubs/parse/description-split-paragraphs--output')
 
 let inputStartWithText = require('./stubs/parse/description-start-with-text--input')
 let outputStartWithText = require('./stubs/parse/description-start-with-text--output')
@@ -18,9 +18,9 @@ const parsersMap = {
 
 describe('description parser', () => {
   it(`splits description into paragraphs`, () => {
-    let tree = parse(Immutable.fromJS(inputParagraphs), parsersMap)
+    let tree = parse(Immutable.fromJS(inputSplitParagraphs), parsersMap)
 
-    assert.deepEqual(tree, outputParagraphs)
+    assert.deepEqual(tree, outputSplitParagraphs)
   })
 
   it(`parses starting paragraph`, () => {
