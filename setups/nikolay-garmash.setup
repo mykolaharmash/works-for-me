@@ -44,6 +44,8 @@ I've tried ZSH and Fish-shell (latter is super nice btw) but often those shells 
 
 Bash-it does not cover all of the nice features in ZSH or Fish, but it covers a lot. It has good git-plugin to suggest your current branch and stuff like this, commands history, etc. All kinds of completions are there as well as different themes.
 
+You can find my bash-it along with other configs is in those <.dotfiles (https://github.com/nik-garmash/.dotfiles)>
+
 
 > diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
 
@@ -102,18 +104,17 @@ Besides some entertaining, Twitter for me is a source of programming-related art
 Podcasts for me are one of the main sources of information, not just technical, but in general, and some entertainment of course. I use native iOS Podcasts app, have tried Overcast, but came back. They are mostly in Russian but also few in English.
 
 English:
-• Serial
-• S-Town
-• Stuff You Should Know
+• <Serial (https://serialpodcast.org)>
+• <S-Town (https://stownpodcast.org)>
+• <Stuff You Should Know (http://www.stuffyoushouldknow.com)>
 
 Russian:
-• Радио-Т
-• Веб-стандарты
-• UWP — Еженедельный подкаст от Umputun
-• Evergreen Podcast
-• Хекслет
-• RadioJS
-• Брендятина (http://radiomayak.ru/podcasts/podcast/id/45/)
+• <Радио-Т (https://radio-t.com/)>
+• <Веб-стандарты (https://itunes.apple.com/ru/podcast/veb-standarty/id1080500016)>
+• <UWP — Еженедельный подкаст от Umputun (https://podcast.umputun.com)>
+• <Evergreen Podcast (http://podtema.com)>
+• <Хекслет (https://itunes.apple.com/fi/podcast/hekslet/id1162673070)>
+• <Брендятина (http://radiomayak.ru/podcasts/podcast/id/45/)>
 
 If you have never tried podcasts, start with Serial, it's high-quality detective audio-show.
 
