@@ -13,6 +13,6 @@ module.exports = {
     { type: WORD_LEXEME, content: 'link' },
     { type: WORD_LEXEME, content: '(https://some.link)>' },
     { type: WORD_LEXEME, content: 'another' },
-    { type: WORD_LEXEME, content: 'text' },
+    { type: WORD_LEXEME, content: 'text' }
   ]
 }
