@@ -61,7 +61,8 @@ a:visited {
 
 .bio > .description {
   text-align: left;
-  margin-top: 8px;
+  margin-top: 38px;
+  margin-bottom: 0;
 }
 
 .name {

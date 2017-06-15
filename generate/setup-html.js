@@ -19,6 +19,10 @@ let toolTitleRenderer = require('./../lib/renderers/tool-title');
 let toolLinkRenderer = require('./../lib/renderers/tool-link');
 let setupLatestUpdateRenderer = require('./../lib/renderers/latest-update');
 let descriptionParagraphRenderer = require('./../lib/renderers/description-paragraph');
+let descriptionLinkRenderer = require('./../lib/renderers/description-link');
+let descriptionLinkTitleRenderer = require('./../lib/renderers/description-link-title');
+let descriptionLinkUrlRenderer = require('./../lib/renderers/description-link-url');
+let descriptionTextRenderer = require('./../lib/renderers/description-text');
 
 const {
   ROOT_RENDERER_KEY,
@@ -39,7 +43,11 @@ const {
   TOOL_TITLE_RENDERER_KEY,
   TOOL_LINK_RENDERER_KEY,
   SETUP_LATEST_UPDATE_RENDERER_KEY,
-  DESCRIPTION_PARAGRAPH_RENDERER_KEY
+  DESCRIPTION_PARAGRAPH_RENDERER_KEY,
+  DESCRIPTION_LINK_RENDERER_KEY,
+  DESCRIPTION_LINK_TITLE_RENDERER_KEY,
+  DESCRIPTION_LINK_URL_RENDERER_KEY,
+  DESCRIPTION_TEXT_RENDERER_KEY
 } = require('./../lib/constants');
 
 const renderersMap = {
@@ -61,7 +69,11 @@ const renderersMap = {
   [TOOL_TITLE_RENDERER_KEY]: toolTitleRenderer,
   [TOOL_LINK_RENDERER_KEY]: toolLinkRenderer,
   [SETUP_LATEST_UPDATE_RENDERER_KEY]: setupLatestUpdateRenderer,
-  [DESCRIPTION_PARAGRAPH_RENDERER_KEY]: descriptionParagraphRenderer
+  [DESCRIPTION_PARAGRAPH_RENDERER_KEY]: descriptionParagraphRenderer,
+  [DESCRIPTION_LINK_RENDERER_KEY]: descriptionLinkRenderer,
+  [DESCRIPTION_LINK_TITLE_RENDERER_KEY]: descriptionLinkTitleRenderer,
+  [DESCRIPTION_LINK_URL_RENDERER_KEY]: descriptionLinkUrlRenderer,
+  [DESCRIPTION_TEXT_RENDERER_KEY]: descriptionTextRenderer
 };
 
 module.exports = function (tree = {}) {
