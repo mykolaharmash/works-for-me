@@ -19,6 +19,10 @@ module.exports = [
   'some',
   'description',
   '\n',
+  '#',
+  'some',
+  'image',
+  '(./some-image.jpg)',
   '//',
   'comment',
   'two'

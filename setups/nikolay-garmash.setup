@@ -3,10 +3,14 @@ occupation: Frontend developer
 location: Berlin, Germany
 link: https://twitter.com/garmashnikolay
 
+# Image here (./some.jpg)
+
 -- Frontend development
 
 Core toolkit to be productive and creative when doing my job.
 My laptop is MacBook Pro (Retina, 15-inch, Mid 2015) with 2,5 GHz Intel Core i7 and 16GB of RAM.
+
+# Also here (./another.jpg)
 
 
 > WebStorm (https://www.jetbrains.com/webstorm/)
@@ -18,6 +22,8 @@ At the second attempt, I finally switched to WebStorm and it's just awesome. It 
 Refactoring feature — one of the most underestimated be me in the past, it saves me a lot of time every single day. Rename a project-wide constant, rename a variable in scope, rename/move a file and refactor all imports, move function to another file — ones of the most used.
 
 Autocompletion is great, especially with statically-typed languages.
+
+# And here (./also.jpg)
 
 One of my must-have plugins is IdeaVim. I'm not a power vim-user but navigation and window-management with vim-shortcuts are much faster and, somehow, intuitive for me).
 

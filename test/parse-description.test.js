@@ -10,6 +10,9 @@ let outputSplitParagraphs = require('./stubs/parse/description-split-paragraphs-
 let inputStartWithText = require('./stubs/parse/description-start-with-text--input')
 let outputStartWithText = require('./stubs/parse/description-start-with-text--output')
 
+let inputWithImages = require('./stubs/parse/description-with-images--input')
+let outputWithImages = require('./stubs/parse/description-with-images--output')
+
 const { DESCRIPTION_PARSER_KEY } = require('../lib/constants')
 
 const parsersMap = {
@@ -27,5 +30,13 @@ describe('description parser', () => {
     let tree = parse(Immutable.fromJS(inputStartWithText), parsersMap)
 
     assert.deepEqual(tree, outputStartWithText)
+  })
+
+  it.only(`parses image contexts`, () => {
+    let tree = parse(Immutable.fromJS(inputWithImages), parsersMap)
+
+    console.log(tree)
+
+    assert.deepEqual(tree, outputWithImages)
   })
 })
