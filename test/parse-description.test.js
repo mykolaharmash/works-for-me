@@ -32,10 +32,8 @@ describe('description parser', () => {
     assert.deepEqual(tree, outputStartWithText)
   })
 
-  it.only(`parses image contexts`, () => {
+  it(`parses image contexts`, () => {
     let tree = parse(Immutable.fromJS(inputWithImages), parsersMap)
-
-    console.log(tree)
 
     assert.deepEqual(tree, outputWithImages)
   })

@@ -22,6 +22,7 @@ const {
   SETUP_UPDATE_DATE_CONTEXT,
   SETUP_UPDATE_MESSAGE_CONTEXT,
   DESCRIPTION_PARAGRAPH_CONTEXT,
+  DESCRIPTION_TEXT_CONTEXT,
   ENV_BULLET_LEXEME,
   WORD_LEXEME,
   NEWLINE_LEXEME
@@ -157,12 +158,17 @@ module.exports = {
                               type: DESCRIPTION_PARAGRAPH_CONTEXT,
                               content: [
                                 {
-                                  type: WORD_LEXEME,
-                                  content: 'some'
-                                },
-                                {
-                                  type: WORD_LEXEME,
-                                  content: 'description'
+                                  type: DESCRIPTION_TEXT_CONTEXT,
+                                  content: [
+                                    {
+                                      type: WORD_LEXEME,
+                                      content: 'some'
+                                    },
+                                    {
+                                      type: WORD_LEXEME,
+                                      content: 'description'
+                                    }
+                                  ]
                                 }
                               ]
                             },
@@ -170,8 +176,13 @@ module.exports = {
                               type: DESCRIPTION_PARAGRAPH_CONTEXT,
                               content: [
                                 {
-                                  type: WORD_LEXEME,
-                                  content: 'even'
+                                  type: DESCRIPTION_TEXT_CONTEXT,
+                                  content: [
+                                    {
+                                      type: WORD_LEXEME,
+                                      content: 'even'
+                                    }
+                                  ]
                                 }
                               ]
                             },
@@ -179,8 +190,13 @@ module.exports = {
                               type: DESCRIPTION_PARAGRAPH_CONTEXT,
                               content: [
                                 {
-                                  type: WORD_LEXEME,
-                                  content: 'multiline'
+                                  type: DESCRIPTION_TEXT_CONTEXT,
+                                  content: [
+                                    {
+                                      type: WORD_LEXEME,
+                                      content: 'multiline'
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -268,26 +284,38 @@ module.exports = {
                           type: DESCRIPTION_PARAGRAPH_CONTEXT,
                           content: [
                             {
-                              type: WORD_LEXEME,
-                              content: 'Context'
-                            },
-                            {
-                              type: WORD_LEXEME,
-                              content: 'description'
+                              type: DESCRIPTION_TEXT_CONTEXT,
+                              content: [
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'Context'
+                                },
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'description'
+                                }
+                              ]
                             }
+
                           ]
                         },
                         {
                           type: DESCRIPTION_PARAGRAPH_CONTEXT,
                           content: [
                             {
-                              type: WORD_LEXEME,
-                              content: 'goes'
-                            },
-                            {
-                              type: WORD_LEXEME,
-                              content: 'here'
+                              type: DESCRIPTION_TEXT_CONTEXT,
+                              content: [
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'goes'
+                                },
+                                {
+                                  type: WORD_LEXEME,
+                                  content: 'here'
+                                }
+                              ]
                             }
+
                           ]
                         }
                       ]
@@ -339,12 +367,17 @@ module.exports = {
                               type: DESCRIPTION_PARAGRAPH_CONTEXT,
                               content: [
                                 {
-                                  type: WORD_LEXEME,
-                                  content: 'another'
-                                },
-                                {
-                                  type: WORD_LEXEME,
-                                  content: 'description'
+                                  type: DESCRIPTION_TEXT_CONTEXT,
+                                  content: [
+                                    {
+                                      type: WORD_LEXEME,
+                                      content: 'another'
+                                    },
+                                    {
+                                      type: WORD_LEXEME,
+                                      content: 'description'
+                                    }
+                                  ]
                                 }
                               ]
                             }
