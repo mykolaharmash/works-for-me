@@ -9,13 +9,11 @@ function findUpdates(commitsList) {
   });
 }
 
-module.exports = function (setupFilename) {
-  let commitsList = gitApi.getCommitsList(
-    `setups/${ setupFilename }`
-  );
+module.exports = function (filePath) {
+  let commitsList = gitApi.getCommitsList(filePath);
 
   if (!commitsList.length) {
-    throw new Error(`No commits for setup: ${ setupFilename }`);
+    throw new Error(`No commits for setup: ${ filePath }`);
   }
 
   let updatesList = findUpdates(commitsList);

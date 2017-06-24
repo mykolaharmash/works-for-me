@@ -15,21 +15,23 @@ body {
 }
 
 .setup-root {
-  width: 700px;
-  margin: 0 auto;
-  padding: 0 30px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
   text-decoration: none;
 }
+
 a:link {
   color: #007AFF;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 a:visited {
   color: #5856D6;
 }
@@ -41,6 +43,9 @@ a:visited {
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 0.85rem;
   line-height: 1.3em;
   letter-spacing: 0.016em;
@@ -48,14 +53,28 @@ a:visited {
 }
 
 .description-paragraph {
+  width: 700px;
   margin: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
+
 .description-paragraph + .description-paragraph {
   margin-top: 16px;
 }
 
+.image {
+  margin: 30px 0;
+}
+
+.image__picture {
+  width: 100%;
+}
+
 .bio {
-  padding: 94px 0;
+  width: 700px;
+  padding: 94px 30px;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -98,7 +117,6 @@ a:visited {
 }
 
 .setup {
-  max-width: 700px;
   word-wrap: break-word;
 }
 
@@ -107,24 +125,44 @@ a:visited {
 }
 
 .environment-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 24px;
 }
 
 .environment-title {
+  width: 700px;
   margin: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
   font-size: 1.75rem;
   font-weight: 300;
 }
 
 .environment-header .description {
   margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tool-item .description {
   margin-top: 4px;
 }
+
 .tool-item + .tool-item {
   margin-top: 16px;
+}
+
+.tool-head {
+  width: 700px;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 .tool-names-list {

@@ -53,13 +53,13 @@ describe('get setup metadata', () => {
         },
       ]
     };
-    const setupFilenameMock = 'some-guy.setup';
+    const setupPathMock = '/some/path/setups/some-guy.setup';
 
     getCommitsListStub
-      .withArgs(`setups/${ setupFilenameMock }`)
+      .withArgs(setupPathMock)
       .returns(commitsListMock);
 
-    let metadata = getSetupMetadata(setupFilenameMock);
+    let metadata = getSetupMetadata(setupPathMock);
 
     assert.deepEqual(metadata.updates, metadataStub.updates);
   });
@@ -89,13 +89,13 @@ describe('get setup metadata', () => {
         message: 'Initial'
       }
     };
-    const setupFilenameMock = 'some-guy.setup';
+    const setupPathMock = '/some/path/setups/some-guy.setup';
 
     getCommitsListStub
-      .withArgs(`setups/${ setupFilenameMock }`)
+      .withArgs(setupPathMock)
       .returns(commitsListMock);
 
-    let metadata = getSetupMetadata(setupFilenameMock);
+    let metadata = getSetupMetadata(setupPathMock);
 
     assert.deepEqual(metadata.initial, metadataStub.initial);
   });

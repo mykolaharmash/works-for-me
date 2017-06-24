@@ -7,6 +7,7 @@ const generateSetupItemHtml = require('./setup-html')
 const generateSetupsListAst = require('./setups-list-ast')
 const generateSetupsListHtml = require('./setups-list-html')
 const getSetupMetadata = require('./get-setup-metadata')
+const copySetups = require('./copy-setups')
 const copyStatics = require('./copy-statics')
 const generateRssAst = require('./rss-ast')
 const generateRssXml = require('./rss-xml')
@@ -20,6 +21,7 @@ function readSetupContent (filePath) {
   let content = fs.readFileSync(filePath, 'utf8')
 
   return {
+    path: filePath,
     name: pathInfo.name,
     filename: pathInfo.base,
     content
@@ -56,9 +58,9 @@ function saveSetupAst (astItem) {
 }
 
 function saveSetupHtml (setupsDistDir, htmlItem) {
-  let filename = `${htmlItem.name}.html`
+  let filename = `${ htmlItem.name }.html`
 
-  fs.writeFileSync(`${setupsDistDir}/${filename}`, htmlItem.content)
+  fs.writeFileSync(`${ setupsDistDir }/${ htmlItem.name }/${ filename }`, htmlItem.content)
 }
 
 function saveSetupsListAst (setupsListAst) {
@@ -75,16 +77,26 @@ function saveSetupsListHtml (distDir, listHtml) {
 }
 
 function readSetupsContent (setupsSrcDir) {
-  return fs
+  let setupsDirsList = fs
     .readdirSync(setupsSrcDir)
     .map(item => path.resolve(setupsSrcDir, item))
+    .filter(itemPath => fs.statSync(itemPath).isDirectory())
+
+  return setupsDirsList
+    .reduce((items, setupDir) => {
+      return items.concat(
+        fs.readdirSync(setupDir)
+          .map((item) => path.resolve(setupDir, item))
+      )
+    }, [])
     .filter(itemPath => fs.statSync(itemPath).isFile())
+    .filter(filePath => /\.setup$/.test(filePath))
     .map(readSetupContent)
 }
 
-function getSetupsMetadata (setupsContent) {
-  return setupsContent
-    .map(contentItem => getSetupMetadata(contentItem.filename))
+function getSetupsMetadata (setupsContentItems) {
+  return setupsContentItems
+    .map(contentItem => getSetupMetadata(contentItem.path))
 }
 
 function generateSetupsAst (setupsContent, setupsMetadata) {
@@ -121,7 +133,8 @@ function generate (customDistDir) {
   let setupsAst
 
   fs.ensureDirSync(distDir)
-  fs.ensureDirSync(setupsDistDir)
+
+  copySetups(distDir)
 
   setupsContent = readSetupsContent(setupsSrcDir)
   setupsMetadata = getSetupsMetadata(setupsContent)
