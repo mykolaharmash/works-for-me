@@ -207,30 +207,35 @@
   margin-top: 4px;
 }
 
-.context-cheat,
-.tool-cheat {
-  margin-left: 20px;
+.cheatsheet {
+  flex-wrap: wrap;
 }
 
-.cheat-title {
-  font-size: 0.75rem;
+.cheatsheet__item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.cheatsheet__title {
   margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
-.cheat-example {
-  min-width: 300px;
+.cheatsheet__example {
+  width: 397px;
 }
 
-.cheat-example + .cheat-example {
+.cheatsheet__example + .cheatsheet__example {
   margin-top: 8px;
 }
 
-.cheat-example-title {
+.cheatsheet__example-title {
   color: #525252;
 }
 
-.cheat-example-body {
-  padding: 8px 14px;
+.cheatsheet__example-body {
+  padding: 21px 23px;
   white-space: nowrap;
   font-family: monospace;
   line-height: 1.5em;
@@ -239,7 +244,12 @@
   background-color: #F6F8FA;
 }
 
-.example-data {
-  color: #0086B3;
+.cheatsheet__example-syntax {
+  color: #000000;
+  font-weight: bold;
+}
+
+.cheatsheet__example-data {
+  color: #797a7b;
 }
 

@@ -60,81 +60,143 @@
       </div>
 
       <div class="cheatsheet hidden">
-        <div class="bio-cheat">
-          <div class="cheat-title">
+        <div class="cheatsheet__item bio-cheat">
+          <div class="cheatsheet__title">
             Author's info
           </div>
 
-          <div class="cheat-example">
-            <div class="cheat-example-body">
-              name: <span class="example-data">John Doe</span><br>
-              occupation: <span class="example-data">Designer</span><br>
-              location: <span class="example-data">Berlin, Germany</span><br>
-              link:
-              <span class="example-data">https://twitter.com/johndoe</span><br>
-              link: <span class="example-data">https://johns-blog.com</span>
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">name:</span>
+              <span class="cheatsheet__example-data">John Doe</span><br>
+
+              <span class="cheatsheet__example-syntax">occupation:</span>
+              <span class="cheatsheet__example-data">Designer</span><br>
+
+              <span class="cheatsheet__example-syntax">location:</span>
+              <span class="cheatsheet__example-data">Berlin, Germany</span><br>
+
+              <span class="cheatsheet__example-syntax">link:</span>
+              <span class="cheatsheet__example-data">https://twitter.com/johndoe</span><br>
+
+              <span class="cheatsheet__example-syntax">link:</span>
+              <span class="cheatsheet__example-data">https://johns-blog.com</span><br>
+              <br>
+              <span class="cheatsheet__example-data">Optional description goes here&hellip;</span>
             </div>
           </div>
         </div>
 
-        <div class="context-cheat">
-          <div class="cheat-title">
-            Optional grouping title
-          </div>
-
-          <div class="cheat-example">
-            <div class="cheat-example-body">
-              -- <span class="example-data">Programming</span>
-            </div>
-          </div>
-
-          <div class="cheat-example">
-            <div class="cheat-example-body">
-              -- <span class="example-data">Video editing</span>
-            </div>
-          </div>
-
-          <div class="cheat-example">
-            <div class="cheat-example-title">
-              with a description
-            </div>
-
-            <div class="cheat-example-body">
-              -- <span class="example-data">On my phone</span><br>
-              <span class="example-data">My phone is...</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tool-cheat">
-          <div class="cheat-title">
+        <div class="cheatsheet__item tool-cheat">
+          <div class="cheatsheet__title">
             Tool
           </div>
 
-          <div class="cheat-example">
-            <div class="cheat-example-body">
-              > <span class="example-data">WebStorm (https://www.jetbrains.com/webstorm/)</span>
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">></span>
+              <span class="cheatsheet__example-data">Sketch</span>
+              <span class="cheatsheet__example-syntax">(</span><!--
+              --><span class="cheatsheet__example-data">https://www.sketchapp.com</span><!--
+              --><span class="cheatsheet__example-syntax">)</span>
             </div>
           </div>
 
-          <div class="cheat-example">
-            <div class="cheat-example-title">
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-title">
               with a description
             </div>
 
-            <div class="cheat-example-body">
-              > <span class="example-data">Sketch</span><br>
-              <span class="example-data">Couple of useful plugins...</span>
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">></span>
+              <span class="cheatsheet__example-data">WebStorm</span><br>
+              <br>
+              <span class="cheatsheet__example-data">Couple of useful plugins...</span>
             </div>
           </div>
 
-          <div class="cheat-example">
-            <div class="cheat-example-title">
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-title">
               inline similar tools
             </div>
 
-            <div class="cheat-example-body">
-              > <span class="example-data">Telegram (https://telegram.org/), Slack</span>
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">></span>
+              <span class="cheatsheet__example-data">Telegram, Slack</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheatsheet__item context-cheat">
+          <div class="cheatsheet__title">
+            Optional grouping title
+          </div>
+
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">--</span>
+              <span class="cheatsheet__example-data">Programming</span>
+            </div>
+          </div>
+
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">--</span>
+              <span class="cheatsheet__example-data">Video editing</span>
+            </div>
+          </div>
+
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-title">
+              with a description
+            </div>
+
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">--</span>
+              <span class="cheatsheet__example-data">On my phone</span><br>
+              <br>
+              <span class="cheatsheet__example-data">My phone is...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheatsheet__item links-cheat">
+          <div class="cheatsheet__title">
+            Links
+          </div>
+
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-title">
+              within any description
+            </div>
+
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax"><</span><!--
+              --><span class="cheatsheet__example-data">My dotfiles</span>
+              <span class="cheatsheet__example-syntax">(</span><!--
+              --><span class="cheatsheet__example-data">https://git.io/vHSaX</span><!--
+              --><span class="cheatsheet__example-syntax">)</span><!--
+              --><span class="cheatsheet__example-syntax">></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheatsheet__item images-cheat">
+          <div class="cheatsheet__title">
+            Images
+          </div>
+
+          <div class="cheatsheet__example">
+            <div class="cheatsheet__example-title">
+              placed on separate line
+            </div>
+
+            <div class="cheatsheet__example-body">
+              <span class="cheatsheet__example-syntax">#</span>
+              <span class="cheatsheet__example-data">Desktop photo</span>
+              <span class="cheatsheet__example-syntax">(</span><!--
+              --><span class="cheatsheet__example-data">./my-desktop.jpg</span><!--
+              --><span class="cheatsheet__example-syntax">)</span>
             </div>
           </div>
         </div>
