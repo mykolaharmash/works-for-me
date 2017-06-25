@@ -20,20 +20,17 @@ body {
   align-items: center;
 }
 
-a {
+a:link,
+a:visited {
+  padding-bottom: 2px;
+  color: #0084D6;
+  border-bottom: 1px solid #CDE7F7;
+  font-weight: 400;
   text-decoration: none;
 }
 
-a:link {
-  color: #007AFF;
-}
-
 a:hover {
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #5856D6;
+  border-color: #0084D6;
 }
 
 .goto-list {
