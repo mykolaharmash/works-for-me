@@ -1,3 +1,13 @@
+@media screen and (max-width: 1340px) {
+  .bio {
+    position: static;
+    width: 700px;
+    padding: 0 30px;
+    margin-bottom: 28px;
+    box-sizing: border-box;
+  }
+}
+
 @media screen and (max-width: 700px) {
   body {
     align-items: flex-start;
@@ -5,13 +15,11 @@
 
   .goto-list {
     position: static;
-    padding: 30px 30px 0 30px;
   }
 
   .bio {
     width: 100%;
     text-align: left;
-    padding-top: 30px;
   }
 
   .latest-update {

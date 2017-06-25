@@ -15,9 +15,11 @@ body {
 }
 
 .setup-root {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 a:link,
@@ -34,9 +36,13 @@ a:hover {
 }
 
 .goto-list {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 .description {
@@ -69,28 +75,29 @@ a:hover {
 }
 
 .bio {
-  width: 700px;
-  padding: 94px 30px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 320px;
   box-sizing: border-box;
-  text-align: center;
 }
 
-.bio > .description {
-  text-align: left;
-  margin-top: 38px;
-  margin-bottom: 0;
+.bio + .description {
+  flex-shrink: 0;
+  width: 100%;
+  margin-bottom: 48px;
 }
 
 .name {
   margin: 0 0 8px 0;
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .occupation,
 .location,
 .link {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.25em;
 }
 
@@ -133,8 +140,8 @@ a:hover {
   margin: 0;
   padding: 0 30px;
   box-sizing: border-box;
-  font-size: 1.75rem;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .environment-header .description {
@@ -170,4 +177,9 @@ a:hover {
 
 .tool-names-list-separator {
   margin-right: 8px;
+}
+
+a.tool-name,
+span.tool-name {
+  font-weight: 600;
 }

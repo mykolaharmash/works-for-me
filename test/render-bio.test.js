@@ -43,7 +43,7 @@ describe('bio renderer', () => {
     assert.equal(html, outputEmpty, jsonBeautify(testSets.basic));
   });
 
-  it('renders bio with trailing description', () => {
+  it('renders bio and trailing description as sibling elements', () => {
     let html = render(inputTrailingDescription, renderersMap);
 
     assert.equal(
