@@ -140,6 +140,22 @@
   opacity: 0.4;
 }
 
+.sheet-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  transition-property: opacity;
+  transition-duration: 150ms;
+}
+
+.sheet-backdrop.hidden {
+  opacity: 0;
+}
+
 .images,
 .cheatsheet {
   display: flex;
@@ -149,7 +165,7 @@
   width: 100%;
   padding: 30px 147px 60px 147px;
   background-color: #FFFFFF;
-  box-shadow: 0 0 120px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 120px rgba(0, 0, 0, 0.2);
   font-size: 15px;
   transition-property: transform, opacity;
   transition-duration: 250ms;

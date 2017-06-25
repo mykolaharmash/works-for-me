@@ -1,25 +1,28 @@
-let render = require('./../lib/render');
+let render = require('./../lib/render')
 
-let playgroundBodyRenderer = require('./../lib/renderers/playgrount-setup-body');
-let bioRenderer = require('./../lib/renderers/bio');
-let bioLineRenderer = require('./../lib/renderers/bio-line');
-let setupRenderer = require('./../lib/renderers/setup');
-let environmentRenderer = require('./../lib/renderers/environment');
-let descriptionRenderer = require('./../lib/renderers/description');
-let environmentHeaderRenderer = require('./../lib/renderers/environment-header');
-let environmentTitleRenderer = require('./../lib/renderers/environment-title');
-let toolsListRenderer = require('./../lib/renderers/tools-list');
-let toolItemRenderer = require('./../lib/renderers/tool-item');
-let toolHeadRenderer = require('./../lib/renderers/tool-head');
-let toolNamesListRenderer = require('./../lib/renderers/tool-names-list');
-let toolNameRenderer = require('./../lib/renderers/tool-name');
-let toolTitleRenderer = require('./../lib/renderers/tool-title');
-let toolLinkRenderer = require('./../lib/renderers/tool-link');
-let descriptionParagraphRenderer = require('./../lib/renderers/description-paragraph');
-let descriptionLinkRenderer = require('./../lib/renderers/description-link');
-let descriptionLinkTitleRenderer = require('./../lib/renderers/description-link-title');
-let descriptionLinkUrlRenderer = require('./../lib/renderers/description-link-url');
-let descriptionTextRenderer = require('./../lib/renderers/description-text');
+let playgroundBodyRenderer = require('./../lib/renderers/playgrount-setup-body')
+let bioRenderer = require('./../lib/renderers/bio')
+let bioLineRenderer = require('./../lib/renderers/bio-line')
+let setupRenderer = require('./../lib/renderers/setup')
+let environmentRenderer = require('./../lib/renderers/environment')
+let descriptionRenderer = require('./../lib/renderers/description')
+let environmentHeaderRenderer = require('./../lib/renderers/environment-header')
+let environmentTitleRenderer = require('./../lib/renderers/environment-title')
+let toolsListRenderer = require('./../lib/renderers/tools-list')
+let toolItemRenderer = require('./../lib/renderers/tool-item')
+let toolHeadRenderer = require('./../lib/renderers/tool-head')
+let toolNamesListRenderer = require('./../lib/renderers/tool-names-list')
+let toolNameRenderer = require('./../lib/renderers/tool-name')
+let toolTitleRenderer = require('./../lib/renderers/tool-title')
+let toolLinkRenderer = require('./../lib/renderers/tool-link')
+let descriptionParagraphRenderer = require('./../lib/renderers/description-paragraph')
+let descriptionLinkRenderer = require('./../lib/renderers/description-link')
+let descriptionLinkTitleRenderer = require('./../lib/renderers/description-link-title')
+let descriptionLinkUrlRenderer = require('./../lib/renderers/description-link-url')
+let descriptionTextRenderer = require('./../lib/renderers/description-text')
+let playgroundImageRenderer = require('./../lib/renderers/playground-image')
+let imageTitleRenderer = require('./../lib/renderers/image-title')
+let imageUrlRenderer = require('./../lib/renderers/image-url')
 
 const {
   BODY_RENDERER_KEY,
@@ -41,8 +44,11 @@ const {
   DESCRIPTION_LINK_RENDERER_KEY,
   DESCRIPTION_LINK_TITLE_RENDERER_KEY,
   DESCRIPTION_LINK_URL_RENDERER_KEY,
-  DESCRIPTION_TEXT_RENDERER_KEY
-} = require('./../lib/constants');
+  DESCRIPTION_TEXT_RENDERER_KEY,
+  IMAGE_RENDERER_KEY,
+  IMAGE_TITLE_RENDERER_KEY,
+  IMAGE_URL_RENDERER_KEY
+} = require('./../lib/constants')
 
 const renderersMap = {
   [BODY_RENDERER_KEY]: playgroundBodyRenderer,
@@ -64,9 +70,12 @@ const renderersMap = {
   [DESCRIPTION_LINK_RENDERER_KEY]: descriptionLinkRenderer,
   [DESCRIPTION_LINK_TITLE_RENDERER_KEY]: descriptionLinkTitleRenderer,
   [DESCRIPTION_LINK_URL_RENDERER_KEY]: descriptionLinkUrlRenderer,
-  [DESCRIPTION_TEXT_RENDERER_KEY]: descriptionTextRenderer
-};
+  [DESCRIPTION_TEXT_RENDERER_KEY]: descriptionTextRenderer,
+  [IMAGE_RENDERER_KEY]: playgroundImageRenderer(window),
+  [IMAGE_TITLE_RENDERER_KEY]: imageTitleRenderer,
+  [IMAGE_URL_RENDERER_KEY]: imageUrlRenderer
+}
 
 module.exports = function (tree = {}) {
-  return render(tree, renderersMap, false);
-};
+  return render(tree, renderersMap, false)
+}
