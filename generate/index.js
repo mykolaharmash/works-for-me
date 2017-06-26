@@ -15,7 +15,6 @@ const createPlayground = require('./create-playground')
 const jsonBeautify = require('../lib/json-beautify')
 const { DIST_FOLDER } = require('../lib/constants')
 
-
 function readSetupContent (filePath) {
   let pathInfo = path.parse(filePath)
   let content = fs.readFileSync(filePath, 'utf8')
