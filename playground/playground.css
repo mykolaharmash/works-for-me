@@ -1,40 +1,9 @@
-.header {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  flex-shrink: 0;
-  width: 100%;
-  min-width: 1200px;
-  padding: 0 30px 0 8px;
+.setup-root > .bio {
+  position: static;
+  width: 700px;
+  padding: 0 30px;
+  margin-bottom: 28px;
   box-sizing: border-box;
-}
-
-.logo:link,
-.logo:visited {
-  width: 139px;
-  padding: 8px 0 14px 0;
-  border: none;
-  color: #000000;
-  font-size: 25px;
-  font-weight: 800;
-  line-height: 1em;
-  text-decoration: none;
-}
-
-.logo:hover {
-  color: #4A4A4A;
-}
-
-.navigation {
-  flex-grow: 1;
-}
-
-.navigation-item {
-  font-size: 16px;
-}
-
-.navigation-item + .navigation-item {
-  margin-left: 20px;
 }
 
 .playground {
@@ -77,8 +46,10 @@
 }
 
 .controls {
+  align-self: center;
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 .upload-images {
@@ -250,6 +221,6 @@
 }
 
 .cheatsheet__example-data {
-  color: #797a7b;
+  color: #797A7B;
 }
 

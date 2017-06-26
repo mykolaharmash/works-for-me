@@ -200,5 +200,6 @@ function renderSetup (content) {
 let initialValue = window.sessionStorage.getItem(CONTENT_STORAGE_KEY) || DEFAULT_TEXT
 
 inputElement.value = initialValue
+setTimeout(() => inputElement.scrollTop = 0)
 renderSetup(initialValue)
 inputElement.focus()

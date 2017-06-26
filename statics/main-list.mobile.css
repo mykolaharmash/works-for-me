@@ -1,43 +1,69 @@
-@media screen and (max-width: 800px) {
-  .header {
-    padding: 65px 0;
+@media screen and (max-width: 1100px) {
+  .description {
+    position: static;
+    width: 660px;
+    padding: 0 30px;
+    margin-top: 50px;
+    box-sizing: border-box;
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 894px) {
+  .header {
+    align-self: center;
+    width: 660px;
+    padding: 8px 30px;
+  }
+}
+
+@media screen and (max-width: 660px) {
   body {
     align-items: flex-start;
   }
 
-  .external-links {
-    flex-direction: column;
-    padding-top: 20px;
-  }
-
-  .external-link-item {
-    padding: 10px 0;
-  }
-
-  .external-link-item + .external-link-item {
-    margin-left: 0;
-  }
-
   .header {
-    text-align: left;
-    padding: 30px 0 48px 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
   }
 
-  .main,
-  .links {
+  .logo {
+    display: none;
+  }
+
+  .logo.inline {
+    display: block;
+    width: 100%;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .navigation-item + .navigation-item {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .description {
+    width: 100%;
+    margin: 20px 0 50px 0;
+  }
+
+  .main {
     width: 100%;
   }
 
   .setup-item {
     display: flex;
     flex-direction: column-reverse;
+    align-items: flex-start;
   }
 
-  .item-date {
-    text-align: left;
+  .setup-item__date {
+    display: none;
   }
 }

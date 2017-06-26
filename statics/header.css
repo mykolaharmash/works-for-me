@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  align-self: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.logo:link,
+.logo:visited {
+  width: 139px;
+  border: none;
+  color: #000000;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1em;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: #4A4A4A;
+}
+
+.logo.inline {
+  display: none;
+}
+
+.navigation {
+  flex-grow: 1;
+}
+
+.navigation-item {
+  font-size: 16px;
+}
+
+.navigation-item.current {
+  font-weight: 400;
+}
+
+.navigation-item + .navigation-item {
+  margin-left: 20px;
+}

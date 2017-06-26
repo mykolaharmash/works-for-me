@@ -1,48 +1,10 @@
-html {
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 21px;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-}
-
 .setup-root {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-}
-
-a:link,
-a:visited {
-  padding-bottom: 2px;
-  color: #0084D6;
-  border-bottom: 1px solid #CDE7F7;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-a:hover {
-  border-color: #0084D6;
-}
-
-.goto-list {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100px;
-  padding: 0 30px;
-  box-sizing: border-box;
+  margin-top: 40px;
 }
 
 .description {
@@ -67,18 +29,31 @@ a:hover {
 }
 
 .image {
-  margin: 30px 0;
+  margin: 0;
 }
 
 .image__picture {
   width: 100%;
 }
 
+.description-paragraph + .image,
+.image + .description-paragraph {
+  margin-top: 30px;
+}
+
 .bio {
   position: absolute;
   top: 0;
-  left: 30px;
+  right: 30px;
   width: 320px;
+  box-sizing: border-box;
+}
+
+.bio.static {
+  position: static;
+  width: 700px;
+  padding: 0 30px;
+  margin-bottom: 28px;
   box-sizing: border-box;
 }
 
