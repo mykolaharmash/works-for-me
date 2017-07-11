@@ -17,7 +17,6 @@ let toolNamesListRenderer = require('./../lib/renderers/tool-names-list')
 let toolNameRenderer = require('./../lib/renderers/tool-name')
 let toolTitleRenderer = require('./../lib/renderers/tool-title')
 let toolLinkRenderer = require('./../lib/renderers/tool-link')
-let setupLatestUpdateRenderer = require('./../lib/renderers/latest-update')
 let descriptionParagraphRenderer = require('./../lib/renderers/description-paragraph')
 let descriptionLinkRenderer = require('./../lib/renderers/description-link')
 let descriptionLinkTitleRenderer = require('./../lib/renderers/description-link-title')
@@ -45,7 +44,6 @@ const {
   TOOL_NAME_RENDERER_KEY,
   TOOL_TITLE_RENDERER_KEY,
   TOOL_LINK_RENDERER_KEY,
-  SETUP_LATEST_UPDATE_RENDERER_KEY,
   DESCRIPTION_PARAGRAPH_RENDERER_KEY,
   DESCRIPTION_LINK_RENDERER_KEY,
   DESCRIPTION_LINK_TITLE_RENDERER_KEY,
@@ -74,7 +72,6 @@ const renderersMap = {
   [TOOL_NAME_RENDERER_KEY]: toolNameRenderer,
   [TOOL_TITLE_RENDERER_KEY]: toolTitleRenderer,
   [TOOL_LINK_RENDERER_KEY]: toolLinkRenderer,
-  [SETUP_LATEST_UPDATE_RENDERER_KEY]: setupLatestUpdateRenderer,
   [DESCRIPTION_PARAGRAPH_RENDERER_KEY]: descriptionParagraphRenderer,
   [DESCRIPTION_LINK_RENDERER_KEY]: descriptionLinkRenderer,
   [DESCRIPTION_LINK_TITLE_RENDERER_KEY]: descriptionLinkTitleRenderer,
