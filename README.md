@@ -41,7 +41,7 @@ name: John 🚀 Doe
 
 Try to copy it into [the playground](https://works-for-me.github.io/playground/playground.html) and see it works.
 
-#### Author's information
+### Author's information
 
 You can add more information about yourself besides just a name.<br>
 Supported lines are:
@@ -62,7 +62,7 @@ link: https://works-for-me.github.io
 Something about you …
 ```
 
-#### Tools
+### Tools
 
 After author's information goes the list of your tools.
 
@@ -90,7 +90,7 @@ You can list similar tools in one line:
 ```
 
 
-#### Titles
+### Titles
 
 Tools can be grouped with a titles if you want to have setup more organised.
 
@@ -111,7 +111,7 @@ My laptop is MacBook Pro (Retina, 15-inch, Mid 2015), 2,5 GHz Intel Core i7, 16G
 After a title goes the list of related tools.
 
 
-#### Links
+### Links
 
 You can leave links to external resources within any free text description (for author's info, tools or titles).
 
@@ -122,7 +122,7 @@ Check out my <GitHub (https://github.com/nik-garmash)>
 Link itself is wrapped with ```<>```, inside are title and URL wrapped with ```()```.
 
 
-#### Images
+### Images
 
 To make setup even more interesting to read you can add images. Start a line with ```#``` symbol followed by title and image URL.
 
@@ -135,7 +135,7 @@ Title is a text which describes what's on the image. It's very important for scr
 URL is wrapped with ```()``` and it refers to images you put inside your setup folder. External URLs are also good if you prefer.
 
 
-#### Comments
+### Comments
 
 ```
 // some reminder …
@@ -146,7 +146,7 @@ Such line won't be rendered.
 
 ## Syntax cheatsheet
 
-#### Author's information
+### Author's information
 
 ```
 name: John 🚀 Doe
@@ -157,7 +157,7 @@ link: https://works-for-me.github.io
 Free text description …
 ```
 
-#### Tools
+### Tools
 
 ```
 > Tool Title
@@ -173,7 +173,7 @@ Free text description …
 Free text description …
 ```
 
-#### Titles
+### Titles
 
 ```
 -- Groupping title
@@ -185,7 +185,7 @@ Free text description …
 Free text description …
 ```
 
-#### Links
+### Links
 
 ```
 <link title (https://link.url)>
@@ -196,7 +196,7 @@ some text <link title (https://link.url)> more text
 ```
 
 
-#### Images
+### Images
 
 ```
 # Image title (./image.png)
