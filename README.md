@@ -9,14 +9,14 @@ Collection of great software setups. Way to discover and share useful tools.
 
 ## Index
 
-- [How to contribute a setup](#how-to-add-my-setup)
+- [How to contribute a setup](#how-to-contribute-a-setup)
 - [Guide to write a setup](#guide-to-write-a-setup)
-- [Syntax Cheatsheet](#syntax-sheatsheet)
-    - [Author's information](#authors-information)
-    - [Tools](#tools)
-    - [Titles](#titles)
-    - [Links](#links)
-    - [Images](#images)
+- [Syntax Cheatsheet](#syntax-cheatsheet)
+    - [Author's information](#authors-information-syntax)
+    - [Tools](#tools-syntax)
+    - [Titles](#titles-syntax)
+    - [Links](#links-syntax)
+    - [Images](#images-syntax)
 - [What goes to RSS-feed](#what-goes-to-rss-feed)
 
 
@@ -146,7 +146,7 @@ Such line won't be rendered.
 
 ## Syntax cheatsheet
 
-### Author's information
+### Author's information syntax
 
 ```
 name: John 🚀 Doe
@@ -157,7 +157,7 @@ link: https://works-for-me.github.io
 Free text description …
 ```
 
-### Tools
+### Tools syntax
 
 ```
 > Tool Title
@@ -173,7 +173,7 @@ Free text description …
 Free text description …
 ```
 
-### Titles
+### Titles syntax
 
 ```
 -- Groupping title
@@ -185,7 +185,7 @@ Free text description …
 Free text description …
 ```
 
-### Links
+### Links syntax
 
 ```
 <link title (https://link.url)>
@@ -196,7 +196,7 @@ some text <link title (https://link.url)> more text
 ```
 
 
-### Images
+### Images syntax
 
 ```
 # Image title (./image.png)
