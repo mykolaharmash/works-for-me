@@ -175,7 +175,7 @@ module.exports = {
           content: [
             {
               type: SETUP_URL_CONTEXT,
-              content: `${ BASE_URL }/setups/john-doe.html`
+              content: `${ BASE_URL }/setups/john-doe/john-doe.html`
             }
           ]
         }
@@ -298,7 +298,7 @@ module.exports = {
           content: [
             {
               type: SETUP_URL_CONTEXT,
-              content: `${ BASE_URL }/setups/john-smith.html`
+              content: `${ BASE_URL }/setups/john-smith/john-smith.html`
             }
           ]
         }
@@ -421,7 +421,7 @@ module.exports = {
           content: [
             {
               type: SETUP_URL_CONTEXT,
-              content: `${ BASE_URL }/setups/john-smith.html`
+              content: `${ BASE_URL }/setups/john-smith/john-smith.html`
             }
           ]
         }
