@@ -1,79 +1,211 @@
 ### Works For Me
 
-A nice way to discover new tools and share ones which work for you. 
+Collection of great software setups. Way to discover and share useful tools.
 
-All contributed setups are compiled to [Works For Me site](https://works-for-me.github.io).<br>
-Try [the Playground](https://works-for-me.github.io/playground/playground.html) to see how your setup will look like.<br>
-Subscribe to [RSS-feed](https://works-for-me.github.io/rss.xml) to get new setups and updates to existing ones.
+[Works For Me site](https://works-for-me.github.io) compiles all contributes setups in a readable way.<br>
+[RSS-feed](https://works-for-me.github.io/rss.xml) lets you subscribe to new setups and updates to existing ones.<br>
+[The Playground](https://works-for-me.github.io/playground/playground.html) helps you to see how setup is going to look like.
+
 
 ## Index
 
-- [How to add my setup?](#how-to-add-my-setup)
-- [Setup structure](#setup-structure)
+- [How to contribute a setup](#how-to-add-my-setup)
+- [Guide to write a setup](#guide-to-write-a-setup)
+- [Syntax Cheatsheet](#syntax-sheatsheet)
+    - [Author's information](#authors-information)
+    - [Tools](#tools)
+    - [Titles](#titles)
+    - [Links](#links)
+    - [Images](#images)
 - [What goes to RSS-feed](#what-goes-to-rss-feed)
 
-## How to add my setup?
 
-1. Fork  [original repository](https://github.com/nik-garmash/works-for-me)
-1. Create a new file within `setups/` folder and describe your setup there
-1. Make a Pull Request
+## How to contribute a setup
 
-## Setup structure
+Make a Pull Request to the [original repository](https://github.com/nik-garmash/works-for-me) with a new folder inside [setups/](https://github.com/nik-garmash/works-for-me/tree/master/setups) directory.
 
-Start with little information about you.
-Essentially, only name is required to make sense.
+The new folder should contain a ```your-name.setup``` file (e.g. john-doe.setup) and optionally images.
+
+
+## Guide to write a setup
+
+Setup should start with a little information about yourself, followed by the list of tools you are using.
+
+This is how very minimal setup may look like:
 
 ```
 name: John 🚀 Doe
-occupation: Software Engineer 
-location: Berlin, Germany
-link: https://www.google.com/search?q=john+doe
+
+> Photoshop (http://www.adobe.com/de/products/photoshop.html)
 ```
 
-![Rendered author's information](./bio-rendered.png)
- 
+Try to copy it into [the playground](https://works-for-me.github.io/playground/playground.html) and see it works.
 
-Add your tools.
+#### Author's information
+
+You can add more information about yourself besides just a name.<br>
+Supported lines are:
+
+- name
+- occupation
+- location
+- link — personal blog, twitter, github etc. You can add multiple of those. 
+
+Also, those lines can be followed by some free text about yourself.
+
+```
+name: John 🚀 Doe
+occupation: Designer
+location: Berlin, Germany
+link: https://works-for-me.github.io
+
+Something about you …
+```
+
+#### Tools
+
+After author's information goes the list of your tools.
+
+Each tool starts with ```>``` symbol.
+
+```
+> WebStorm
+```
+
+It can have optional link and free text description:
 
 ```
 > WebStorm (https://www.jetbrains.com/webstorm/)
 
-My main work instrument.
-Has pretty much everything out of the box, but still I have some usefull plugins installed:
+Usefull plugins installed:
 • IdeaVim
 • Markdown Support
-...
+…
 ```
 
-![Rendered tool with description](./tool-rendered.png)
+You can list similar tools in one line:
+
+```
+> Slack, Telegram (https://telegram.org)
+```
 
 
-Optionally add grouping titles.
+#### Titles
+
+Tools can be grouped with a titles if you want to have setup more organised.
+
+Title starts with ```--```.
+
+```
+-- Programming
+```
+
+Just like with tools, title can be followed by some description.
 
 ```
 -- Programming
 
 My laptop is MacBook Pro (Retina, 15-inch, Mid 2015), 2,5 GHz Intel Core i7, 16GB of RAM.
-
-> iTerm 2 (https://www.iterm2.com/), tmux (https://tmux.github.io/)
-
-> Docker
-
-All software with more or less heavy dependence goes into containers to not pollute the system...
 ```
 
-![Rendered grouping title with corresponding tools](./context-rendered.png)
+After a title goes the list of related tools.
 
-You can leave a comment inside setup.
+
+#### Links
+
+You can leave links to external resources within any free text description (for author's info, tools or titles).
+
 ```
-// Add some description...
+Check out my <GitHub (https://github.com/nik-garmash)>
+```
+
+Link itself is wrapped with ```<>```, inside are title and URL wrapped with ```()```.
+
+
+#### Images
+
+To make setup even more interesting to read you can add images. Start a line with ```#``` symbol followed by title and image URL.
+
+```
+# My desktop screenshot (./desktop.png)
+```
+
+Title is a text which describes what's on the image. It's very important for screen-reader users, do not skip it.
+
+URL is wrapped with ```()``` and it refers to images you put inside your setup folder. External URLs are also good if you prefer.
+
+
+#### Comments
+
+```
+// some reminder …
 ```
 
 Such line won't be rendered.
 
+
+## Syntax cheatsheet
+
+#### Author's information
+
+```
+name: John 🚀 Doe
+occupation: Designer
+location: Berlin, Germany
+link: https://works-for-me.github.io
+
+Free text description …
+```
+
+#### Tools
+
+```
+> Tool Title
+```
+
+```
+> Tool Title (https://tool.url)
+```
+
+```
+> Tool Title (https://tool.url)
+
+Free text description …
+```
+
+#### Titles
+
+```
+-- Groupping title
+```
+
+```
+-- Groupping title
+
+Free text description …
+```
+
+#### Links
+
+```
+<link title (https://link.url)>
+```
+
+```
+some text <link title (https://link.url)> more text
+```
+
+
+#### Images
+
+```
+# Image title (./image.png)
+```
+
+
 ## What goes to RSS-feed
 
-RSS-feed is based on commit-messages.
+RSS-feed is based on a commit-messages.
 
 If you are about to commit new setup start commit-message with `new: `
 
@@ -81,7 +213,7 @@ If you are about to commit new setup start commit-message with `new: `
 new: John Doe (Software Engineer)
 ```
 
-You can add a few words about you, commit-message goes to the feed.
+You can add a few words about you in the commit-message, it goes to the feed.
 
 For major updates to existing setup, use `update: `, that also goes to RSS.
 
@@ -89,7 +221,7 @@ For major updates to existing setup, use `update: `, that also goes to RSS.
 update: Changed IDE
 ```
 
-If you want to fix some typos or make minor chages, use `fix: `, no-one will see that one.
+If you want to fix some typos or make minor changes, use `fix: `, no-one will see that one.
 
 ```
 fix: Fixing typos
