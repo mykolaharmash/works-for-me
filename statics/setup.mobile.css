@@ -62,9 +62,22 @@
     padding: 0;
   }
 
+  .description {
+    width: 100%;
+  }
+
   .description-paragraph,
   .environment-title,
   .tool-head {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .description-paragraph,
+  .environment-title,
+  .tool-head {
+    word-break: break-all;
+    word-break: break-word;
   }
 }
