@@ -17,7 +17,7 @@ Collection of great software setups. Way to discover and share useful tools.
     - [Titles](#titles-syntax)
     - [Links](#links-syntax)
     - [Images](#images-syntax)
-- [What goes to RSS-feed](#what-goes-to-rss-feed)
+- [Commit message convention](#commit-message-convention)
 
 
 ## How to contribute a setup
@@ -203,7 +203,7 @@ some text <link title (https://link.url)> more text
 ```
 
 
-## What goes to RSS-feed
+## Commit message convention
 
 RSS-feed is based on a commit-messages.
 
