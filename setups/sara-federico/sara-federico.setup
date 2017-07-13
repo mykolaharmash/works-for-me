@@ -1,0 +1,130 @@
+name: Sara Federico
+occupation: Software Engineer @ Freight Farms
+link: https://github.com/gretzky
+
+-- My Machines
+________________________________________
+Work machine:
+🚀 15" Macbook Pro Retina running macOS Sierra
+🚀 27" Samsung widescreen external display
+
+Home machine:
+🚀 13" Macbook Pro Retina running macOS High Sierra beta
+🚀 22" AOC external display
+
+-- Necessities
+________________________________________
+> 🍺 Homebrew (https://brew.sh/)
+with the following packages:
+  - git
+  - vim --override-system-vi
+  - macvim
+  - tmux
+  - coreutils, moreutils, findutils, gnu-sed --wih-default-names
+  - zsh
+  - rename
+  - tree
+  - ack
+
+> iTerm2 (https://www.iterm2.com/)
+running zsh with <prompt pure (https://github.com/sindresorhus/pure)> and the <snazzy (https://github.com/sindresorhus/iterm2-snazzy)> theme
+# (./Screen Shot 2017-07-12 at 7.56.32 PM.png)
+
+and using <Antigen (https://antigen.sharats.me)> to bundle useful packages.
+
+I have a pretty intense zshrc file, which you can <check out (https://github.com/gretzky/zshrc)>
+
+> Visual Studio Code (https://code.visualstudio.com)>
+Diehard VSCode fangirl. Made the switch from Sublime Text after I realized how awesome IDE's are.
+
+Running the <One Dark Pro (https://binaryify.github.io/OneDark-Pro/#/)> theme and using 14px <Hack (http://sourcefoundry.org/hack/)> font. The icons are from <Material (https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)>
+
+# (./Screen Shot 2017-07-12 at 8.07.03 PM.png)
+
+> Sketch (https://www.sketchapp.com/)
+ I use this every day to mockup and wireframe front end components. I'm also managing our app's react-sketchapp repo based off of <airbnb's open source tool (http://airbnb.io/react-sketchapp>
+
+> Pikka (http://www.quotleapp.com/pikka/)
+Super useful eyedropper tool and color organizer
+
+> Slack (https://www.slack.com)
+Work communication!
+
+> Alfred (https://www.alfredapp.com)
+Better, faster, more robust spotlight
+
+-- Frontend Development
+
+My current day to day is mostly around building React components, as well as creating mockups and working with some hardware integration.
+
+> Chrome (https://www.google.com/chrome/browser/desktop/index.html)
+My go-to browser for everything
+
+> Webpack (https://webpack.js.org)
+I have no idea how I bundled anything before it.
+
+> Babel (https://babeljs.io)
+I have no idea how I wrote js before it.
+
+> Sass (https://sass-lang.com)
+I have no idea how I wrote css before it.
+
+> ESLint (https://eslint.org/)
+My code would be a hot mess without it.
+
+> ⚛️ React (https://facebook.github.io/react/)
+Self explanatory.
+
+-- Backend Development
+Sometimes I dabble in some backend development- a lot of it with my own projects and past projects.
+
+> Node.js & Express
+At work and for my side projects, I use the <MERN (http://mern.io/)> stack.
+
+> MongoDB (https://www.mongodb.com/)
+Yay NoSQL!
+
+
+-- Electronics
+I mess around a lot with raspberry pi, arduino, and any other piece of hardware I can make do something. A part of my job is playing with sensors, and that carries over at home too where I'm knee-deep in home automation.
+
+> Shell & UNIX
+I'd say this is the stuff I've known the longest. It's extremely handy.
+
+> C
+Arduino has its own language which is just a set of C functions, but I found it was useful to learn more of C to understand wtf I was doing
+
+> Python
+Get yourself a $30 raspi and learn it. Seriously, worth it
+
+> OpenVPN (https://openvpn.net/)
+Running this on one of my Pi's. Free privacy, can't beat it.
+
+> Pi-Hole (https://pi-hole.net/)
+Sucks all the ads from my network 👋
+
+> 🦆 DuckDNS (https://duckdns.org)
+Forever free dynamic DNS. Using on the same Pi as above for my home network.
+
+> OSMC (https://osmc.tv/)
+Free, open source media center that's super flexible and extensible-- not to mention easy to use and nice design.
+
+> Motion (https://github.com/Motion-Project/motion)
+A really kickass motion sensor program. It can detect movement and then takes a snapshot and sends it to my phone. Useful for spying on the dog.
+
+> Phillips Hue (http://www2.meethue.com/en-us/)
+Purple lights, good API
+
+> Nest Thermostat (https://nest.com/thermostat/meet-nest-thermostat/)
+Great intuitive design, also good API
+
+-- Browser Extensions
+
+> Wappalyzer (https://wappalyzer.com/)
+Find out what stacks and builds any website is using
+
+> Fontface Ninja (https://fontface.ninja/)
+Discover what font is being usedho
+
+> Honey (https://www.joinhoney.com/insider/stores)
+COUPONS.
