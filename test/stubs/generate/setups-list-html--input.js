@@ -20,10 +20,6 @@ module.exports = {
           type: SETUPS_LIST_ITEM_CONTEXT,
           content: [
             {
-              type: SETUPS_LIST_ITEM_KEY_CONTEXT,
-              content: 'some-guy'
-            },
-            {
               type: SETUP_CREATE_DATE_CONTEXT,
               content: '2017-01-02T08:28:53+02:00'
             },
@@ -44,6 +40,10 @@ module.exports = {
                     {
                       type: WORD_LEXEME,
                       content: 'Guy'
+                    },
+                    {
+                      type: SETUPS_LIST_ITEM_KEY_CONTEXT,
+                      content: 'some-guy'
                     }
                   ]
                 }
@@ -54,10 +54,6 @@ module.exports = {
         {
           type: SETUPS_LIST_ITEM_CONTEXT,
           content: [
-            {
-              type: SETUPS_LIST_ITEM_KEY_CONTEXT,
-              content: 'some-other-guy'
-            },
             {
               type: SETUP_UPDATE_DATE_CONTEXT,
               content: '2017-03-07T10:32:51+02:00'
@@ -83,6 +79,10 @@ module.exports = {
                     {
                       type: WORD_LEXEME,
                       content: 'Guy'
+                    },
+                    {
+                      type: SETUPS_LIST_ITEM_KEY_CONTEXT,
+                      content: 'some-other-guy'
                     }
                   ]
                 },
@@ -100,6 +100,10 @@ module.exports = {
                     {
                       type: WORD_LEXEME,
                       content: 'developer'
+                    },
+                    {
+                      type: SETUPS_LIST_ITEM_KEY_CONTEXT,
+                      content: 'some-other-guy'
                     }
                   ]
                 }

@@ -18,7 +18,7 @@
 
 .main {
   width: 660px;
-  padding: 0 30px;
+  padding: 0 30px 40px 30px;
   box-sizing: border-box;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .setup-item + .setup-item {
-  margin-top: 16px;
+  margin-top: 28px;
 }
 
 .setup-item {
@@ -52,8 +52,13 @@
   align-items: baseline;
 }
 
-.setup-item__link {
+.setup-item__bio {
   margin-right: 20px;
+}
+
+.setup-item__occupation {
+  font-size: 16px;
+  margin-top: 4px;
 }
 
 .setup-item__date {

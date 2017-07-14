@@ -18,10 +18,6 @@ module.exports = {
           type: SETUPS_LIST_ITEM_CONTEXT,
           content: [
             {
-              type: SETUPS_LIST_ITEM_KEY_CONTEXT,
-              content: 'second-guy'
-            },
-            {
               type: BIO_CONTEXT,
               content: [
                 {
@@ -38,6 +34,10 @@ module.exports = {
                     {
                       type: WORD_LEXEME,
                       content: 'Guy'
+                    },
+                    {
+                      type: SETUPS_LIST_ITEM_KEY_CONTEXT,
+                      content: 'second-guy'
                     }
                   ]
                 }

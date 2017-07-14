@@ -8,9 +8,6 @@ const htmlBeautify = require('../lib/html-beautify');
 const basicInput = require('./stubs/render/setups-list/setups-list-item-basic--input');
 const basicOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-basic--output.html'), 'utf8'));
 
-const noKeyInput = require('./stubs/render/setups-list/setups-list-item-no-key--input');
-const noKeyOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-no-key--output.html'), 'utf8'));
-
 const updateDateInput = require('./stubs/render/setups-list/setups-list-item-update-date--input');
 const updateDateOutput = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-item-update-date--output.html'), 'utf8'));
 
@@ -25,12 +22,6 @@ describe('setups-list-item renderer', () => {
     let html = render(basicInput, renderersMap);
 
     assert.equal(html, basicOutput, './stubs/render/setups-list/setups-list-item-basic--output.html');
-  });
-
-  it('does not render item which has no "key" context', () => {
-    let html = render(noKeyInput, renderersMap);
-
-    assert.equal(html, noKeyOutput, './stubs/render/setups-list/setups-list-item-no-key--output.html');
   });
 
   it('renders update date if there is update date context', () => {

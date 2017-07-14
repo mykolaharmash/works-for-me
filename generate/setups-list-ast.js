@@ -25,15 +25,8 @@ function findBioContext (setupAst) {
     .find(context => context.get('type') === BIO_CONTEXT)
 }
 
-function generateMetadataContexts (key, metadata) {
+function generateMetadataContexts (metadata) {
   let contextsList = []
-
-  if (key) {
-    contextsList.push({
-      type: SETUPS_LIST_ITEM_KEY_CONTEXT,
-      content: key
-    })
-  }
 
   if (!metadata) {
     return contextsList
@@ -54,15 +47,33 @@ function generateMetadataContexts (key, metadata) {
   return contextsList
 }
 
+/**
+ * Adds metadata to bio lines so bio-line renderer
+ * xan access it
+ */
+function enrichBio (bioContext, key) {
+  return bioContext.update('content', (content) => {
+    return content.map((bioLineContext) => {
+      return bioLineContext.update('content', (content) => {
+        return content.push(Immutable.fromJS({
+          type: SETUPS_LIST_ITEM_KEY_CONTEXT,
+          content: key
+        }))
+      })
+    })
+  })
+}
+
 function generateSetupListItem (setupAst, setupMetadata) {
   let bio = findBioContext(setupAst)
   let key = setupAst.get('name')
+  let enrichedBio = enrichBio(bio, key)
   let content = []
 
-  let metadataContexts = generateMetadataContexts(key, setupMetadata)
+  let metadataContexts = generateMetadataContexts(setupMetadata)
 
   content = content.concat(metadataContexts)
-  content.push(bio)
+  content.push(enrichedBio)
 
   return Immutable.fromJS({
     type: SETUPS_LIST_ITEM_CONTEXT,
@@ -80,6 +91,10 @@ function findDateContext (tree) {
 function sortByDate (a, b) {
   let aDateContext = findDateContext(a)
   let bDateContext = findDateContext(b)
+
+  if (!aDateContext || !bDateContext) {
+    return 0
+  }
 
   return Date.parse(aDateContext.get('content')) < Date.parse(bDateContext.get('content'))
 }
