@@ -1,3 +1,7 @@
+.header {
+  min-width: 1200px;
+}
+
 .setup-root > .bio {
   position: static;
   width: 700px;
@@ -8,8 +12,10 @@
 
 .playground {
   position: relative;
+  align-self: flex-start;
   height: 100%;
   width: 100%;
+  min-width: 1200px;
   overflow: hidden;
 }
 
