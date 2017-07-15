@@ -1,15 +1,16 @@
-### Works For Me
+### [Works For Me](https://works-for-me.github.io)
 
-Collection of great software setups. Way to discover and share useful tools.
-
-[Works For Me site](https://works-for-me.github.io) compiles all contributes setups in a readable way.<br>
-[RSS-feed](https://works-for-me.github.io/rss.xml) lets you subscribe to new setups and updates to existing ones.<br>
-[The Playground](https://works-for-me.github.io/playground/playground.html) helps you to see how setup is going to look like.
+Place to share useful tools.
 
 
-## Index
+## Contribute your setup
 
-- [How to contribute a setup](#how-to-contribute-a-setup)
+1. Add a new folder under [setups/](https://github.com/nik-garmash/works-for-me/tree/master/setups) directory
+1. Describe your setup in ```your-name.setup``` file
+1. Make a Pull Request
+1. 🚀
+
+
 - [Guide to write a setup](#guide-to-write-a-setup)
 - [Syntax Cheatsheet](#syntax-cheatsheet)
     - [Author's information](#authors-information-syntax)
@@ -17,14 +18,8 @@ Collection of great software setups. Way to discover and share useful tools.
     - [Titles](#titles-syntax)
     - [Links](#links-syntax)
     - [Images](#images-syntax)
+- [RSS feed with new setups](https://works-for-me.github.io/rss.xml)
 - [Commit message convention](#commit-message-convention)
-
-
-## How to contribute a setup
-
-Make a Pull Request to the [original repository](https://github.com/nik-garmash/works-for-me) with a new folder inside [setups/](https://github.com/nik-garmash/works-for-me/tree/master/setups) directory.
-
-The new folder should contain a ```your-name.setup``` file (e.g. john-doe.setup) and optionally images.
 
 
 ## Guide to write a setup
@@ -124,7 +119,9 @@ Link itself is wrapped with ```<>```, inside are title and URL wrapped with ```(
 
 ### Images
 
-To make setup even more interesting to read you can add images. Start a line with ```#``` symbol followed by title and image URL.
+First, put images next to the ```*.setup``` file.
+
+Start a line with ```#``` symbol followed by title and image URL.
 
 ```
 # My desktop screenshot (./desktop.png)
