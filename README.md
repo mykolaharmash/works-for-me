@@ -1,6 +1,8 @@
-## [Works For Me](https://works-for-me.github.io)
+## Place to share useful tools
 
-Place to share useful tools.
+[Collection of software setups](https://works-for-me.github.io)
+
+People craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal setup and discover more great software.
 
 
 ## Contribute your setup
