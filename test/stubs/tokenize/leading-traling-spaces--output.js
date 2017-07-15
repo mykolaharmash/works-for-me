@@ -17,4 +17,4 @@ module.exports = [
   'both',
   'of',
   'them.'
-];
+]

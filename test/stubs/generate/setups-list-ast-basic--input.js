@@ -7,7 +7,7 @@ const {
   BIO_CONTEXT,
   BIO_LINE_CONTEXT,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = [
   {
@@ -106,4 +106,4 @@ module.exports = [
       ]
     }
   }
-];
+]

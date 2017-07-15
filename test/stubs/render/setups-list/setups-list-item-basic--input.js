@@ -2,7 +2,7 @@ const {
   BIO_CONTEXT,
   SETUPS_LIST_ITEM_CONTEXT,
   SETUP_CREATE_DATE_CONTEXT
-} = require('../../../../lib/constants');
+} = require('../../../../lib/constants')
 
 module.exports = {
   type: SETUPS_LIST_ITEM_CONTEXT,
@@ -16,4 +16,4 @@ module.exports = {
       content: 'some guy'
     }
   ]
-};
+}

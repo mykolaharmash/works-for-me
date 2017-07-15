@@ -1,7 +1,7 @@
 const {
   DESCRIPTION_CONTEXT,
   DESCRIPTION_PARAGRAPH_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: DESCRIPTION_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: 'test description'
     }
   ]
-};
+}

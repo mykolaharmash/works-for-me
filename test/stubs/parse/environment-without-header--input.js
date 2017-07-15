@@ -1,4 +1,4 @@
-const { ENVIRONMENT_CONTEXT } = require('../../../lib/constants');
+const { ENVIRONMENT_CONTEXT } = require('../../../lib/constants')
 
 module.exports = {
   type: ENVIRONMENT_CONTEXT,
@@ -16,4 +16,4 @@ module.exports = {
     { type: 'word', content: '2' },
     { type: 'word', content: '(https://www.iterm2.com/)' }
   ]
-};
+}

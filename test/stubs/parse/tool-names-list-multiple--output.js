@@ -2,7 +2,7 @@ const {
   TOOL_NAMES_LIST_CONTEXT,
   TOOL_NAME_CONTEXT,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOL_NAMES_LIST_CONTEXT,
@@ -33,4 +33,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

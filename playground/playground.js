@@ -99,7 +99,7 @@ function saveImage (filename, blobUrl) {
     window.wfmPlaygroundImages = {}
   }
 
-  window.wfmPlaygroundImages[`./${ filename }`] = blobUrl
+  window.wfmPlaygroundImages[`./${filename}`] = blobUrl
 }
 
 function toggleCheatSheet (show) {
@@ -149,11 +149,11 @@ function onCheatTriggerClick () {
 function onImagesSelect (event) {
   Array.from(event.target.files)
     .forEach((file) => {
-      let reader = new FileReader()
+      let reader = new window.FileReader()
 
       reader.onload = (uploadEvent) => {
-        let blob = new Blob([uploadEvent.target.result], { type: file.type })
-        let blobUrl = URL.createObjectURL(blob)
+        let blob = new window.Blob([uploadEvent.target.result], { type: file.type })
+        let blobUrl = window.URL.createObjectURL(blob)
 
         saveImage(file.name, blobUrl)
         createImage(file.name, blobUrl)
@@ -194,12 +194,12 @@ function renderSetup (content) {
   let ast = generateSetupAst(content)
   let html = generateSetupHtml(ast)
 
-  setTimeout(() => resultElement.innerHTML = html)
+  setTimeout(() => { resultElement.innerHTML = html })
 }
 
 let initialValue = window.sessionStorage.getItem(CONTENT_STORAGE_KEY) || DEFAULT_TEXT
 
 inputElement.value = initialValue
-setTimeout(() => inputElement.scrollTop = 0)
+setTimeout(() => { inputElement.scrollTop = 0 })
 renderSetup(initialValue)
 inputElement.focus()

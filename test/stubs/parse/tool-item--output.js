@@ -6,7 +6,7 @@ const {
   COMMENT_BULLET_LEXEME,
   TOOL_HEAD_CONTEXT,
   DESCRIPTION_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOL_ITEM_CONTEXT,
@@ -39,4 +39,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

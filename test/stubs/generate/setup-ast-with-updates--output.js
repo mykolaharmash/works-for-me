@@ -26,7 +26,7 @@ const {
   ENV_BULLET_LEXEME,
   WORD_LEXEME,
   NEWLINE_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: ROOT_CONTEXT,
@@ -95,7 +95,7 @@ module.exports = {
             {
               type: DESCRIPTION_CONTEXT,
               content: []
-            },
+            }
           ]
         },
         {
@@ -274,7 +274,7 @@ module.exports = {
                         {
                           type: NEWLINE_LEXEME,
                           content: '\n'
-                        },
+                        }
                       ]
                     },
                     {
@@ -427,4 +427,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

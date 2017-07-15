@@ -1,7 +1,7 @@
 const {
   TOOL_NAME_CONTEXT,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOL_NAME_CONTEXT,
@@ -10,4 +10,4 @@ module.exports = {
     { type: WORD_LEXEME, content: 'awesome' },
     { type: WORD_LEXEME, content: 'tool' }
   ]
-};
+}

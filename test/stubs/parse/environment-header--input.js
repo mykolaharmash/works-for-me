@@ -1,4 +1,4 @@
-const { ENVIRONMENT_HEADER_CONTEXT } = require('../../../lib/constants');
+const { ENVIRONMENT_HEADER_CONTEXT } = require('../../../lib/constants')
 
 module.exports = {
   type: ENVIRONMENT_HEADER_CONTEXT,
@@ -15,4 +15,4 @@ module.exports = {
     { type: 'word', content: 'one' },
     { type: 'newline', content: '\n' }
   ]
-};
+}

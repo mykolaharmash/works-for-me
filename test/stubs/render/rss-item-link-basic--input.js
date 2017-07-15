@@ -1,7 +1,7 @@
 const {
   RSS_ITEM_LINK_CONTEXT,
   SETUP_URL_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: RSS_ITEM_LINK_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: 'https://test.html'
     }
   ]
-};
+}

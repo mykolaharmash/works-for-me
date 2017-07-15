@@ -1,7 +1,7 @@
 const {
   BIO_LINE_CONTEXT,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: BIO_LINE_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
     { type: WORD_LEXEME, content: 'useful' },
     { type: WORD_LEXEME, content: 'info' }
   ]
-};
+}

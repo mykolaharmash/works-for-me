@@ -92,7 +92,7 @@ module.exports = {
             {
               type: DESCRIPTION_CONTEXT,
               content: []
-            },
+            }
           ]
         },
 
@@ -260,7 +260,7 @@ module.exports = {
                         {
                           type: NEWLINE_LEXEME,
                           content: '\n'
-                        },
+                        }
                       ]
                     },
                     {

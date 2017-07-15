@@ -1,3 +1,5 @@
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Place to share useful tools
 
 [Collection of software setups](https://works-for-me.github.io)

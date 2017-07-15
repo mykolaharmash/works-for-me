@@ -1,20 +1,20 @@
-let Immutable = require('immutable');
+let Immutable = require('immutable')
 
-let tokenize = require('../lib/tokenize');
-let lex = require('../lib/lex');
-let sanitize = require('../lib/sanitize');
-let parse = require('../lib/parse');
+let tokenize = require('../lib/tokenize')
+let lex = require('../lib/lex')
+let sanitize = require('../lib/sanitize')
+let parse = require('../lib/parse')
 
-let bodyParser = require('../lib/parsers/body');
-let bioParser = require('../lib/parsers/bio');
-let setupParser = require('../lib/parsers/setup');
-let environmentParser = require('../lib/parsers/environment');
-let environmentHeaderParser = require('../lib/parsers/environment-header');
-let toolsListParser = require('../lib/parsers/tools-list');
-let toolItemParser = require('../lib/parsers/tool-item');
-let toolHeadParser = require('../lib/parsers/tool-head');
-let toolNamesListParser = require('../lib/parsers/tool-names-list');
-let toolNameParser = require('../lib/parsers/tool-name');
+let bodyParser = require('../lib/parsers/body')
+let bioParser = require('../lib/parsers/bio')
+let setupParser = require('../lib/parsers/setup')
+let environmentParser = require('../lib/parsers/environment')
+let environmentHeaderParser = require('../lib/parsers/environment-header')
+let toolsListParser = require('../lib/parsers/tools-list')
+let toolItemParser = require('../lib/parsers/tool-item')
+let toolHeadParser = require('../lib/parsers/tool-head')
+let toolNamesListParser = require('../lib/parsers/tool-names-list')
+let toolNameParser = require('../lib/parsers/tool-name')
 let descriptionParser = require('../lib/parsers/description')
 let descriptionParagraphParser = require('../lib/parsers/description-paragraph')
 let descriptionLinkParser = require('../lib/parsers/description-link')
@@ -36,7 +36,7 @@ const {
   DESCRIPTION_PARAGRAPH_PARSER_KEY,
   DESCRIPTION_LINK_PARSER_KEY,
   IMAGE_PARSER_KEY
-} = require('../lib/constants');
+} = require('../lib/constants')
 
 const parsersMap = {
   [BODY_PARSER_KEY]: bodyParser,
@@ -53,21 +53,21 @@ const parsersMap = {
   [DESCRIPTION_PARAGRAPH_PARSER_KEY]: descriptionParagraphParser,
   [DESCRIPTION_LINK_PARSER_KEY]: descriptionLinkParser,
   [IMAGE_PARSER_KEY]: imageParser
-};
+}
 
 module.exports = function (content = '') {
-  let chars = [...content];
-  let tokens = tokenize(chars);
-  let lexemes = lex(tokens);
-  let sanitizedLexemes = sanitize(lexemes);
+  let chars = [...content]
+  let tokens = tokenize(chars)
+  let lexemes = lex(tokens)
+  let sanitizedLexemes = sanitize(lexemes)
   let bodyContext = Immutable.fromJS({
     type: BODY_CONTEXT,
     content: sanitizedLexemes
-  });
+  })
 
   let bodyAst = Immutable.fromJS(
     parse(bodyContext, parsersMap)
-  );
+  )
 
-  return bodyAst;
-};
+  return bodyAst
+}

@@ -83,8 +83,8 @@ function generateSetupListItem (setupAst, setupMetadata) {
 
 function findDateContext (tree) {
   return tree.get('content').find((context) => {
-    return context.get('type') === SETUP_CREATE_DATE_CONTEXT
-      || context.get('type') === SETUP_UPDATE_DATE_CONTEXT
+    return context.get('type') === SETUP_CREATE_DATE_CONTEXT ||
+      context.get('type') === SETUP_UPDATE_DATE_CONTEXT
   })
 }
 

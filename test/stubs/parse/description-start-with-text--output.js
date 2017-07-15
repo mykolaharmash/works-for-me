@@ -11,13 +11,13 @@ module.exports = {
       type: DESCRIPTION_PARAGRAPH_CONTEXT,
       content: [
         { type: WORD_LEXEME, content: 'description' },
-        { type: WORD_LEXEME, content: 'goes' },
+        { type: WORD_LEXEME, content: 'goes' }
       ]
     },
     {
       type: DESCRIPTION_PARAGRAPH_CONTEXT,
       content: [
-        { type: WORD_LEXEME, content: 'here' },
+        { type: WORD_LEXEME, content: 'here' }
       ]
     }
   ]

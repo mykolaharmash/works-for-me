@@ -19,7 +19,7 @@ const {
   COMMIT_DATE_CONTEXT,
   COMMIT_MESSAGE_CONTEXT,
   SETUP_URL_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: RSS_CONTEXT,
@@ -147,7 +147,7 @@ module.exports = {
                 {
                   type: DESCRIPTION_CONTEXT,
                   content: []
-                },
+                }
               ]
             }
           ]
@@ -175,7 +175,7 @@ module.exports = {
           content: [
             {
               type: SETUP_URL_CONTEXT,
-              content: `${ BASE_URL }/setups/john-doe/john-doe.html`
+              content: `${BASE_URL}/setups/john-doe/john-doe.html`
             }
           ]
         }
@@ -298,7 +298,7 @@ module.exports = {
           content: [
             {
               type: SETUP_URL_CONTEXT,
-              content: `${ BASE_URL }/setups/john-smith/john-smith.html`
+              content: `${BASE_URL}/setups/john-smith/john-smith.html`
             }
           ]
         }
@@ -421,7 +421,7 @@ module.exports = {
           content: [
             {
               type: SETUP_URL_CONTEXT,
-              content: `${ BASE_URL }/setups/john-smith/john-smith.html`
+              content: `${BASE_URL}/setups/john-smith/john-smith.html`
             }
           ]
         }
@@ -429,4 +429,3 @@ module.exports = {
     }
   ]
 }
-;

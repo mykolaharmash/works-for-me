@@ -3,7 +3,7 @@ const {
   ENV_BULLET_LEXEME,
   ENV_BULLET_TOKEN,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: ENVIRONMENT_TITLE_CONTEXT,
@@ -13,4 +13,4 @@ module.exports = {
     { type: WORD_LEXEME, content: 'multiword' },
     { type: WORD_LEXEME, content: 'title' }
   ]
-};
+}

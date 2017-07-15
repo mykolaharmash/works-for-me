@@ -1,4 +1,4 @@
-const { SETUP_CONTEXT } = require('../../../lib/constants');
+const { SETUP_CONTEXT } = require('../../../lib/constants')
 
 module.exports = {
   type: SETUP_CONTEXT,
@@ -17,4 +17,4 @@ module.exports = {
     { type: 'tool-bullet', content: '>' },
     { type: 'word', content: 'Safari' }
   ]
-};
+}

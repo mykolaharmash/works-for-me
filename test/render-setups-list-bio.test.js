@@ -3,10 +3,10 @@ let assert = require('assert')
 
 let render = require('../lib/render')
 let setupsListBioRenderer = require('../lib/renderers/setups-list-bio')
-const htmlBeautify = require('../lib/html-beautify');
+const htmlBeautify = require('../lib/html-beautify')
 
 const input = require('./stubs/render/setups-list/setups-list-bio--input')
-const output = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-bio--output.html'), 'utf8'));
+const output = htmlBeautify(fs.readFileSync(require.resolve('./stubs/render/setups-list/setups-list-bio--output.html'), 'utf8'))
 
 const { BIO_RENDERER_KEY } = require('../lib/constants')
 

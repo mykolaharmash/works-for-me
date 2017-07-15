@@ -32,7 +32,7 @@ module.exports = {
     {
       type: IMAGE_URL_CONTEXT,
       content: [
-        { type: WORD_LEXEME, content: 'http://some.com/another-image.jpg' },
+        { type: WORD_LEXEME, content: 'http://some.com/another-image.jpg' }
       ]
     }
   ]

@@ -4,7 +4,7 @@ const {
   NEWLINE_LEXEME,
   ENVIRONMENT_CONTEXT,
   TOOLS_LIST_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: ENVIRONMENT_CONTEXT,
@@ -27,4 +27,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

@@ -1,6 +1,6 @@
 const {
   SETUPS_LIST_ROOT_CONTEXT
-} = require('../../../../lib/constants');
+} = require('../../../../lib/constants')
 
 module.exports = {
   type: SETUPS_LIST_ROOT_CONTEXT,
@@ -9,4 +9,4 @@ module.exports = {
       content: '<span>test</span>'
     }
   ]
-};
+}

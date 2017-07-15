@@ -1,7 +1,7 @@
 const {
   DESCRIPTION_LINK_CONTEXT,
-  DESCRIPTION_LINK_TITLE_CONTEXT,
-} = require('../../../lib/constants');
+  DESCRIPTION_LINK_TITLE_CONTEXT
+} = require('../../../lib/constants')
 
 module.exports = {
   type: DESCRIPTION_LINK_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: 'link title'
     }
   ]
-};
+}

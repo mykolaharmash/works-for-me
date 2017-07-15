@@ -9,8 +9,7 @@ const {
   DESCRIPTION_CONTEXT,
   WORD_LEXEME,
   NEWLINE_LEXEME
-} = require('../../../lib/constants');
-
+} = require('../../../lib/constants')
 
 module.exports = {
   metadata: [
@@ -195,4 +194,4 @@ module.exports = {
       }
     }
   ]
-};
+}

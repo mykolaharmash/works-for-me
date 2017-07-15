@@ -3,7 +3,7 @@ const {
   TOOL_BULLET_LEXEME,
   NEWLINE_LEXEME,
   TOOLS_LIST_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOLS_LIST_CONTEXT,
@@ -21,4 +21,4 @@ module.exports = {
     { type: WORD_LEXEME, content: '2' },
     { type: WORD_LEXEME, content: '(https://www.iterm2.com/)' }
   ]
-};
+}

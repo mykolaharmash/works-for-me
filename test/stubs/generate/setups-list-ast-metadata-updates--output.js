@@ -7,7 +7,7 @@ const {
   BIO_LINE_CONTEXT,
   WORD_LEXEME,
   SETUP_UPDATE_DATE_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: SETUPS_LIST_ROOT_CONTEXT,
@@ -88,4 +88,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

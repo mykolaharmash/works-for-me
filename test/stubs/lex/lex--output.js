@@ -35,4 +35,4 @@ module.exports = [
   { type: COMMENT_BULLET_LEXEME, content: '//' },
   { type: WORD_LEXEME, content: 'comment' },
   { type: WORD_LEXEME, content: 'two' }
-];
+]

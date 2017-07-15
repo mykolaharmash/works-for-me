@@ -7,7 +7,7 @@ const {
   TOOLS_LIST_CONTEXT,
   ENV_BULLET_LEXEME,
   COMMENT_BULLET_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: ENVIRONMENT_CONTEXT,
@@ -46,4 +46,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

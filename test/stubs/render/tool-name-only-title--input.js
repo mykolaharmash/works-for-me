@@ -1,7 +1,7 @@
 const {
   TOOL_NAME_CONTEXT,
   TOOL_TITLE_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOL_NAME_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: 'tool title'
     }
   ]
-};
+}

@@ -2,7 +2,7 @@ const {
   HEAD_CONTEXT,
   HEAD_TITLE_CONTEXT,
   HEAD_DESCRIPTION_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: HEAD_CONTEXT,
@@ -16,4 +16,4 @@ module.exports = {
       content: 'John Doe\'s software setup'
     }
   ]
-};
+}

@@ -49,7 +49,7 @@ function generateSetupHtml (astItem) {
 
 function saveSetupAst (astItem) {
   fs.writeFileSync(
-    `${ path.resolve(__dirname, '../tmp') }/${ astItem.name }.ast.json`,
+    `${path.resolve(__dirname, '../tmp')}/${astItem.name}.ast.json`,
     jsonBeautify(astItem.content)
   )
 
@@ -57,14 +57,14 @@ function saveSetupAst (astItem) {
 }
 
 function saveSetupHtml (setupsDistDir, htmlItem) {
-  let filename = `${ htmlItem.name }.html`
+  let filename = `${htmlItem.name}.html`
 
-  fs.writeFileSync(`${ setupsDistDir }/${ htmlItem.name }/${ filename }`, htmlItem.content)
+  fs.writeFileSync(`${setupsDistDir}/${htmlItem.name}/${filename}`, htmlItem.content)
 }
 
 function saveSetupsListAst (setupsListAst) {
   fs.writeFileSync(
-    `${ path.resolve(__dirname, '../tmp') }/list.ast.json`,
+    `${path.resolve(__dirname, '../tmp')}/list.ast.json`,
     jsonBeautify(setupsListAst)
   )
 }
@@ -112,7 +112,7 @@ function generateRss (setupsAst, setupsMetadata) {
 }
 
 function saveRss (distDir, rss) {
-  fs.writeFileSync(`${ distDir }/rss.xml`, rss)
+  fs.writeFileSync(`${distDir}/rss.xml`, rss)
 }
 
 function generate (customDistDir) {
@@ -121,10 +121,10 @@ function generate (customDistDir) {
   if (customDistDir) {
     distDir = path.resolve(customDistDir)
   } else {
-    distDir = path.resolve(__dirname, `../${ DIST_FOLDER }`)
+    distDir = path.resolve(__dirname, `../${DIST_FOLDER}`)
   }
 
-  let setupsDistDir = `${ distDir }/setups`
+  let setupsDistDir = `${distDir}/setups`
   let setupsSrcDir = path.resolve(__dirname, '../setups')
 
   let setupsContent
@@ -162,5 +162,3 @@ function generate (customDistDir) {
 let customDistDir = process.argv.slice(2)[0]
 
 generate(customDistDir)
-
-

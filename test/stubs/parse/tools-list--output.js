@@ -4,7 +4,7 @@ const {
   TOOL_BULLET_LEXEME,
   WORD_LEXEME,
   NEWLINE_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOLS_LIST_CONTEXT,
@@ -32,4 +32,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

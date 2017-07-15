@@ -2,7 +2,7 @@ const {
   SETUP_LATEST_UPDATE_CONTEXT,
   SETUP_UPDATE_DATE_CONTEXT,
   SETUP_UPDATE_MESSAGE_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: SETUP_LATEST_UPDATE_CONTEXT,
@@ -19,4 +19,4 @@ module.exports = {
     }
 
   ]
-};
+}

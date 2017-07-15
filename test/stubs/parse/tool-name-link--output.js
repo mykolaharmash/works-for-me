@@ -3,7 +3,7 @@ const {
   TOOL_TITLE_CONTEXT,
   TOOL_LINK_CONTEXT,
   TOOL_NAME_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOL_NAME_CONTEXT,
@@ -23,4 +23,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

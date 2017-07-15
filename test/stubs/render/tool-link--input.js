@@ -1,7 +1,7 @@
 const {
   TOOL_LINK_CONTEXT,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: TOOL_LINK_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: 'http://some.url/test'
     }
   ]
-};
+}

@@ -2,7 +2,7 @@ const {
   BIO_CONTEXT,
   DESCRIPTION_CONTEXT,
   BIO_LINE_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: BIO_CONTEXT,
@@ -69,4 +69,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

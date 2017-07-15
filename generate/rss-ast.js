@@ -1,4 +1,3 @@
-const fs = require('fs');
 const {
   BASE_URL,
   NEW_SETUP_TAG_TOKEN,
@@ -19,20 +18,20 @@ const {
   COMMIT_DATE_CONTEXT,
   COMMIT_HASH_CONTEXT,
   SETUP_URL_CONTEXT
-} = require('../lib/constants');
+} = require('../lib/constants')
 
 function findBioContext (setupAst) {
   let bodyContext = setupAst
     .content
-    .find(context => context.type === BODY_CONTEXT);
+    .find(context => context.type === BODY_CONTEXT)
 
   if (!bodyContext) {
-    return;
+    return
   }
 
   return bodyContext
     .content
-    .find(context => context.type === BIO_CONTEXT);
+    .find(context => context.type === BIO_CONTEXT)
 }
 
 /**
@@ -46,34 +45,34 @@ function findBioContext (setupAst) {
 function generateCommitsList (setupsAst, setupsMetadata) {
   return setupsMetadata.reduce((list, metadata, index) => {
     let commits = metadata.allCommits.map(commit => {
-      let setup = setupsAst[index];
+      let setup = setupsAst[index]
 
       return {
         commit,
         key: setup.name,
         setupAst: setup.content
-      };
-    });
+      }
+    })
 
-    return list.concat(commits);
-  }, []);
+    return list.concat(commits)
+  }, [])
 }
 
 function generateItemTitle (setupAst, commit) {
-  let bioContext = findBioContext(setupAst);
-  let message = commit.message.trim();
-  let titleTypeContext;
+  let bioContext = findBioContext(setupAst)
+  let message = commit.message.trim()
+  let titleTypeContext
 
   if (message.startsWith(NEW_SETUP_TAG_TOKEN)) {
     titleTypeContext = {
       type: RSS_NEW_SETUP_TITLE_CONTEXT,
       content: 'New setup:'
-    };
+    }
   } else {
     titleTypeContext = {
       type: RSS_UPDATE_SETUP_TITLE_CONTEXT,
       content: 'Updated setup:'
-    };
+    }
   }
 
   return {
@@ -82,7 +81,7 @@ function generateItemTitle (setupAst, commit) {
       titleTypeContext,
       bioContext
     ]
-  };
+  }
 }
 
 function generateItemDescription (commit) {
@@ -94,18 +93,18 @@ function generateItemDescription (commit) {
         content: commit.message
       }
     ]
-  };
+  }
 }
 
 function generateItemAuthor (setupAst) {
-  let bioContext = findBioContext(setupAst);
+  let bioContext = findBioContext(setupAst)
 
   return {
     type: RSS_ITEM_AUTHOR_CONTEXT,
     content: [
       bioContext
     ]
-  };
+  }
 }
 
 function generateItemPubDate (commit) {
@@ -117,7 +116,7 @@ function generateItemPubDate (commit) {
         content: commit.date
       }
     ]
-  };
+  }
 }
 
 function generateItemId (commit) {
@@ -129,7 +128,7 @@ function generateItemId (commit) {
         content: commit.hash
       }
     ]
-  };
+  }
 }
 
 function generateItemLink (setupKey) {
@@ -138,19 +137,19 @@ function generateItemLink (setupKey) {
     content: [
       {
         type: SETUP_URL_CONTEXT,
-        content: `${ BASE_URL }/setups/${ setupKey }/${ setupKey }.html`
+        content: `${BASE_URL}/setups/${setupKey}/${setupKey}.html`
       }
     ]
-  };
+  }
 }
 
 function generateFeedItem (commitItem) {
-  let title = generateItemTitle(commitItem.setupAst, commitItem.commit);
-  let description = generateItemDescription(commitItem.commit);
-  let author = generateItemAuthor(commitItem.setupAst);
-  let pubDate = generateItemPubDate(commitItem.commit);
-  let id = generateItemId(commitItem.commit);
-  let link = generateItemLink(commitItem.key);
+  let title = generateItemTitle(commitItem.setupAst, commitItem.commit)
+  let description = generateItemDescription(commitItem.commit)
+  let author = generateItemAuthor(commitItem.setupAst)
+  let pubDate = generateItemPubDate(commitItem.commit)
+  let id = generateItemId(commitItem.commit)
+  let link = generateItemLink(commitItem.key)
 
   return {
     type: RSS_ITEM_CONTEXT,
@@ -162,28 +161,28 @@ function generateFeedItem (commitItem) {
       id,
       link
     ]
-  };
+  }
 }
 
 function generateFeed (itemsAst = []) {
   return {
     type: RSS_CONTEXT,
     content: itemsAst
-  };
+  }
 }
 
 function isRssCommit (commitItem) {
-  let message = commitItem.commit.message.trim();
+  let message = commitItem.commit.message.trim()
 
-  return message.startsWith(NEW_SETUP_TAG_TOKEN)
-    || message.startsWith(UPDATE_TAG_TOKEN);
+  return message.startsWith(NEW_SETUP_TAG_TOKEN) ||
+    message.startsWith(UPDATE_TAG_TOKEN)
 }
 
 module.exports = function (setupsAst = [], setupsMetadata = []) {
-  let commitsList = generateCommitsList(setupsAst, setupsMetadata);
+  let commitsList = generateCommitsList(setupsAst, setupsMetadata)
   let feedItemsAst = commitsList
     .filter(isRssCommit)
-    .map(generateFeedItem);
+    .map(generateFeedItem)
 
-  return generateFeed(feedItemsAst);
-};
+  return generateFeed(feedItemsAst)
+}

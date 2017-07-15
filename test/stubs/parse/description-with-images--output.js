@@ -13,14 +13,14 @@ module.exports = {
       content: [
         { type: WORD_LEXEME, content: 'starting' },
         { type: WORD_LEXEME, content: 'image' },
-        { type: WORD_LEXEME, content: '(./start.jpg)' },
+        { type: WORD_LEXEME, content: '(./start.jpg)' }
       ]
     },
     {
       type: DESCRIPTION_PARAGRAPH_CONTEXT,
       content: [
         { type: WORD_LEXEME, content: 'description' },
-        { type: WORD_LEXEME, content: 'goes' },
+        { type: WORD_LEXEME, content: 'goes' }
       ]
     },
     {
@@ -36,7 +36,7 @@ module.exports = {
       content: [
         { type: WORD_LEXEME, content: 'another' },
         { type: WORD_LEXEME, content: 'description' },
-        { type: WORD_LEXEME, content: 'paragraph' },
+        { type: WORD_LEXEME, content: 'paragraph' }
       ]
     },
     {

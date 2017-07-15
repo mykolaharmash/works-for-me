@@ -1,7 +1,7 @@
 const {
   NEWLINE_LEXEME,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = [
   { type: WORD_LEXEME, content: 'name:' },
@@ -22,4 +22,4 @@ module.exports = [
   { type: WORD_LEXEME, content: 'description' },
   { type: NEWLINE_LEXEME, content: '\n' },
   { type: WORD_LEXEME, content: 'mobile' }
-];
+]

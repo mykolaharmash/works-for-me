@@ -1,7 +1,7 @@
 const {
   RSS_ITEM_CONTEXT,
   RSS_ITEM_TITLE_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: RSS_ITEM_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: '<title>item title</title>'
     }
   ]
-};
+}

@@ -1,7 +1,7 @@
 const {
   DESCRIPTION_TEXT_CONTEXT,
   WORD_LEXEME
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: DESCRIPTION_TEXT_CONTEXT,
@@ -10,4 +10,4 @@ module.exports = {
     { type: WORD_LEXEME, content: 'text' },
     { type: WORD_LEXEME, content: 'here' }
   ]
-};
+}

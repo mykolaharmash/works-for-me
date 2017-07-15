@@ -1,4 +1,4 @@
-const { BIO_CONTEXT } = require('../../../lib/constants');
+const { BIO_CONTEXT } = require('../../../lib/constants')
 
 module.exports = {
   type: BIO_CONTEXT,
@@ -29,4 +29,4 @@ module.exports = {
       ]
     }
   ]
-};
+}

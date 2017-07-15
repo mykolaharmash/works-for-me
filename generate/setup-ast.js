@@ -124,7 +124,7 @@ function generateHeadDescriptionContext (nameBioLineContext, occupationBioLineCo
 
   return Immutable.fromJS({
     type: HEAD_DESCRIPTION_CONTEXT,
-    content: `${ occupation ? occupation : name }'s software setup`
+    content: `${occupation || name}'s software setup`
   })
 }
 

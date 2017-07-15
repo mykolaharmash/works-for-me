@@ -1,17 +1,17 @@
-const proxyquire = require('proxyquire');
-const sinon = require('sinon');
-const { assert } = require('chai');
+const proxyquire = require('proxyquire')
+const sinon = require('sinon')
+const { assert } = require('chai')
 
-const getCommitsListStub = sinon.stub();
+const getCommitsListStub = sinon.stub()
 
 const getSetupMetadata = proxyquire('../generate/get-setup-metadata', {
   '../lib/git-api': { getCommitsList: getCommitsListStub }
-});
+})
 
 describe('get setup metadata', () => {
   afterEach(() => {
-    getCommitsListStub.reset();
-  });
+    getCommitsListStub.reset()
+  })
 
   it(`gets updates list which contains of commits with 'update:' in title
        while ignoring fix commits and commits which don't follow convention`, () => {
@@ -40,7 +40,7 @@ describe('get setup metadata', () => {
         date: '2016-12-29T17:54:01+02:00',
         message: 'Initial'
       }
-    ];
+    ]
     const metadataStub = {
       updates: [
         {
@@ -50,19 +50,19 @@ describe('get setup metadata', () => {
         {
           date: '2017-01-10T12:14:04+02:00',
           message: 'update: Changed my editor'
-        },
+        }
       ]
-    };
-    const setupPathMock = '/some/path/setups/some-guy.setup';
+    }
+    const setupPathMock = '/some/path/setups/some-guy.setup'
 
     getCommitsListStub
       .withArgs(setupPathMock)
-      .returns(commitsListMock);
+      .returns(commitsListMock)
 
-    let metadata = getSetupMetadata(setupPathMock);
+    let metadata = getSetupMetadata(setupPathMock)
 
-    assert.deepEqual(metadata.updates, metadataStub.updates);
-  });
+    assert.deepEqual(metadata.updates, metadataStub.updates)
+  })
 
   it(`gets initial commit`, () => {
     const commitsListMock = [
@@ -82,33 +82,33 @@ describe('get setup metadata', () => {
         date: '2016-12-29T17:54:01+02:00',
         message: 'Initial'
       }
-    ];
+    ]
     const metadataStub = {
       initial: {
         date: '2016-12-29T17:54:01+02:00',
         message: 'Initial'
       }
-    };
-    const setupPathMock = '/some/path/setups/some-guy.setup';
+    }
+    const setupPathMock = '/some/path/setups/some-guy.setup'
 
     getCommitsListStub
       .withArgs(setupPathMock)
-      .returns(commitsListMock);
+      .returns(commitsListMock)
 
-    let metadata = getSetupMetadata(setupPathMock);
+    let metadata = getSetupMetadata(setupPathMock)
 
-    assert.deepEqual(metadata.initial, metadataStub.initial);
-  });
+    assert.deepEqual(metadata.initial, metadataStub.initial)
+  })
 
   it('throws an error if there are no commits for setup', () => {
-    const setupFilenameMock = 'some-guy.setup';
+    const setupFilenameMock = 'some-guy.setup'
 
     getCommitsListStub
-      .withArgs(`setups/${ setupFilenameMock }`)
-      .returns([]);
+      .withArgs(`setups/${setupFilenameMock}`)
+      .returns([])
 
-    let fn = () => getSetupMetadata(setupFilenameMock);
+    let fn = () => getSetupMetadata(setupFilenameMock)
 
-    assert.throws(fn);
-  });
-});
+    assert.throws(fn)
+  })
+})

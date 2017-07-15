@@ -1,7 +1,7 @@
 const {
   RSS_ITEM_AUTHOR_CONTEXT,
   BIO_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: RSS_ITEM_AUTHOR_CONTEXT,
@@ -11,4 +11,4 @@ module.exports = {
       content: 'John Doe (Software Developer)'
     }
   ]
-};
+}

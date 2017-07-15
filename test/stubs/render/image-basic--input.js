@@ -2,7 +2,7 @@ const {
   IMAGE_CONTEXT,
   IMAGE_TITLE_CONTEXT,
   IMAGE_URL_CONTEXT
-} = require('../../../lib/constants');
+} = require('../../../lib/constants')
 
 module.exports = {
   type: IMAGE_CONTEXT,
@@ -16,4 +16,4 @@ module.exports = {
       content: './some-image.png'
     }
   ]
-};
+}
