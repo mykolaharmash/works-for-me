@@ -30,7 +30,7 @@ describe('git api', () => {
       ]
 
       spawnStub
-        .withArgs('git', ['log', '--format=%cI%x1f%B%x1f%H%x1e'])
+        .withArgs('git', ['log', '--follow', '--format=%cI%x1f%B%x1f%H%x1e'])
         .returns(resMock)
 
       let commitsList = gitApi.getCommitsList()
@@ -52,7 +52,7 @@ describe('git api', () => {
       const pathMock = 'setups/some-guy.setup'
 
       spawnStub
-        .withArgs('git', ['log', '--format=%cI%x1f%B%x1f%H%x1e', pathMock])
+        .withArgs('git', ['log', '--follow', '--format=%cI%x1f%B%x1f%H%x1e', pathMock])
         .returns(resMock)
 
       let commitsList = gitApi.getCommitsList(pathMock)

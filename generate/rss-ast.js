@@ -137,7 +137,7 @@ function generateItemLink (setupKey) {
     content: [
       {
         type: SETUP_URL_CONTEXT,
-        content: `${BASE_URL}/setups/${setupKey}/${setupKey}.html`
+        content: `${BASE_URL}/toolkits/${setupKey}/${setupKey}.html`
       }
     ]
   }

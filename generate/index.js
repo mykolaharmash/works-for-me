@@ -89,7 +89,7 @@ function readSetupsContent (setupsSrcDir) {
       )
     }, [])
     .filter(itemPath => fs.statSync(itemPath).isFile())
-    .filter(filePath => /\.setup$/.test(filePath))
+    .filter(filePath => /\.toolkit$/.test(filePath))
     .map(readSetupContent)
 }
 
@@ -124,8 +124,8 @@ function generate (customDistDir) {
     distDir = path.resolve(__dirname, `../${DIST_FOLDER}`)
   }
 
-  let setupsDistDir = `${distDir}/setups`
-  let setupsSrcDir = path.resolve(__dirname, '../setups')
+  let setupsDistDir = `${distDir}/toolkits`
+  let setupsSrcDir = path.resolve(__dirname, '../toolkits')
 
   let setupsContent
   let setupsMetadata
