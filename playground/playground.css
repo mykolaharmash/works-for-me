@@ -53,8 +53,10 @@
 
 .controls {
   align-self: center;
+  flex-grow: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   margin-right: 30px;
 }
 

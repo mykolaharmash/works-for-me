@@ -1,18 +1,24 @@
-@media screen and (max-width: 1100px) {
-  .description {
-    position: static;
-    width: 660px;
-    padding: 0 30px;
-    margin-top: 50px;
-    box-sizing: border-box;
-  }
-}
-
 @media screen and (max-width: 894px) {
   .header {
+    flex-direction: column;
     align-self: center;
     width: 660px;
     padding: 8px 30px;
+  }
+
+  .main {
+    padding-top: 60px;
+  }
+
+  .share {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .share__facebook {
+    margin-left: 0;
+    margin-top: 3px;
   }
 }
 
@@ -34,13 +40,13 @@
   .logo.inline {
     display: block;
     width: 100%;
+    margin-bottom: 30px;
   }
 
   .navigation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 20px;
   }
 
   .navigation-item + .navigation-item {
@@ -48,13 +54,18 @@
     margin-top: 10px;
   }
 
-  .description {
-    width: 100%;
-    margin: 20px 0 50px 0;
+  .share {
+    flex-direction: row;
+  }
+
+  .share__facebook {
+    margin-left: 20px;
+    margin-top: 0;
   }
 
   .main {
     width: 100%;
+    padding-top: 40px;
   }
 
   .setup-item {

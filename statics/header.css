@@ -28,7 +28,8 @@
 }
 
 .navigation {
-  flex-grow: 1;
+  display: flex;
+  align-items: baseline;
 }
 
 .navigation-item {
@@ -41,4 +42,32 @@
 
 .navigation-item + .navigation-item {
   margin-left: 20px;
+}
+
+.share {
+  display: flex;
+  margin-left: 65px;
+}
+
+.share__twitter,
+.share__facebook {
+  display: flex;
+  align-items: baseline;
+}
+
+.share__facebook {
+  margin-left: 20px;
+}
+
+.share__icon {
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+a.share__link {
+  font-size: 16px;
+  border-bottom-style: dashed;
 }
