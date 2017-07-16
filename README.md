@@ -2,21 +2,21 @@
 
 ## Place to share useful tools
 
-[Collection of software setups](https://works-for-me.github.io)
+[Collection of developer toolkits](https://works-for-me.github.io)
 
-People craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal setup and discover more great software.
+Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.
 
 
-## Contribute your setup
+## Contribute your toolkit
 
-1. Add a new folder under [setups/](https://github.com/nik-garmash/works-for-me/tree/master/setups) directory
-1. Describe your setup in ```your-name.setup``` file
+1. Add a new folder under [toolkits/](https://github.com/nik-garmash/works-for-me/tree/master/toolkits) directory
+1. Describe your toolkit in ```your-name.toolkit``` file (see [Guide](#guide))
 1. Make a Pull Request
 1. 🚀
 
 ## 
 
-- [Guide to write a setup](#guide-to-write-a-setup)
+- [Guide](#guide)
 - [Syntax Cheatsheet](#syntax-cheatsheet)
     - [Author's information](#authors-information-syntax)
     - [Tools](#tools-syntax)
@@ -27,11 +27,11 @@ People craft their workflows for years carefully selecting tools which suit them
 - [Commit message convention](#commit-message-convention)
 
 
-## Guide to write a setup
+## Guide
 
-Setup should start with a little information about yourself, followed by the list of tools you are using.
+Toolkit file should start with little information about yourself, followed by the list of tools you are using.
 
-This is how very minimal setup may look like:
+This is how very minimal toolkit may look like:
 
 ```
 name: John 🚀 Doe
@@ -92,7 +92,7 @@ You can list similar tools in one line:
 
 ### Titles
 
-Tools can be grouped with a titles if you want to have setup more organised.
+Tools can be grouped with a titles to keep things more organised.
 
 Title starts with ```--```.
 
@@ -209,13 +209,13 @@ some text <link title (https://link.url)> more text
 
 RSS-feed is based on a commit-messages.
 
-If you are about to commit new setup start commit-message with `new: `
+If you are about to commit new toolkit, start commit-message with `new: `
 
 ```
 new: John Doe (Software Engineer)
 ```
 
-You can add a few words about you in the commit-message, it goes to the feed.
+Commit-message will end up in RSS.
 
 For major updates to existing setup, use `update: `, that also goes to RSS.
 
@@ -223,7 +223,7 @@ For major updates to existing setup, use `update: `, that also goes to RSS.
 update: Changed IDE
 ```
 
-If you want to fix some typos or make minor changes, use `fix: `, no-one will see that one.
+If you want to fix some typos or make minor changes, use `fix: `, nobody will see that one.
 
 ```
 fix: Fixing typos
