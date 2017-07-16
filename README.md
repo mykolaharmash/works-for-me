@@ -7,7 +7,7 @@
 Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.
 
 
-## Contribute your toolkit
+## Contribute a toolkit
 
 1. Add a new folder under [toolkits/](https://github.com/nik-garmash/works-for-me/tree/master/toolkits) directory
 1. Describe your toolkit in ```your-name.toolkit``` file (see [Guide](#guide))
