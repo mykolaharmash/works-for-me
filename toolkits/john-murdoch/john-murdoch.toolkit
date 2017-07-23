@@ -1,0 +1,83 @@
+name: John Murdoch
+occupation: Human
+location: l=179° 56′ 39.4″ b=0° 2′ 46.2″
+
+-- Hardware
+
+The company I currently work got me a mid 2015 MacBook Pro. I am quite happy, despite the fact it's a 15-inch. But the 13-inch I owned previously made me much happier in terms of weight and overall handling.
+
+-- Software
+
+> OS
+
+Obviously macOS.
+
+# (./desktop.png)
+
+> IntelliJ Idea (https://www.jetbrains.com/idea)
+
+Since I started programming for money I use IntelliJ Idea. That means the first version I installed on one of my machines was 1.X. It is fast, supports all major languages out-of-the-box. It also provides access to a huge repository of plugins created by an active community. In contrast to Eclipse it never tried to be the Eierlegende Wollmilchsau.
+
+It is consistent. No need to remember more than one key-binding for a single action, e.g. 'Rename' is always the same no matter if you rename a class in Java, a file name in project browser, a JS function, or a Go method - you name it.
+
+Features I use on a daily basis:
+• refactoring (works great even for dynamically typed languages)
+• quick code navigation (targets can be pretty much everything (type, function, method, file name, …)
+• IdeaVim (works great for almost all VIM keybindings I know, there are some glitches though)
+• "Distraction Free Mode"
+
+# (./idea.png)
+
+> Fira Code (https://github.com/tonsky/FiraCode)
+
+There are tons of fonts out there and I might have tried dozens of them. Some made me happy, some just hurt my eyes. I used to use Fira Mono, but some time ago I discovered Fira Code and I am using it since then. I am happy. Have you tried programming ligatures yet?
+
+# (./fira.png)
+
+> TMUX (https://github.com/tmux/tmux)
+
+I just do not get it how people survive without it. Create terminal sessions, windows and panes within a single console. Easy switching between all of them . Detach from sessions while keep them running on local or remote machines - not only good for long running task, but also to continue where you left off.
+
+# (./tmux.png)
+
+> Vimperator (http://vimperator.org/vimperator)
+
+You enjoy a distraction free browsing experience? You know some Vim key-bindings? Go for it. It was never easier to access browsing history, bookmarks, and open tabs. Use search keywords and follow links without using your mouse at all. Can not imagine to live without it. I am curious to see where this project goes when XUL support is dropped later this year.
+
+# (./vimperator.png)
+
+> Forklift (http://www.binarynights.com/forklift)
+
+Despite I am able to locate items on local disks and remote servers via command line, sometimes it is just easier to have a GUI to explore content on local and remote spaces.
+
+# (./forklift.png)
+
+> Magnet (http://magnet.crowdcafe.com)
+
+If you are like me and feel restraint when working with full screen apps, then you will love Magnet. All windows properly organized and sized on your desktop. No more fiddling around on how to arrange your open windows. Never would never go without it anymore.
+
+> nvALT (http://brettterpstra.com/projects/nvalt)
+
+The application I stick for no obvious reason. Using it since ages and it holds all my private and professional notes. No images though. But easy to navigate/search via keyboard.
+
+> 1Password (https://1password.com/)
+
+Keeps my secrets secret. Do not know where the path leads but for now I am happy. Syncs my secrets offline across all my devices.
+
+> Resilio Sync (https://www.resilio.com/individuals)
+
+Dropbox, Google Cloud, … I was never a big fan of those. That is why I started to run my own servers for all kind of things. Besides the usual mail and website hosting, and some other stuff I use Resilio to keep folders in sync between my machines. Encrypted folders, share with others, and support for mobile devices all those features make it a useful tool. Downside here: It is closed source. But support is very helpful. They helped me a lot tracking down a connection issues on FreeBSD.
+
+Might be replaced with <Dat (https://datproject.org)> soon.
+
+> todoist (https://todoist.com/)
+
+This app helps me to keep track of the things I want to do. I am easily lost between all the things I want to do. Organize the action items along projects or labels. Keyboard friendly. Quickly create tasks via shortcuts or - my favorite - by email.
+
+-- Reads
+
+> Hackernews (https://news.ycombinator.com/)
+
+Starting point for daily explorations on new and interesting topics. I can not keep up with all the post on all (social media) websites. I might miss out on some news, or read them later than others. But does it matter? I can not expect myself to keep up with everything and everyone all the time.
+
+
