@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/nik-garmash/works-for-me#readme",
   "engines": {
-    "node": "~6.10.0"
+    "node": "^6.11.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
