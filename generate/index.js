@@ -15,6 +15,8 @@ const createPlayground = require('./create-playground')
 const jsonBeautify = require('../lib/json-beautify')
 const { DIST_FOLDER } = require('../lib/constants')
 
+const TMP_FOLDER = path.resolve(__dirname, '../tmp')
+
 function readSetupContent (filePath) {
   let pathInfo = path.parse(filePath)
   let content = fs.readFileSync(filePath, 'utf8')
@@ -49,7 +51,7 @@ function generateSetupHtml (astItem) {
 
 function saveSetupAst (astItem) {
   fs.writeFileSync(
-    `${path.resolve(__dirname, '../tmp')}/${astItem.name}.ast.json`,
+    `${TMP_FOLDER}/${astItem.name}.ast.json`,
     jsonBeautify(astItem.content)
   )
 
@@ -64,13 +66,13 @@ function saveSetupHtml (setupsDistDir, htmlItem) {
 
 function saveSetupsListAst (setupsListAst) {
   fs.writeFileSync(
-    `${path.resolve(__dirname, '../tmp')}/list.ast.json`,
+    `${TMP_FOLDER}/list.ast.json`,
     jsonBeautify(setupsListAst)
   )
 }
 
 function saveSetupsListHtml (distDir, listHtml) {
-  let filename = `index.html`
+  let filename = 'index.html'
 
   fs.writeFileSync(`${distDir}/${filename}`, listHtml)
 }
@@ -132,6 +134,7 @@ function generate (customDistDir) {
   let setupsAst
 
   fs.ensureDirSync(distDir)
+  fs.ensureDirSync(TMP_FOLDER)
 
   copySetups(distDir)
 
