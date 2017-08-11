@@ -23,7 +23,7 @@ Developers craft their workflows for years carefully selecting tools which suit 
     - [Titles](#titles-syntax)
     - [Links](#links-syntax)
     - [Images](#images-syntax)
-- [RSS feed with new setups](https://works-for-me.github.io/rss.xml)
+- [RSS feed with new toolkits](https://works-for-me.github.io/rss.xml)
 - [Commit message convention](#commit-message-convention)
 
 
@@ -124,7 +124,7 @@ Link itself is wrapped with ```<>```, inside are title and URL wrapped with ```(
 
 ### Images
 
-First, put images next to the ```*.setup``` file.
+First, put images next to the ```*.toolkit``` file.
 
 Start a line with ```#``` symbol followed by title and image URL.
 
@@ -134,7 +134,7 @@ Start a line with ```#``` symbol followed by title and image URL.
 
 Title is a text which describes what's on the image. It's very important for screen-reader users, do not skip it.
 
-URL is wrapped with ```()``` and it refers to images you put inside your setup folder. External URLs are also good if you prefer.
+URL is wrapped with ```()``` and it refers to images you put inside your toolkit folder. External URLs are also good if you prefer.
 
 
 ### Comments
@@ -217,7 +217,7 @@ new: John Doe (Software Engineer)
 
 Commit-message will end up in RSS.
 
-For major updates to existing setup, use `update: `, that also goes to RSS.
+For major updates to existing toolkit, use `update: `, that also goes to RSS.
 
 ```
 update: Changed IDE
