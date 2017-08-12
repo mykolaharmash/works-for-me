@@ -50,12 +50,14 @@
 }
 
 .share__twitter,
-.share__facebook {
+.share__facebook,
+.share__github {
   display: flex;
   align-items: baseline;
 }
 
-.share__facebook {
+.share__facebook,
+.share__github {
   margin-left: 20px;
 }
 

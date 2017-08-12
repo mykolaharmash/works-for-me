@@ -1,0 +1,27 @@
+.list-caption {
+  margin: 0 0 30px 0;
+  font-size: 32px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 400px;
+}
+
+.list-item {
+  margin-bottom: 25px;
+}
+
+.list-item__link {
+  margin-bottom: 4px;
+}
+
+.list-item__link > a {
+  font-weight: bold;
+}
+
+.list-item__description {
+
+}

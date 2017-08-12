@@ -4,10 +4,11 @@
 
 Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.
 
+
 ## Subscribe
 
-- [RSS](https://works-for-me.github.io/rss.xml). Fastest way to receive new toolkits and updates to existing ones.
-- [Medium](https://medium.com/developer-toolkits). All contributed setups are also published to Medium.
+- [RSS](https://works-for-me.github.io/rss.xml). The fastest way to receive new toolkits and updates to existing ones.
+- [Medium](https://medium.com/developer-toolkits). All contributed toolkits are also published to Medium with a little delay.
 
 
 ## Contribute a Toolkit

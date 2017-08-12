@@ -10,9 +10,22 @@
 
 @media screen and (max-width: 934px) {
   .header {
+    flex-direction: column;
     align-self: center;
     width: 700px;
     padding: 8px 30px;
+  }
+
+  .share {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .share__facebook,
+  .share__github {
+    margin-left: 0;
+    margin-top: 3px;
   }
 }
 
@@ -34,18 +47,28 @@
   .logo.inline {
     display: block;
     width: 100%;
+    margin-bottom: 30px;
   }
 
   .navigation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 20px;
   }
 
   .navigation-item + .navigation-item {
     margin-left: 0;
     margin-top: 10px;
+  }
+
+  .share {
+    flex-direction: row;
+  }
+
+  .share__facebook,
+  .share__github {
+    margin-left: 20px;
+    margin-top: 0;
   }
 
   .setup-root {

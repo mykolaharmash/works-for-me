@@ -9,6 +9,7 @@ const generateSetupsListHtml = require('./setups-list-html')
 const getSetupMetadata = require('./get-setup-metadata')
 const copySetups = require('./copy-setups')
 const copyStatics = require('./copy-statics')
+const copySubscribePage = require('./copy-subscribe-page')
 const generateRssAst = require('./rss-ast')
 const generateRssXml = require('./rss-xml')
 const createPlayground = require('./create-playground')
@@ -154,6 +155,7 @@ function generate (customDistDir) {
   saveSetupsListHtml(distDir, setupsListHtml)
 
   copyStatics(distDir)
+  copySubscribePage(distDir)
 
   let rss = generateRss(setupsAst, setupsMetadata)
 

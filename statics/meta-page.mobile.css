@@ -16,7 +16,8 @@
     margin-top: 30px;
   }
 
-  .share__facebook {
+  .share__facebook,
+  .share__github {
     margin-left: 0;
     margin-top: 3px;
   }
@@ -58,7 +59,8 @@
     flex-direction: row;
   }
 
-  .share__facebook {
+  .share__facebook,
+  .share__github {
     margin-left: 20px;
     margin-top: 0;
   }

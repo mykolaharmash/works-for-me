@@ -16,8 +16,8 @@
 
     <link rel="stylesheet" href="./statics/global.css">
     <link rel="stylesheet" href="./statics/header.css">
-    <link rel="stylesheet" href="./statics/main-list.css">
-    <link rel="stylesheet" href="./statics/main-list.mobile.css">
+    <link rel="stylesheet" href="./statics/meta-page.css">
+    <link rel="stylesheet" href="./statics/meta-page.mobile.css">
     <link rel="alternate"
           type="application/rss+xml"
           title="Works For Me"
@@ -42,20 +42,16 @@
         >Playground</a>
 
         <a
-          href="./rss.xml"
+          href="./subscribe/subscribe.html"
           class="navigation-item"
-        >RSS</a>
-
-        <a
-          href="https://github.com/nik-garmash/works-for-me"
-          class="navigation-item"
-        >GitHub</a>
+        >Subscribe</a>
 
         <a
           href="https://github.com/nik-garmash/works-for-me#contribute-a-toolkit"
           class="navigation-item highlight"
-        >Contribute a toolkit</a>
+        >Contribute a toolkit on GitHub</a>
       </nav>
+
       <div class="share">
         <div class="share__twitter">
           <img class="share__icon" src="./statics/twitter.svg">
@@ -73,6 +69,14 @@
             Share
           </a>
         </div>
+        <div class="share__github">
+          <img class="share__icon" src="./statics/github.svg">
+          <a class="share__link"
+             href="https://github.com/nik-garmash/works-for-me"
+             target="_blank">
+            Star
+          </a>
+        </div>
       </div>
     </header>
 
@@ -88,8 +92,8 @@
       (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-          }, i[r].l = 1 * new Date();
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
         a = s.createElement(o),
           m = s.getElementsByTagName(o)[0];
         a.async = 1;
