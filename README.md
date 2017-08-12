@@ -1,30 +1,32 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Place to share useful tools
-
-[Collection of developer toolkits](https://works-for-me.github.io)
+## [Collection of Developer Toolkits](https://works-for-me.github.io)
 
 Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.
 
+## Subscribe
 
-## Contribute a toolkit
+- [RSS](https://works-for-me.github.io/rss.xml). Fastest way to receive new toolkits and updates to existing ones.
+- [Medium](https://medium.com/developer-toolkits). All contributed setups are also published to Medium.
+
+
+## Contribute a Toolkit
 
 1. Add a new folder under [toolkits/](https://github.com/nik-garmash/works-for-me/tree/master/toolkits) directory
 1. Describe your toolkit in ```your-name.toolkit``` file (see [Guide](#guide))
-1. Make a Pull Request
+1. Make a Pull Request (see [Commit Message Convention](#commit-message-convention))
 1. 🚀
 
 ## 
 
 - [Guide](#guide)
 - [Syntax Cheatsheet](#syntax-cheatsheet)
-    - [Author's information](#authors-information-syntax)
+    - [Author's Information](#authors-information-syntax)
     - [Tools](#tools-syntax)
     - [Titles](#titles-syntax)
     - [Links](#links-syntax)
     - [Images](#images-syntax)
-- [RSS feed with new toolkits](https://works-for-me.github.io/rss.xml)
-- [Commit message convention](#commit-message-convention)
+- [Commit Message Convention](#commit-message-convention)
 
 
 ## Guide
@@ -41,7 +43,7 @@ name: John 🚀 Doe
 
 Try to copy it into [the playground](https://works-for-me.github.io/playground/playground.html) and see it works.
 
-### Author's information
+### Author's Information
 
 You can add more information about yourself besides just a name.<br>
 Supported lines are:
@@ -146,9 +148,9 @@ URL is wrapped with ```()``` and it refers to images you put inside your toolkit
 Such line won't be rendered.
 
 
-## Syntax cheatsheet
+## Syntax Cheatsheet
 
-### Author's information syntax
+### Author's Information Syntax
 
 ```
 name: John 🚀 Doe
@@ -159,7 +161,7 @@ link: https://works-for-me.github.io
 Free text description …
 ```
 
-### Tools syntax
+### Tools Syntax
 
 ```
 > Tool Title
@@ -175,7 +177,7 @@ Free text description …
 Free text description …
 ```
 
-### Titles syntax
+### Titles Syntax
 
 ```
 -- Groupping title
@@ -187,7 +189,7 @@ Free text description …
 Free text description …
 ```
 
-### Links syntax
+### Links Syntax
 
 ```
 <link title (https://link.url)>
@@ -198,33 +200,30 @@ some text <link title (https://link.url)> more text
 ```
 
 
-### Images syntax
+### Images Syntax
 
 ```
 # Image title (./image.png)
 ```
 
 
-## Commit message convention
+## Commit Message Convention
 
-RSS-feed is based on a commit-messages.
+Start your commit messages with one of the tags:
 
-If you are about to commit new toolkit, start commit-message with `new: `
+- `new: ` — if you are about to commit new toolkit
 
 ```
 new: John Doe (Software Engineer)
 ```
 
-Commit-message will end up in RSS.
-
-For major updates to existing toolkit, use `update: `, that also goes to RSS.
+- `update: ` — for major updates to existing toolkit
 
 ```
 update: Changed IDE
 ```
 
-If you want to fix some typos or make minor changes, use `fix: `, nobody will see that one.
-
+- `fix: ` — for fixing typos or minor changes
 ```
 fix: Fixing typos
 ```
