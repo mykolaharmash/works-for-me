@@ -32,8 +32,6 @@ Features I use on a daily basis:
 
 There are tons of fonts out there and I might have tried dozens of them. Some made me happy, some just hurt my eyes. I used to use Fira Mono, but some time ago I discovered Fira Code and I am using it since then. I am happy. Have you tried programming ligatures yet?
 
-# (./fira.png)
-
 > TMUX (https://github.com/tmux/tmux)
 
 I just do not get it how people survive without it. Create terminal sessions, windows and panes within a single console. Easy switching between all of them . Detach from sessions while keep them running on local or remote machines - not only good for long running task, but also to continue where you left off.
