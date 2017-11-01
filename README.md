@@ -13,6 +13,7 @@ Developers craft their workflows for years carefully selecting tools which suit 
 
 ## Contribute a Toolkit
 
+1. Fork the [repo](https://github.com/nik-garmash/works-for-me)
 1. Add a new folder under [toolkits/](https://github.com/nik-garmash/works-for-me/tree/master/toolkits) directory
 1. Describe your toolkit in ```your-name.toolkit``` file (see [Guide](#guide))
 1. Make a Pull Request (see [Commit Message Convention](#commit-message-convention))
