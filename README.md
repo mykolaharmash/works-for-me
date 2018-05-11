@@ -27,7 +27,7 @@ Grab the [RSS feed](https://works-for-me.github.io/rss.xml) or search for "works
     - [Images](#images-syntax)
 
 
-## Guide
+## Guide To Describe a Toolkit
 
 Toolkit file should start with little information about yourself, followed by the list of tools you are using.
 
