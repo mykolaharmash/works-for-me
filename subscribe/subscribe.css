@@ -14,14 +14,6 @@
   margin-bottom: 25px;
 }
 
-.list-item__link {
-  margin-bottom: 4px;
-}
-
-.list-item__link > a {
-  font-weight: bold;
-}
-
 .list-item__description {
-
+  line-height: 1.23em;
 }

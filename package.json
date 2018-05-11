@@ -1,6 +1,6 @@
 {
   "name": "works-for-me",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A nice way to discover new tools by looking at setups which work for other people.",
   "main": "./generate/index.js",
   "directories": {
@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/nik-garmash/works-for-me#readme",
   "engines": {
-    "node": "^6.11.0"
+    "node": "^8.11.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",

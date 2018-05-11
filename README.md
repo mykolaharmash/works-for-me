@@ -4,31 +4,27 @@
 
 Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.
 
+## Subscribe To Receive New Toolkits
 
-## Subscribe
-
-- [RSS](https://works-for-me.github.io/rss.xml). The fastest way to receive new toolkits and updates to existing ones.
-- [Medium](https://medium.com/developer-toolkits). All contributed toolkits are also published to Medium with a little delay.
-
+Grab the [RSS feed](https://works-for-me.github.io/rss.xml) or search for "works-for-me.github.io" in services like [Feedly](https://feedly.com) and [Feedbin](https://feedbin.com)
 
 ## Contribute a Toolkit
 
 1. Fork the [repo](https://github.com/nik-garmash/works-for-me)
 1. Add a new folder under [toolkits/](https://github.com/nik-garmash/works-for-me/tree/master/toolkits) directory
-1. Describe your toolkit in ```your-name.toolkit``` file (see [Guide](#guide))
-1. Make a Pull Request (see [Commit Message Convention](#commit-message-convention))
+1. Describe your toolkit in ```your-name.toolkit``` file (see [Guide To Describe a Toolkit](#guide-to-describe-a-toolkit))
+1. Make a Pull Request
 1. 🚀
 
-## 
+##
 
-- [Guide](#guide)
+- [Guide To Describe a Toolkit](#guide-to-describe-a-toolkit)
 - [Syntax Cheatsheet](#syntax-cheatsheet)
     - [Author's Information](#authors-information-syntax)
     - [Tools](#tools-syntax)
     - [Titles](#titles-syntax)
     - [Links](#links-syntax)
     - [Images](#images-syntax)
-- [Commit Message Convention](#commit-message-convention)
 
 
 ## Guide
@@ -53,7 +49,7 @@ Supported lines are:
 - name
 - occupation
 - location
-- link — personal blog, twitter, github etc. You can add multiple of those. 
+- link — personal blog, twitter, github etc. You can add multiple of those.
 
 Also, those lines can be followed by some free text about yourself.
 
@@ -206,26 +202,4 @@ some text <link title (https://link.url)> more text
 
 ```
 # Image title (./image.png)
-```
-
-
-## Commit Message Convention
-
-Start your commit messages with one of the tags:
-
-- `new: ` — if you are about to commit new toolkit
-
-```
-new: John Doe (Software Engineer)
-```
-
-- `update: ` — for major updates to existing toolkit
-
-```
-update: Changed IDE
-```
-
-- `fix: ` — for fixing typos or minor changes
-```
-fix: Fixing typos
 ```
