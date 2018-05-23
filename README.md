@@ -1,3 +1,5 @@
+<img src="./statics/logo.svg" width="180px" height="180px">
+
 ## [Collection of Developer Toolkits](https://works-for-me.github.io)
 
 Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.

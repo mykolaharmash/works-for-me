@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="250px" viewBox="0 0 300 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Github Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Github-Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="OpenSans-ExtraBold, Open Sans" font-size="80" font-weight="600" line-spacing="78">
+        <text id="Works-for-me" fill="#000000">
+            <tspan x="-1" y="76">Works</tspan>
+            <tspan x="-1" y="154">for</tspan>
+            <tspan x="-1" y="232">me</tspan>
+        </text>
+    </g>
+</svg>
