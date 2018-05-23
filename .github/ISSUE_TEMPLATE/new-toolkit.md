@@ -4,7 +4,7 @@ about: Contribute your personal toolkit
 
 ---
 
-// For more info see the [Guide To Describe a Toolkit](https://github.com/nik-garmash/works-for-me#guide-to-describe-a-toolkit)
+// For more info about the syntax see the README https://github.com/nik-garmash/works-for-me#guide-to-describe-a-toolkit
 // Feel free to structure your toolkit in any way you feel makes sense
 
 
