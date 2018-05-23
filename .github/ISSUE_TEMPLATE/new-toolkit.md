@@ -4,11 +4,11 @@ about: Contribute your personal toolkit
 
 ---
 
-// For more info about the syntax see the README https://github.com/nik-garmash/works-for-me#guide-to-describe-a-toolkit
+// For more info about the syntax see the wiki https://github.com/nik-garmash/works-for-me/wiki/Guide-To-Describe-a-Toolkit
 // Feel free to structure your toolkit in any way you feel makes sense
 
 
-// Authors info (all but name is optional)
+// About you (all but the name is optional)
 
 name:
 occupation:
