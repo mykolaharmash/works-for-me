@@ -1,4 +1,4 @@
-![Works For Me logo](./statics/favicon-180x180.png)
+<img src="./statics/logo.svg" width="180px" height="180px">
 
 ## [Collection of Developer Toolkits](https://works-for-me.github.io)
 
