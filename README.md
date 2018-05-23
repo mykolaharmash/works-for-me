@@ -1,5 +1,3 @@
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 ## [Collection of Developer Toolkits](https://works-for-me.github.io)
 
 Developers craft their workflows for years carefully selecting tools which suit them best. Here you can share your personal toolkit and discover more great software.
