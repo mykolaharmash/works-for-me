@@ -1,10 +1,11 @@
 ---
 name: New Toolkit
-about: Feel free to structure your toolkit in any way you feel makes sense
+about: Contribute your personal toolkit
 
 ---
 
 // For more info see the [Guide To Describe a Toolkit](https://github.com/nik-garmash/works-for-me#guide-to-describe-a-toolkit)
+// Feel free to structure your toolkit in any way you feel makes sense
 
 
 // Authors info (all but name is optional)
