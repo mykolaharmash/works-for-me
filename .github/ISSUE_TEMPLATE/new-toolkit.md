@@ -4,45 +4,43 @@ about: Contribute your personal toolkit
 
 ---
 
-// For more info about the syntax see the wiki https://github.com/nik-garmash/works-for-me/wiki/Guide-To-Describe-a-Toolkit
-// Feel free to structure your toolkit in any way you feel makes sense
+<!--
+Feel free to structure your toolkit in any way you feel makes sense.
+Below you can see a minimal example.
+-->
 
+---
+name: Nikolay Garmash
+occupation: Software Engineer
+location: Berlin, Germany
+link: garmash.nikolay@gmail.com
+---
 
-// About you (all but the name is optional)
+## Programmings
 
-name:
-occupation:
-location:
-link:
-
-
-// Tools you're using
-
--- Programmings
-
->  Sublime Text 3 (http://sublimetext.com)
+###  [Sublime Text 3](http://sublimetext.com)
 
 With a bunch of plugins:
-• <Auto​File​Name (https://packagecontrol.io/packages/AutoFileName)>
-• <Naomi (https://packagecontrol.io/packages/Naomi)>
-• …
+* [Auto​File​Name](https://packagecontrol.io/packages/AutoFileName)
+* [Naomi](https://packagecontrol.io/packages/Naomi)
+* …
 
-> iTerm 2 (https://iterm2.com)
+### [iTerm 2](https://iterm2.com)
 
 
--- Podcasts
+## Podcasts
 
-> ATP (https://atp.fm)
+### [ATP](https://atp.fm)
 
-> Stuff You Should Know (http://stuffyoushouldknow.com)
+### [Stuff You Should Know](http://stuffyoushouldknow.com)
 
 …
 
 
--- Blogs
+## Blogs
 
-> Marco Arment (https://marco.org)
+### [Marco Arment](https://marco.org)
 
-> Wait But Why (https://waitbutwhy.com)
+### [Wait But Why](https://waitbutwhy.com)
 
 …
