@@ -31,7 +31,7 @@
     "url": "git+https://github.com/nik-garmash/works-for-me.git"
   },
   "author": "Nikolay Garmash",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nik-garmash/works-for-me/issues"
   },
